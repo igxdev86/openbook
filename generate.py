@@ -38,14 +38,14 @@ PAGE = """<!DOCTYPE html>
 <title>{title}</title>
 <meta name="description" content="{description}">
 <link rel="canonical" href="{canonical}">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="/styles.css">
 <script type="application/ld+json">{jsonld}</script>
 </head>
 <body>
 
 <div class="topbar">
-  <a class="logo" href="../index.html">OPEN<span>BOOK</span></a>
-  <a class="top-link" href="../account.html">Sign in · <b>My bids</b></a>
+  <a class="logo" href="/">OPEN<span>BOOK</span></a>
+  <a class="top-link" href="/account.html">Sign in · <b>My bids</b></a>
 </div>
 
 <div class="demo-banner" id="demoBanner">Demo mode — showing sample data. Add Supabase keys in config.js to go live.</div>
@@ -53,7 +53,7 @@ PAGE = """<!DOCTYPE html>
 <div class="wrap">
 
   <div class="crumbs">
-    <a href="../index.html">Home</a> / <a href="../markets.html">{category_name}</a> / {brand}</div>
+    <a href="/">Home</a> / <a href="/markets.html">{category_name}</a> / {brand}</div>
 
   <div class="card prod-head">
     <div>
@@ -142,7 +142,7 @@ PAGE = """<!DOCTYPE html>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="../config.js"></script>
+<script src="/config.js"></script>
 <script>
 initChrome();
 const slug = {slug_js};
