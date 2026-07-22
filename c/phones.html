@@ -108,10 +108,12 @@ initChrome();
     const row = document.getElementById('r-' + m.slug);
     if (!row) return;
     const meta = row.querySelector('.m-meta');
+    const anchor = m.retail_price_pence || m.rrp_pence;
     if (m.last_matched_pence)
       meta.innerHTML = 'Last ' + P(m.last_matched_pence) + ' · <span class="off">' +
-        PCT_OFF(m.last_matched_pence, m.rrp_pence) + '% off</span> <span class="rrp">' +
-        P(m.rrp_pence) + '</span> · ' + (m.live_bids||0) + ' bids';
+        PCT_OFF(m.last_matched_pence, anchor) + '% off</span> · ' + (m.live_bids||0) + ' bids';
+    else if (m.retail_price_pence)
+      meta.innerHTML = 'Retail ' + P(m.retail_price_pence) + ' · ' + (m.live_bids||0) + ' bids';
     else
       meta.innerHTML = 'RRP <span class="rrp">' + P(m.rrp_pence) + '</span> · ' + (m.live_bids||0) + ' bids';
     const cells = row.querySelectorAll('.cell');

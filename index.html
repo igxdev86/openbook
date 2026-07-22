@@ -99,12 +99,13 @@ initChrome();
   }
   rows.innerHTML = markets.map(m => {
     const last = m.last_matched_pence, rrp = m.rrp_pence;
+    const anchor = m.retail_price_pence || rrp;
     const meta = [
-      last ? `Last ${P(last)}` : null,
-      last ? `<span class="off">${PCT_OFF(last, rrp)}% off</span> <span class="rrp">${P(rrp)}</span>`
-           : `RRP <span class="rrp">${P(rrp)}</span>`,
+      last ? `Last ${P(last)} · <span class="off">${PCT_OFF(last, anchor)}% off</span>`
+           : (m.retail_price_pence ? `Retail ${P(m.retail_price_pence)}`
+                                   : `RRP <span class="rrp">${P(rrp)}</span>`),
       `${m.live_bids || 0} bids`
-    ].filter(Boolean).join(' · ');
+    ].join(' · ');
     const bidCell = m.best_bid_pence
       ? `<div class="cell bid"><b class="num">${P(m.best_bid_pence)}</b><span>best bid</span></div>`
       : `<div class="cell empty"><b>—</b><span>no bids</span></div>`;

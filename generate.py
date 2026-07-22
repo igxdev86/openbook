@@ -160,12 +160,6 @@ function rungHtml(o, side) {{
 async function load() {{
   product = await getProductBySlug(slug);
   const summary = await getMarket(slug);
-  if (summary && summary.last_matched_pence) {{
-    document.getElementById('pLast').textContent = P(summary.last_matched_pence);
-    document.getElementById('pOff').innerHTML =
-      PCT_OFF(summary.last_matched_pence, RRP) +
-      '% below RRP <span style="color:var(--rrp);text-decoration:line-through;font-weight:400">' + P(RRP) + '</span>';
-  }}
   let retail = null;
   try {{
     const rj = await fetch('/data/retail.json').then(r => r.ok ? r.json() : null);
@@ -173,10 +167,20 @@ async function load() {{
   }} catch (e) {{}}
   if (!retail && summary && summary.retail_price_pence)
     retail = {{ price_pence: summary.retail_price_pence, seller: '', url: '' }};
+  if (summary && summary.last_matched_pence) {{
+    document.getElementById('pLast').textContent = P(summary.last_matched_pence);
+    const anchor = (retail && retail.price_pence) || summary.retail_price_pence || RRP;
+    const label = (retail || summary.retail_price_pence) ? 'below retail' : 'below RRP';
+    document.getElementById('pOff').textContent =
+      PCT_OFF(summary.last_matched_pence, anchor) + '% ' + label;
+  }}
   if (retail) {{
     const el = document.getElementById('retailLine');
     el.innerHTML = 'Cheapest at retail today: ' + P(retail.price_pence) +
       (retail.seller ? ' at ' + retail.seller : '');
+    // retail is the reference now — hide the RRP fallback text
+    const off = document.getElementById('pOff');
+    if (off.textContent.trim().startsWith('RRP')) off.textContent = '';
   }}
   const l = await getLadders(slug, product ? product.id : 0);
   document.getElementById('bidLadder').innerHTML =
@@ -324,10 +328,12 @@ initChrome();
     const row = document.getElementById('r-' + m.slug);
     if (!row) return;
     const meta = row.querySelector('.m-meta');
+    const anchor = m.retail_price_pence || m.rrp_pence;
     if (m.last_matched_pence)
       meta.innerHTML = 'Last ' + P(m.last_matched_pence) + ' · <span class="off">' +
-        PCT_OFF(m.last_matched_pence, m.rrp_pence) + '% off</span> <span class="rrp">' +
-        P(m.rrp_pence) + '</span> · ' + (m.live_bids||0) + ' bids';
+        PCT_OFF(m.last_matched_pence, anchor) + '% off</span> · ' + (m.live_bids||0) + ' bids';
+    else if (m.retail_price_pence)
+      meta.innerHTML = 'Retail ' + P(m.retail_price_pence) + ' · ' + (m.live_bids||0) + ' bids';
     else
       meta.innerHTML = 'RRP <span class="rrp">' + P(m.rrp_pence) + '</span> · ' + (m.live_bids||0) + ' bids';
     const cells = row.querySelectorAll('.cell');
