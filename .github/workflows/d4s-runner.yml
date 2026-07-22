@@ -26,4 +26,4 @@ jobs:
           git config user.email "runner@openbook"
           git add -A
           git diff --cached --quiet || git commit -m "D4S results"
-          git push
+          for i in 1 2 3; do git push && break; git pull --rebase -X theirs origin main || true; done

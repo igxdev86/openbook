@@ -108,12 +108,18 @@ def main():
     deadline = time.time() + 15 * 60
     while len(done) < len(posted) and time.time() < deadline:
         time.sleep(20)
-        ready = d4s('merchant/google/products/tasks_ready')
+        try:
+            ready = d4s('merchant/google/products/tasks_ready')
+        except Exception as e:
+            print('  poll error (tasks_ready):', e); continue
         for t in (ready.get('tasks') or []):
             for r in (t.get('result') or []):
                 tid = r.get('id')
                 if not tid: continue
-                got = d4s(f'merchant/google/products/task_get/advanced/{tid}')
+                try:
+                    got = d4s(f'merchant/google/products/task_get/advanced/{tid}')
+                except Exception as e:
+                    print('  poll error (task_get):', e); continue
                 for task in (got.get('tasks') or []):
                     tag = (task.get('data') or {}).get('tag')
                     if not tag or tag in done or tag not in by_slug: continue

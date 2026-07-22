@@ -49,4 +49,7 @@ jobs:
           git config user.email "sweep@openbook"
           git add data/ || true
           git diff --cached --quiet || git commit -m "Sweep receipt"
-          git push
+          for i in 1 2 3 4 5; do
+            git push && break
+            git pull --rebase -X theirs origin main || true
+          done

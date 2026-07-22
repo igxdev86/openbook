@@ -23,4 +23,4 @@ jobs:
           git config user.email "sync@openbook"
           git add data/db-sync-last.json
           git diff --cached --quiet || git commit -m "DB sync receipt"
-          git push
+          for i in 1 2 3; do git push && break; git pull --rebase -X theirs origin main || true; done
