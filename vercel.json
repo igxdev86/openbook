@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/m/:slug", "destination": "/market.html" },
+    { "source": "/markets", "destination": "/markets.html" }
+  ]
+}

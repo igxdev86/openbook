@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All markets — OpenBook</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="logo" href="index.html">OPEN<span>BOOK</span></a>
+  <a class="top-link" href="account.html">Sign in · <b>My bids</b></a>
+</div>
+
+<div class="demo-banner" id="demoBanner">Demo mode — showing sample data. Add Supabase keys in config.js to go live.</div>
+
+<div class="wrap">
+
+  <div style="display:flex;gap:8px;margin-top:10px">
+    <input type="search" id="q" placeholder="Search products, brands, models…"
+      style="flex:1;border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+      font-size:.88rem;font-family:inherit;background:var(--card)">
+  </div>
+
+  <div id="chips" style="display:flex;gap:6px;overflow-x:auto;margin-top:10px;
+    padding-bottom:4px;-webkit-overflow-scrolling:touch"></div>
+
+  <div class="markets" style="margin-top:10px">
+    <div class="m-legend">
+      <div>Product</div><div class="bid-l">Best bid</div><div class="ask-l">Best ask</div>
+    </div>
+    <div id="marketRows" style="min-height:80px"></div>
+  </div>
+
+  <button class="btn btn-dark" id="moreBtn" style="width:100%;margin-top:10px;display:none">
+    Load more markets</button>
+
+  <div class="foot">Can't find a product? Markets open automatically as buyers bid.<br>
+    OpenBook · every price is set by the market, not the retailer</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script>
+initChrome();
+
+const PAGE = 25;
+let state = { cat: null, q: '', offset: 0, done: false };
+
+const rowsEl = document.getElementById('marketRows');
+const moreBtn = document.getElementById('moreBtn');
+
+function rowHtml(m){
+  const last = m.last_matched_pence, rrp = m.rrp_pence;
+  const meta = [
+    m.brand || null,
+    last ? `Last ${P(last)} · <span class="off">${PCT_OFF(last, rrp)}% off</span>` : `RRP <span class="rrp">${P(rrp)}</span>`,
+    (m.live_bids || 0) + ' bids'
+  ].filter(Boolean).join(' · ');
+  const bidCell = m.best_bid_pence
+    ? `<div class="cell bid"><b class="num">${P(m.best_bid_pence)}</b><span>best bid</span></div>`
+    : `<div class="cell empty"><b>—</b><span>no bids</span></div>`;
+  const askCell = m.best_ask_pence
+    ? `<div class="cell ask"><b class="num">${P(m.best_ask_pence)}</b><span>best ask</span></div>`
+    : `<div class="cell empty"><b>—</b><span>no asks</span></div>`;
+  return `<a class="mrow" href="${marketUrl(m.slug)}">
+    <div><div class="m-name">${m.name}</div>
+      <div class="m-meta num">${meta}</div></div>
+    ${bidCell}${askCell}</a>`;
+}
+
+async function loadChips(){
+  const cats = await getCategories();
+  const chip = (label, slug, count) =>
+    `<button data-cat="${slug ?? ''}" style="flex:none;border:1px solid var(--line);
+      background:${state.cat === slug ? 'var(--ink)' : 'var(--card)'};
+      color:${state.cat === slug ? '#fff' : 'var(--ink)'};
+      border-radius:20px;padding:8px 13px;font-size:.72rem;font-weight:600;
+      font-family:inherit;cursor:pointer;white-space:nowrap">
+      ${label}${count != null ? ` <span style="opacity:.55">${count}</span>` : ''}</button>`;
+  document.getElementById('chips').innerHTML =
+    chip('All', null) + cats.map(c => chip(c.name, c.slug, c.market_count)).join('');
+  document.querySelectorAll('#chips button').forEach(b => {
+    b.addEventListener('click', () => {
+      state.cat = b.dataset.cat || null;
+      resetAndLoad(); loadChips();
+    });
+  });
+}
+
+async function loadPage(){
+  moreBtn.disabled = true;
+  const items = await getMarkets({
+    category: state.cat, search: state.q, limit: PAGE, offset: state.offset });
+  if (state.offset === 0) rowsEl.innerHTML = '';
+  if (!items.length && state.offset === 0){
+    rowsEl.innerHTML = '<div style="padding:16px;font-size:.76rem;color:var(--ink-soft)">Nothing matches — try another search.</div>';
+  } else {
+    rowsEl.insertAdjacentHTML('beforeend', items.map(rowHtml).join(''));
+  }
+  state.done = items.length < PAGE;
+  state.offset += items.length;
+  moreBtn.style.display = state.done ? 'none' : 'block';
+  moreBtn.disabled = false;
+}
+
+function resetAndLoad(){ state.offset = 0; state.done = false; loadPage(); }
+
+let qTimer;
+document.getElementById('q').addEventListener('input', e => {
+  clearTimeout(qTimer);
+  qTimer = setTimeout(() => { state.q = e.target.value.trim(); resetAndLoad(); }, 300);
+});
+moreBtn.addEventListener('click', loadPage);
+
+loadChips();
+loadPage();
+</script>
+</body>
+</html>

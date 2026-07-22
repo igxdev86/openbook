@@ -1,0 +1,138 @@
+/* ============ OPENBOOK shared styles ============ */
+:root{
+  --ink:#16202b; --ink-soft:#5b6b7c; --paper:#f6f8fa; --card:#ffffff;
+  --line:#e3e9ef;
+  --buy:#cfe7fb; --buy-strong:#8ec8f2; --buy-ink:#0b5c96;
+  --sell:#fbd7de; --sell-strong:#f6aebc; --sell-ink:#a8324e;
+  --match:#0e9f6e; --match-soft:#e5f7ef; --rrp:#99a7b5;
+  font-size:15px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--paper);color:var(--ink);
+  font-family:"Archivo","Segoe UI",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.num{font-family:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+  font-variant-numeric:tabular-nums}
+a{color:inherit}
+
+/* top bar */
+.topbar{display:flex;align-items:center;gap:12px;padding:10px 14px;
+  background:var(--ink);color:#fff}
+.logo{font-weight:800;letter-spacing:.06em;font-size:1rem;
+  text-decoration:none;color:#fff}
+.logo span{color:var(--buy-strong)}
+.top-link{margin-left:auto;font-size:.7rem;color:#9fb0c0;
+  letter-spacing:.06em;text-decoration:none}
+.top-link b{color:#fff}
+
+/* ticker */
+.ticker{background:#0f1620;color:#c8d6e2;font-size:.68rem;
+  padding:7px 14px;display:flex;align-items:center;gap:8px;
+  white-space:nowrap;overflow:hidden}
+.ticker .dot{width:7px;height:7px;border-radius:50%;
+  background:var(--match);flex:none;animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.3}}
+.ticker b{color:#fff}
+.tick-price{color:#7fd4ae;font-weight:700}
+
+.wrap{max-width:640px;margin:0 auto;padding:14px}
+
+/* section heads */
+.sec{display:flex;justify-content:space-between;align-items:baseline;
+  margin:22px 2px 10px}
+.sec h2{font-size:.7rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.sec a{font-size:.68rem;color:var(--buy-ink);text-decoration:none;font-weight:600}
+
+/* cards & buttons */
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.btn{border:none;border-radius:10px;padding:13px 10px;font-weight:700;
+  font-size:.9rem;cursor:pointer;font-family:inherit;transition:transform .08s}
+.btn:active{transform:scale(.97)}
+.btn-buy{background:var(--buy-ink);color:#fff}
+.btn-sell{background:var(--sell-ink);color:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+.btn small{display:block;font-weight:400;font-size:.66rem;opacity:.85;margin-top:2px}
+
+/* market rows */
+.markets{background:var(--card);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden}
+.m-legend{display:grid;grid-template-columns:1fr 66px 66px;gap:6px;
+  padding:8px 12px;border-bottom:1px solid var(--line);
+  font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.m-legend .bid-l{text-align:center;color:var(--buy-ink)}
+.m-legend .ask-l{text-align:center;color:var(--sell-ink)}
+.mrow{display:grid;grid-template-columns:1fr 66px 66px;gap:6px;align-items:center;
+  padding:11px 12px;border-bottom:1px solid #f0f4f7;text-decoration:none}
+.mrow:last-child{border-bottom:none}
+.m-name{font-weight:700;font-size:.84rem;line-height:1.25}
+.m-meta{font-size:.64rem;color:var(--ink-soft);margin-top:3px}
+.m-meta .off{color:var(--match);font-weight:700}
+.m-meta .rrp{text-decoration:line-through;color:var(--rrp)}
+.cell{border-radius:8px;padding:7px 4px;text-align:center;transition:background .4s}
+.cell b{display:block;font-size:.8rem;font-weight:700}
+.cell span{display:block;font-size:.56rem;color:var(--ink-soft);margin-top:1px}
+.cell.bid{background:var(--buy)} .cell.bid b{color:var(--buy-ink)}
+.cell.ask{background:var(--sell)} .cell.ask b{color:var(--sell-ink)}
+.cell.empty{background:#eef3f7} .cell.empty b{color:#a5b3c1}
+.cell.flash{background:#fff3bf}
+
+/* ladder (market page) */
+.book-head{display:grid;grid-template-columns:1fr 86px 1fr;
+  border-bottom:1px solid var(--line)}
+.side-label{padding:9px 12px;font-size:.66rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase}
+.side-label.sell{color:var(--sell-ink)}
+.side-label.buy{color:var(--buy-ink);text-align:right}
+.mid-label{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-soft);display:flex;align-items:center;justify-content:center}
+.book{display:grid;grid-template-columns:1fr 86px 1fr}
+.ladder{display:flex;flex-direction:column}
+.rung{display:flex;justify-content:space-between;align-items:baseline;
+  padding:9px 12px;font-size:.86rem;border-bottom:1px solid #f0f4f7}
+.ladder.sell .rung{background:linear-gradient(90deg,var(--sell) 0%,#fdeef1 100%)}
+.ladder.sell .rung:first-child{background:var(--sell-strong)}
+.ladder.buy .rung{background:linear-gradient(270deg,var(--buy) 0%,#eaf5fd 100%);
+  flex-direction:row-reverse}
+.ladder.buy .rung:first-child{background:var(--buy-strong)}
+.price{font-weight:700}
+.ladder.sell .price{color:var(--sell-ink)}
+.ladder.buy .price{color:var(--buy-ink)}
+.units{font-size:.68rem;color:var(--ink-soft)}
+.spread{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;border-left:1px solid var(--line);border-right:1px solid var(--line);
+  padding:8px 4px}
+.spread-val{font-size:.95rem;font-weight:700}
+.spread-cap{font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-soft)}
+
+/* forms */
+.field{margin-top:10px}
+.field label{display:block;font-size:.62rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:5px}
+.field input{width:100%;border:1px solid var(--line);border-radius:10px;
+  padding:12px;font-size:.95rem;font-family:inherit;background:var(--card)}
+.hint{font-size:.66rem;color:var(--ink-soft);margin-top:8px;line-height:1.5}
+.msg{margin-top:10px;font-size:.76rem;padding:10px 12px;border-radius:10px;display:none}
+.msg.ok{display:block;background:var(--match-soft);color:#0a6e4e}
+.msg.err{display:block;background:#fdecef;color:var(--sell-ink)}
+
+/* overlay sheet */
+.overlay{position:fixed;inset:0;background:rgba(14,20,27,.55);
+  display:none;align-items:flex-end;justify-content:center;z-index:50}
+.overlay.open{display:flex}
+.sheet{background:var(--card);width:100%;max-width:480px;
+  border-radius:18px 18px 0 0;padding:18px 16px 22px;animation:rise .25s ease-out}
+@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.foot{font-size:.62rem;color:var(--ink-soft);text-align:center;
+  margin:22px 0 10px;line-height:1.6}
+.demo-banner{background:#fff6cf;color:#7a5c00;font-size:.66rem;
+  padding:7px 14px;text-align:center;display:none}
+.demo-banner.on{display:block}
+
+@media (max-width:420px){
+  :root{font-size:14px}
+  .book,.book-head{grid-template-columns:1fr 64px 1fr}
+  .rung{padding:8px 8px;font-size:.8rem}
+}

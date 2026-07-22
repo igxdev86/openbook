@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market — OpenBook</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="logo" href="index.html">OPEN<span>BOOK</span></a>
+  <a class="top-link" href="account.html">Sign in · <b>My bids</b></a>
+</div>
+
+<div class="demo-banner" id="demoBanner">Demo mode — showing sample data. Add Supabase keys in config.js to go live.</div>
+
+<div class="wrap">
+
+  <!-- product header -->
+  <div class="card" style="display:flex;gap:14px;align-items:center;padding:14px;margin-top:6px">
+    <div>
+      <div style="font-weight:700;font-size:1.02rem;line-height:1.25" id="pName">Loading…</div>
+      <div style="font-size:.72rem;color:var(--ink-soft);margin-top:2px" id="pSpec"></div>
+    </div>
+    <div style="margin-left:auto;text-align:right;flex:none">
+      <div style="font-size:.62rem;letter-spacing:.12em;color:var(--ink-soft);text-transform:uppercase">Last matched</div>
+      <div class="num" style="font-size:1.7rem;font-weight:700" id="pLast">—</div>
+      <div class="num" style="font-size:.72rem;color:var(--match);font-weight:600" id="pOff"></div>
+    </div>
+  </div>
+
+  <!-- the book -->
+  <div class="card" style="margin-top:12px;overflow:hidden">
+    <div class="book-head">
+      <div class="side-label sell">Sellers · Ask</div>
+      <div class="mid-label">Spread</div>
+      <div class="side-label buy">Buyers · Bid</div>
+    </div>
+    <div class="book">
+      <div class="ladder sell" id="askLadder"></div>
+      <div class="spread">
+        <div class="spread-val num" id="spreadVal">—</div>
+        <div class="spread-cap">spread</div>
+      </div>
+      <div class="ladder buy" id="bidLadder"></div>
+    </div>
+  </div>
+
+  <!-- place a bid -->
+  <div class="card" style="margin-top:12px;padding:14px">
+    <div style="font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)">
+      Place your bid</div>
+    <div class="field">
+      <label for="bidPrice">Your price (£)</label>
+      <input type="number" id="bidPrice" inputmode="decimal" step="0.01" min="1" placeholder="e.g. 478.00">
+    </div>
+    <button class="btn btn-buy" style="width:100%;margin-top:12px" id="bidBtn">
+      Place bid<small>free to bid · you're only committed if a retailer accepts</small></button>
+    <div class="msg" id="bidMsg"></div>
+    <div class="hint">One live bid per product. If a retailer accepts, you'll get a
+      30-minute checkout link at your exact price. Payment and delivery are direct
+      with the retailer — OpenBook never takes your money.</div>
+  </div>
+
+  <div class="foot">OpenBook · every price is set by the market, not the retailer</div>
+</div>
+
+<!-- sign-in sheet -->
+<div class="overlay" id="authSheet">
+  <div class="sheet">
+    <div style="font-size:1.1rem;font-weight:700">Sign in to place your bid</div>
+    <p style="font-size:.76rem;color:var(--ink-soft);margin-top:6px;line-height:1.5">
+      We'll email you a one-tap sign-in link. No passwords.</p>
+    <div class="field">
+      <label for="authEmail">Email</label>
+      <input type="email" id="authEmail" placeholder="you@example.com" autocomplete="email">
+    </div>
+    <button class="btn btn-dark" style="width:100%;margin-top:12px" id="authBtn">Send sign-in link</button>
+    <div class="msg" id="authMsg"></div>
+    <button style="display:block;width:100%;margin-top:8px;border:none;background:none;
+      color:var(--ink-soft);font-size:.78rem;padding:8px;cursor:pointer;font-family:inherit"
+      onclick="document.getElementById('authSheet').classList.remove('open')">Not now</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script>
+initChrome();
+
+const slug = currentSlug() || 'bosch-series-4-wan28282gb';
+let product = null;
+
+function rungHtml(o, side){
+  const label = side === 'bid'
+    ? `${o.c} bid${o.c === 1 ? '' : 's'}`
+    : `${o.u} unit${o.u === 1 ? '' : 's'}`;
+  return `<div class="rung"><span class="price num">${P(o.p)}</span>
+    <span class="units num">${label}</span></div>`;
+}
+
+async function load(){
+  product = await getProductBySlug(slug);
+  if (!product){ document.getElementById('pName').textContent = 'Market not found'; return; }
+  document.title = product.name + ' — OpenBook';
+  document.getElementById('pName').textContent = product.name;
+  document.getElementById('pSpec').textContent = product.spec_line || '';
+
+  const summary = await getMarket(slug);
+  if (summary && summary.last_matched_pence){
+    document.getElementById('pLast').textContent = P(summary.last_matched_pence);
+    document.getElementById('pOff').innerHTML =
+      PCT_OFF(summary.last_matched_pence, product.rrp_pence) +
+      '% below RRP <span style="color:var(--rrp);text-decoration:line-through;font-weight:400">' +
+      P(product.rrp_pence) + '</span>';
+  } else {
+    document.getElementById('pOff').innerHTML =
+      'RRP <span style="color:var(--rrp);font-weight:400">' + P(product.rrp_pence) + '</span>';
+  }
+
+  const { bids, asks } = await getLadders(slug, product.id);
+  document.getElementById('bidLadder').innerHTML =
+    bids.length ? bids.map(o => rungHtml(o,'bid')).join('')
+    : '<div class="rung"><span class="units">No bids yet — set the market</span></div>';
+  document.getElementById('askLadder').innerHTML =
+    asks.length ? asks.map(o => rungHtml(o,'ask')).join('')
+    : '<div class="rung"><span class="units">No asks yet</span></div>';
+  if (bids.length && asks.length)
+    document.getElementById('spreadVal').textContent = P(asks[0].p - bids[0].p);
+}
+
+/* ---- bid flow ---- */
+document.getElementById('bidBtn').addEventListener('click', async () => {
+  const msg = document.getElementById('bidMsg');
+  msg.className = 'msg';
+  const v = parseFloat(document.getElementById('bidPrice').value);
+  if (!v || v <= 0){ msg.textContent = 'Enter a price.'; msg.className = 'msg err'; return; }
+  const pence = Math.round(v * 100);
+  if (product && product.rrp_pence && pence >= product.rrp_pence){
+    msg.textContent = 'Your bid is at or above RRP — just buy it from a shop! Bid below ' + P(product.rrp_pence) + '.';
+    msg.className = 'msg err'; return;
+  }
+  const { error } = await placeBid(product.id, pence);
+  if (error && error.message === 'SIGN_IN'){
+    document.getElementById('authSheet').classList.add('open'); return;
+  }
+  if (error){ msg.textContent = error.message; msg.className = 'msg err'; return; }
+  msg.textContent = 'Bid placed at ' + P(pence) + '. You\'ll be emailed the moment a retailer accepts.';
+  msg.className = 'msg ok';
+  load();
+});
+
+document.getElementById('authBtn').addEventListener('click', async () => {
+  const email = document.getElementById('authEmail').value.trim();
+  const msg = document.getElementById('authMsg');
+  msg.className = 'msg';
+  if (!email){ msg.textContent = 'Enter your email.'; msg.className = 'msg err'; return; }
+  const { error } = await signIn(email);
+  if (error){ msg.textContent = error.message; msg.className = 'msg err'; return; }
+  msg.textContent = 'Link sent — check your inbox, then come back and place your bid.';
+  msg.className = 'msg ok';
+});
+
+load();
+</script>
+</body>
+</html>
