@@ -242,6 +242,136 @@ def build_page(row):
         slug_js="'" + row['slug'].replace("'", "") + "'"
     )
 
+CAT_PAGE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<meta name="description" content="{description}">
+<link rel="canonical" href="{canonical}">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{jsonld}</script>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="logo" href="/">OPEN<span>BOOK</span></a>
+  <a class="top-link" href="/account.html"><b>My bids</b></a>
+</div>
+
+<div class="wrap">
+
+  <div class="crumbs"><a href="/">Home</a> / <a href="/markets.html">All markets</a> / {cat_name}</div>
+
+  {catnav}
+
+  <div style="padding:14px 4px 2px">
+    <h1 style="font-size:1.25rem;font-weight:800;letter-spacing:-.01em">{cat_name}: name your price</h1>
+    <p style="font-size:.78rem;color:var(--ink-soft);margin-top:6px;line-height:1.55">
+      {intro}</p>
+  </div>
+
+  <div class="markets" style="margin-top:8px">
+    <div class="m-legend">
+      <div>Product</div><div class="bid-l">Best bid</div><div class="ask-l">Best ask</div>
+    </div>
+    {rows}
+  </div>
+
+  <div class="card content">
+    <h2>How bidding on {cat_name_lc} works on OpenBook</h2>
+    <p>Every product above has an open market. Pick the exact model you want, bid the
+      price you'd pay today, and your bid joins the public order book. Verified UK
+      retailers watch the demand on their stock and accept bids in bulk when the price
+      works — if yours is accepted you get a 30-minute checkout link at your exact
+      price, paid directly to the retailer. Bidding is free and you can cancel any time.</p>
+  </div>
+
+  <div class="foot">OpenBook · every price is set by the market, not the retailer</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/config.js"></script>
+<script>
+initChrome();
+(async () => {{
+  const items = await getMarkets({{ category: '{cat_slug}', limit: 200 }});
+  items.forEach(m => {{
+    const row = document.getElementById('r-' + m.slug);
+    if (!row) return;
+    const meta = row.querySelector('.m-meta');
+    if (m.last_matched_pence)
+      meta.innerHTML = 'Last ' + P(m.last_matched_pence) + ' · <span class="off">' +
+        PCT_OFF(m.last_matched_pence, m.rrp_pence) + '% off</span> <span class="rrp">' +
+        P(m.rrp_pence) + '</span> · ' + (m.live_bids||0) + ' bids';
+    else
+      meta.innerHTML = 'RRP <span class="rrp">' + P(m.rrp_pence) + '</span> · ' + (m.live_bids||0) + ' bids';
+    const cells = row.querySelectorAll('.cell');
+    if (m.best_bid_pence) cells[0].outerHTML =
+      '<div class="cell bid"><b class="num">' + P(m.best_bid_pence) + '</b><span>best bid</span></div>';
+    if (m.best_ask_pence) cells[1].outerHTML =
+      '<div class="cell ask"><b class="num">' + P(m.best_ask_pence) + '</b><span>best ask</span></div>';
+  }});
+}})();
+</script>
+</body>
+</html>
+"""
+
+def catnav_html(cats, active=None):
+    links = ['<a href="/markets.html"%s>All</a>' % (' class="active"' if active is None else '')]
+    for c in cats:
+        cls = ' class="active"' if active == c['slug'] else ''
+        links.append('<a href="/c/%s"%s>%s</a>' % (c['slug'], cls, esc(c['name'])))
+    return '<nav class="catnav" aria-label="Categories">' + ''.join(links) + '</nav>'
+
+def cat_row(r):
+    return ('<a class="mrow" id="r-%s" href="/m/%s">'
+            '<div><div class="m-name">%s</div>'
+            '<div class="m-meta num">%s · RRP <span class="rrp">%s</span></div></div>'
+            '<div class="cell empty"><b>—</b><span>no bids</span></div>'
+            '<div class="cell empty"><b>—</b><span>no asks</span></div></a>'
+            ) % (esc(r['slug']), esc(r['slug']), esc(r['name']),
+                 esc(r['brand']), money(r['rrp_pence']))
+
+def build_category(cat, rows_in_cat, cats):
+    import json
+    name = cat['name']
+    brands = sorted({r['brand'] for r in rows_in_cat if r['brand']})
+    lo = min(int(r['rrp_pence']) for r in rows_in_cat)
+    hi = max(int(r['rrp_pence']) for r in rows_in_cat)
+    title = f"{name} — Name Your Price on {len(rows_in_cat)} Models | OpenBook"
+    desc = (f"Bid what you'd pay on {len(rows_in_cat)} {name.lower()} from "
+            f"{', '.join(brands[:4])}{' and more' if len(brands)>4 else ''}. "
+            f"RRPs {money(lo)}–{money(hi)}. Verified UK retailers accept bids in bulk. Free to bid.")
+    intro = (f"{len(rows_in_cat)} live {name.lower()} markets from "
+             f"{', '.join(brands[:5])}{' and more' if len(brands)>5 else ''}. "
+             f"Recommended retail prices run from {money(lo)} to {money(hi)} — "
+             f"the price you bid is up to you.")
+    jsonld = json.dumps({
+        "@context":"https://schema.org","@type":"ItemList","name":title,
+        "itemListElement":[{"@type":"ListItem","position":i+1,
+            "url":f"{DOMAIN}/m/{r['slug']}","name":r['name']}
+            for i,r in enumerate(rows_in_cat)]})
+    return CAT_PAGE.format(
+        title=esc(title), description=esc(desc),
+        canonical=f"{DOMAIN}/c/{cat['slug']}", jsonld=jsonld,
+        cat_name=esc(name), cat_name_lc=esc(name.lower()),
+        cat_slug=cat['slug'], intro=esc(intro),
+        catnav=catnav_html(cats, active=cat['slug']),
+        rows='\n    '.join(cat_row(r) for r in rows_in_cat))
+
+def inject_catnav(path, nav):
+    f = pathlib.Path(path)
+    if not f.exists(): return
+    t = f.read_text()
+    start, end = '<!--CATNAV-->', '<!--/CATNAV-->'
+    if start not in t: return
+    pre = t.split(start)[0]
+    post = t.split(end)[1]
+    f.write_text(pre + start + '\n' + nav + '\n' + end + post)
+
 def main():
     rows = []
     with open(ROOT / CSV_PATH, newline='', encoding='utf-8') as f:
@@ -250,11 +380,37 @@ def main():
             if row.get('slug') and row.get('name') and row.get('rrp_pence'):
                 rows.append(row)
 
+    # categories in CSV order
+    cats, seen = [], set()
+    for r in rows:
+        if r['category_slug'] not in seen:
+            seen.add(r['category_slug'])
+            cats.append({'slug': r['category_slug'], 'name': r['category_name']})
+    nav_all = catnav_html(cats)
+
+    # product pages (with catnav injected under the crumbs)
     for row in rows:
-        (OUT_M / f"{row['slug']}.html").write_text(build_page(row), encoding='utf-8')
+        page = build_page(row)
+        page = page.replace('</div>\n\n  <div class="card prod-head">',
+                            '</div>\n\n  ' + catnav_html(cats, active=row['category_slug']) +
+                            '\n\n  <div class="card prod-head">', 1)
+        (OUT_M / f"{row['slug']}.html").write_text(page, encoding='utf-8')
+
+    # category pages
+    OUT_C = ROOT / 'c'; OUT_C.mkdir(exist_ok=True)
+    for cat in cats:
+        in_cat = [r for r in rows if r['category_slug'] == cat['slug']]
+        (OUT_C / f"{cat['slug']}.html").write_text(
+            build_category(cat, in_cat, cats), encoding='utf-8')
+
+    # inject nav into hand-written pages between markers
+    inject_catnav(ROOT / 'index.html', nav_all)
+    inject_catnav(ROOT / 'markets.html', nav_all)
 
     today = datetime.date.today().isoformat()
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/markets"] + [f"{DOMAIN}/m/{r['slug']}" for r in rows]
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/markets"] \
+         + [f"{DOMAIN}/c/{c['slug']}" for c in cats] \
+         + [f"{DOMAIN}/m/{r['slug']}" for r in rows]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
@@ -265,14 +421,10 @@ def main():
         f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n", encoding='utf-8')
 
     # Supabase seed for the same rows
-    cats, seen = [], set()
-    for r in rows:
-        if r['category_slug'] not in seen:
-            seen.add(r['category_slug']); cats.append(r)
     sql = ["-- generated by generate.py — categories & products upsert",
            "insert into categories(slug,name) values"]
     sql.append(',\n'.join(
-        f" ('{c['category_slug']}','{c['category_name'].replace(chr(39), chr(39)*2)}')" for c in cats))
+        f" ('{c['slug']}','{c['name'].replace(chr(39), chr(39)*2)}')" for c in cats))
     sql.append("on conflict (slug) do nothing;")
     sql.append("\nwith c as (select slug,id from categories)")
     sql.append("insert into products(slug,name,model_code,brand,category_id,rrp_pence,spec_line)")
@@ -285,8 +437,8 @@ def main():
     sql.append("on conflict (slug) do nothing;")
     (ROOT / 'seed-generated.sql').write_text('\n'.join(sql), encoding='utf-8')
 
-    print(f"generated {len(rows)} pages in /m, sitemap.xml ({len(urls)} urls), "
-          f"robots.txt, seed-generated.sql")
+    print(f"generated {len(rows)} product pages, {len(cats)} category pages, "
+          f"sitemap ({len(urls)} urls), seed SQL")
 
 if __name__ == '__main__':
     main()

@@ -188,3 +188,11 @@ a{color:inherit}
   padding:8px 12px;font-size:.72rem;font-weight:700;text-decoration:none;margin-top:5px}
 .countdown{font-size:.66rem;color:var(--sell-ink);font-weight:700}
 .empty{padding:16px;font-size:.76rem;color:var(--ink-soft)}
+
+/* ============ category nav ============ */
+.catnav{display:flex;gap:6px;overflow-x:auto;margin-top:10px;
+  padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.catnav a{flex:none;border:1px solid var(--line);background:var(--card);
+  color:var(--ink);border-radius:20px;padding:8px 13px;font-size:.72rem;
+  font-weight:600;text-decoration:none;white-space:nowrap}
+.catnav a.active{background:var(--ink);color:#fff;border-color:var(--ink)}
