@@ -22,7 +22,7 @@ permissions:
 
 concurrency:
   group: retail-sweep
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   sweep:
