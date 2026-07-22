@@ -1,0 +1,29 @@
+name: DataForSEO task runner
+on:
+  push:
+    paths:
+      - 'tasks/pending/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Run pending tasks
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+        run: python3 d4s_runner.py
+      - name: Commit results
+        run: |
+          git config user.name "d4s-runner"
+          git config user.email "runner@openbook"
+          git add -A
+          git diff --cached --quiet || git commit -m "D4S results"
+          git push
