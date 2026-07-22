@@ -34,6 +34,7 @@
       <div class="cap">Last matched</div>
       <div class="num big" id="pLast">—</div>
       <div class="num sub" id="pOff">RRP £1,199</div>
+      <div class="num" id="retailLine" style="font-size:.66rem;color:var(--ink-soft);margin-top:2px"></div>
     </div>
   </div>
 
@@ -134,6 +135,10 @@ async function load() {
     document.getElementById('pOff').innerHTML =
       PCT_OFF(summary.last_matched_pence, RRP) +
       '% below RRP <span style="color:var(--rrp);text-decoration:line-through;font-weight:400">' + P(RRP) + '</span>';
+  }
+  if (summary && summary.retail_price_pence) {
+    document.getElementById('retailLine').textContent =
+      'Cheapest at retail today: ' + P(summary.retail_price_pence);
   }
   const l = await getLadders(slug, product ? product.id : 0);
   document.getElementById('bidLadder').innerHTML =
