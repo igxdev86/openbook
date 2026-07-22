@@ -121,7 +121,7 @@ PAGE = """<!DOCTYPE html>
     </table>
   </div>
 
-  <div class="foot">OpenBook · every price is set by the market, not the retailer<br>
+  <div class="foot"><a href="/about" style="color:inherit">What is OpenBook</a> · <a href="/support" style="color:inherit">Support</a> · <a href="/terms" style="color:inherit">Terms</a> · <a href="/privacy" style="color:inherit">Privacy</a><br>OpenBook · every price is set by the market, not the retailer<br>
     All retailers are verified UK businesses · payment &amp; delivery direct with the retailer</div>
 </div>
 
@@ -315,7 +315,7 @@ CAT_PAGE = """<!DOCTYPE html>
       price, paid directly to the retailer. Bidding is free and you can cancel any time.</p>
   </div>
 
-  <div class="foot">OpenBook · every price is set by the market, not the retailer</div>
+  <div class="foot"><a href="/about" style="color:inherit">What is OpenBook</a> · <a href="/support" style="color:inherit">Support</a> · <a href="/terms" style="color:inherit">Terms</a> · <a href="/privacy" style="color:inherit">Privacy</a><br>OpenBook · every price is set by the market, not the retailer</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
@@ -439,7 +439,9 @@ def main():
     inject_catnav(ROOT / 'markets.html', nav_all)
 
     today = datetime.date.today().isoformat()
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/markets"] \
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/markets",
+            f"{DOMAIN}/about", f"{DOMAIN}/support",
+            f"{DOMAIN}/terms", f"{DOMAIN}/privacy"] \
          + [f"{DOMAIN}/c/{c['slug']}" for c in cats] \
          + [f"{DOMAIN}/m/{r['slug']}" for r in rows]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
