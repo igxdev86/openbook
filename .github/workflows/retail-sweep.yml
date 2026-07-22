@@ -44,11 +44,13 @@ jobs:
           if [ -n "${{ github.event.inputs.limit }}" ]; then ARGS="--limit ${{ github.event.inputs.limit }}"; fi
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           python3 sweep.py $ARGS
+      - name: Regenerate pages with fresh prices
+        run: python3 generate.py products.csv --domain https://openbook-pi.vercel.app
       - name: Commit receipt
         run: |
           git config user.name "sweep"
           git config user.email "sweep@openbook"
-          git add data/ || true
+          git add -A || true
           git diff --cached --quiet || git commit -m "Sweep receipt"
           for i in 1 2 3 4 5; do
             git push && break

@@ -12,7 +12,7 @@ Run:   python3 generate.py [products.csv] [--domain https://openbook.example]
 The generated pages are static shells for Google; the live ladder hydrates
 client-side from Supabase via ../config.js.
 """
-import csv, sys, html, pathlib, datetime
+import csv, sys, html, json, pathlib, datetime
 
 CSV_PATH = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith('--') else 'products.csv'
 DOMAIN = 'https://openbook.example'
@@ -100,7 +100,7 @@ PAGE = """<!DOCTYPE html>
   <div class="card content">
     <h2>Name your price on the {name}</h2>
     <p>
-      The {name} ({spec_line}) has a recommended retail price of <b class="num">{rrp_disp}</b>.
+      The {name} ({spec_line}) {anchor_sentence}.
       On OpenBook you don't pay the shelf price — you place an order at the price you'd pay today,
       and verified UK retailers accept orders in bulk when the numbers work for them.
       Your order joins the open book above alongside every other buyer's.</p>
@@ -116,7 +116,7 @@ PAGE = """<!DOCTYPE html>
       <tr><td>Model</td><td class="num">{model_code}</td></tr>
       {ean_row}
       <tr><td>Category</td><td>{category_name}</td></tr>
-      <tr><td>RRP</td><td class="num">{rrp_disp}</td></tr>
+      {price_row}
       <tr><td>Condition</td><td>New — every unit sold by a verified UK retailer</td></tr>
     </table>
   </div>
@@ -178,6 +178,10 @@ async function load() {{
     const el = document.getElementById('retailLine');
     el.innerHTML = 'Cheapest at retail today: ' + P(retail.price_pence) +
       (retail.seller ? ' at ' + retail.seller : '');
+    const cr = document.getElementById('contentRetail');
+    if (cr) cr.textContent = P(retail.price_pence);
+    const sr = document.getElementById('specRetail');
+    if (sr) sr.textContent = P(retail.price_pence);
     // retail is the reference now — hide the RRP fallback text
     const off = document.getElementById('pOff');
     if (off.textContent.trim().startsWith('RRP')) off.textContent = '';
@@ -258,9 +262,22 @@ def jsonld(row):
 
 def build_page(row):
     rrp_disp = money(row['rrp_pence'])
+    lp = (RETAIL.get(row['slug']) or {}).get('price_pence')
+    live_disp = money(lp) if lp else rrp_disp
+    if lp:
+        anchor_sentence = (f'currently sells at UK retailers from '
+                           f'<b class="num" id="contentRetail">{money(lp)}</b>')
+        price_row = (f'<tr><td>Live retail price</td>'
+                     f'<td class="num" id="specRetail">{money(lp)}</td></tr>')
+        desc_price = f"From {money(lp)} at UK retailers."
+    else:
+        anchor_sentence = (f'has a recommended retail price of '
+                           f'<b class="num" id="contentRetail">{rrp_disp}</b>')
+        price_row = f'<tr><td>RRP</td><td class="num" id="specRetail">{rrp_disp}</td></tr>'
+        desc_price = f"RRP {rrp_disp}."
     short_name = (row['brand'] + ' ' + row['model_code']).strip() or row['name']
     title = f"{row['name']} — Name Your Price (RRP {rrp_disp}) | OpenBook"
-    desc = (f"Name the price you'd pay for the {row['name']} ({row['spec_line']}). RRP {rrp_disp}. "
+    desc = (f"Name the price you'd pay for the {row['name']} ({row['spec_line']}). {desc_price} "
             f"Verified UK retailers accept orders in bulk. Free to place — you only commit if a retailer accepts.")
     ean_row = (f'<tr><td>EAN</td><td class="num">{esc(row["ean"])}</td></tr>') if row.get('ean') else ''
     return PAGE.format(
@@ -272,6 +289,7 @@ def build_page(row):
         model_code=esc(row['model_code']), ean_row=ean_row,
         category_name=esc(row['category_name']),
         rrp_disp=rrp_disp, rrp_pence=int(row['rrp_pence']),
+        anchor_sentence=anchor_sentence, price_row=price_row,
         slug_js="'" + row['slug'].replace("'", "") + "'"
     )
 
@@ -376,15 +394,16 @@ def build_category(cat, rows_in_cat, cats):
     import json
     name = cat['name']
     brands = sorted({r['brand'] for r in rows_in_cat if r['brand']})
-    lo = min(int(r['rrp_pence']) for r in rows_in_cat)
-    hi = max(int(r['rrp_pence']) for r in rows_in_cat)
+    anch = lambda r: (RETAIL.get(r['slug']) or {}).get('price_pence') or int(r['rrp_pence'])
+    lo = min(anch(r) for r in rows_in_cat)
+    hi = max(anch(r) for r in rows_in_cat)
     title = f"{name} — Name Your Price on {len(rows_in_cat)} Models | OpenBook"
     desc = (f"Name your price on {len(rows_in_cat)} {name.lower()} from "
             f"{', '.join(brands[:4])}{' and more' if len(brands)>4 else ''}. "
             f"RRPs {money(lo)}–{money(hi)}. Verified UK retailers accept orders in bulk. Free to order.")
     intro = (f"{len(rows_in_cat)} live {name.lower()} markets from "
              f"{', '.join(brands[:5])}{' and more' if len(brands)>5 else ''}. "
-             f"Recommended retail prices run from {money(lo)} to {money(hi)} — "
+             f"Retail prices currently run from {money(lo)} to {money(hi)} — "
              f"the price you name is up to you.")
     jsonld = json.dumps({
         "@context":"https://schema.org","@type":"ItemList","name":title,
@@ -409,7 +428,14 @@ def inject_catnav(path, nav):
     post = t.split(end)[1]
     f.write_text(pre + start + '\n' + nav + '\n' + end + post)
 
+RETAIL = {}
+
 def main():
+    global RETAIL
+    rp = ROOT / 'data' / 'retail.json'
+    if rp.exists():
+        try: RETAIL = json.loads(rp.read_text())
+        except Exception: RETAIL = {}
     rows = []
     with open(ROOT / CSV_PATH, newline='', encoding='utf-8') as f:
         for row in csv.DictReader(f):

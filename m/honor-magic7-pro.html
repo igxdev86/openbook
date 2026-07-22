@@ -70,7 +70,7 @@
   <div class="card content">
     <h2>Name your price on the Honor Magic7 Pro 512GB</h2>
     <p>
-      The Honor Magic7 Pro 512GB (512GB · Unlocked · New &amp; sealed) has a recommended retail price of <b class="num">£1,099</b>.
+      The Honor Magic7 Pro 512GB (512GB · Unlocked · New &amp; sealed) has a recommended retail price of <b class="num" id="contentRetail">£1,099</b>.
       On OpenBook you don't pay the shelf price — you place an order at the price you'd pay today,
       and verified UK retailers accept orders in bulk when the numbers work for them.
       Your order joins the open book above alongside every other buyer's.</p>
@@ -86,7 +86,7 @@
       <tr><td>Model</td><td class="num"></td></tr>
       
       <tr><td>Category</td><td>Phones</td></tr>
-      <tr><td>RRP</td><td class="num">£1,099</td></tr>
+      <tr><td>RRP</td><td class="num" id="specRetail">£1,099</td></tr>
       <tr><td>Condition</td><td>New — every unit sold by a verified UK retailer</td></tr>
     </table>
   </div>
@@ -148,6 +148,10 @@ async function load() {
     const el = document.getElementById('retailLine');
     el.innerHTML = 'Cheapest at retail today: ' + P(retail.price_pence) +
       (retail.seller ? ' at ' + retail.seller : '');
+    const cr = document.getElementById('contentRetail');
+    if (cr) cr.textContent = P(retail.price_pence);
+    const sr = document.getElementById('specRetail');
+    if (sr) sr.textContent = P(retail.price_pence);
     // retail is the reference now — hide the RRP fallback text
     const off = document.getElementById('pOff');
     if (off.textContent.trim().startsWith('RRP')) off.textContent = '';
