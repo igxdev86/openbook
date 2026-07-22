@@ -1,0 +1,8 @@
+{
+ "id": "mine-oppo",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "oppo",
+  "limit": 300
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "id": "mine-nothing-phone",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "nothing phone",
+  "limit": 300
+ }
+}

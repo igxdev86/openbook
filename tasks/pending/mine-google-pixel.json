@@ -1,0 +1,8 @@
+{
+ "id": "mine-google-pixel",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "google pixel",
+  "limit": 300
+ }
+}

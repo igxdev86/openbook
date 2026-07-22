@@ -1,0 +1,8 @@
+{
+ "id": "mine-motorola",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "motorola",
+  "limit": 300
+ }
+}

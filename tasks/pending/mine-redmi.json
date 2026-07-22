@@ -1,0 +1,8 @@
+{
+ "id": "mine-redmi",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "redmi",
+  "limit": 300
+ }
+}

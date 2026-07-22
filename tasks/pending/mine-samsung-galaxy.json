@@ -1,0 +1,8 @@
+{
+ "id": "mine-samsung-galaxy",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "samsung galaxy",
+  "limit": 300
+ }
+}

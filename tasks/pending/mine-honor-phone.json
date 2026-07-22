@@ -1,0 +1,8 @@
+{
+ "id": "mine-honor-phone",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "honor phone",
+  "limit": 300
+ }
+}

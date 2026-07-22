@@ -1,0 +1,8 @@
+{
+ "id": "mine-samsung-z",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "samsung z",
+  "limit": 300
+ }
+}

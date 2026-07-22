@@ -1,0 +1,8 @@
+{
+ "id": "mine-sony-xperia",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "sony xperia",
+  "limit": 300
+ }
+}

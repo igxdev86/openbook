@@ -1,0 +1,8 @@
+{
+ "id": "mine-iphone",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "iphone",
+  "limit": 300
+ }
+}

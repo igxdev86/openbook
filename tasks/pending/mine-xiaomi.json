@@ -1,0 +1,8 @@
+{
+ "id": "mine-xiaomi",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "xiaomi",
+  "limit": 300
+ }
+}

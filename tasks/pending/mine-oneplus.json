@@ -1,0 +1,8 @@
+{
+ "id": "mine-oneplus",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "oneplus",
+  "limit": 300
+ }
+}
