@@ -1,64 +1,9 @@
 slug,name,model_code,brand,category_slug,category_name,rrp_pence,ean,spec_line
-bosch-series-6-wgg25402gb,Bosch Series 6 Washing Machine,WGG25402GB,Bosch,washing-machines,Washing machines,69900,,10kg · 1400rpm · New & boxed
-samsung-series-5-ww90cgc04dae,Samsung Series 5+ ecobubble,WW90CGC04DAE,Samsung,washing-machines,Washing machines,54900,,9kg · 1400rpm · New & boxed
-lg-f4y509wblna,LG TurboWash 360 Washing Machine,F4Y509WBLNA,LG,washing-machines,Washing machines,64900,,9kg · 1400rpm · New & boxed
-hisense-wfqa9014evjm,Hisense 5S Series Washing Machine,WFQA9014EVJM,Hisense,washing-machines,Washing machines,42900,,9kg · 1400rpm · New & boxed
-beko-b3w5941iw,Beko IronFast RecycledTub,B3W5941IW,Beko,washing-machines,Washing machines,39900,,9kg · 1400rpm · New & boxed
-miele-wek365-wcs,Miele WEK365 WCS Washing Machine,WEK365,Miele,washing-machines,Washing machines,109900,,9kg · 1400rpm · New & boxed
-bosch-series-4-wth85223gb,Bosch Series 4 Heat Pump Dryer,WTH85223GB,Bosch,tumble-dryers,Tumble dryers,59900,,8kg · Heat pump · New & boxed
-samsung-series-5-dv90cgc0a0ae,Samsung Series 5+ Heat Pump Dryer,DV90CGC0A0AE,Samsung,tumble-dryers,Tumble dryers,64900,,9kg · Heat pump · New & boxed
-beko-b3t4911dw,Beko Heat Pump Tumble Dryer,B3T4911DW,Beko,tumble-dryers,Tumble dryers,44900,,9kg · Heat pump · New & boxed
-bosch-series-4-sms4hkw00g,Bosch Series 4 Dishwasher,SMS4HKW00G,Bosch,dishwashers,Dishwashers,54900,,13 place · Freestanding · New & boxed
-samsung-series-5-dw60cg550fsl,Samsung Series 5 Dishwasher,DW60CG550FSL,Samsung,dishwashers,Dishwashers,49900,,14 place · Freestanding · New & boxed
-beko-bdfn26430x,Beko Freestanding Dishwasher,BDFN26430X,Beko,dishwashers,Dishwashers,37900,,14 place · Freestanding · New & boxed
-samsung-rb34c600esa,Samsung Bespoke SpaceMax Fridge Freezer,RB34C600ESA,Samsung,fridge-freezers,Fridge freezers,74900,,344L · Frost free · New & boxed
-lg-gbv3200dsw,LG Fridge Freezer,GBV3200DSW,LG,fridge-freezers,Fridge freezers,59900,,344L · Frost free · New & boxed
-beko-cfg4790dvps,Beko HarvestFresh Fridge Freezer,CFG4790DVPS,Beko,fridge-freezers,Fridge freezers,52900,,340L · Frost free · New & boxed
-ninja-double-stack-xl-sl400uk,Ninja Double Stack XL Air Fryer,SL400UK,Ninja,air-fryers,Air fryers,26900,,9.5L · Dual drawer · New & sealed
-ninja-foodi-max-af400uk,Ninja Foodi MAX Dual Zone Air Fryer,AF400UK,Ninja,air-fryers,Air fryers,24900,,9.5L · Dual zone · New & sealed
-tower-t17088,Tower Vortx Dual Basket Air Fryer,T17088,Tower,air-fryers,Air fryers,13900,,9L · Dual basket · New & sealed
-philips-3000-na231-00,Philips 3000 Series Dual Basket Airfryer,NA231/00,Philips,air-fryers,Air fryers,19900,,9L · Dual basket · New & sealed
-ninja-creami-nc300uk,Ninja CREAMi Ice Cream Maker,NC300UK,Ninja,kitchen,Kitchen,19900,,7-in-1 · New & sealed
-sage-barista-express-bes875uk,Sage Barista Express,BES875UK,Sage,kitchen,Kitchen,63000,,Bean-to-cup espresso · New & boxed
-delonghi-magnifica-evo-ecam292,De'Longhi Magnifica Evo,ECAM292.81.B,De'Longhi,kitchen,Kitchen,49900,,Bean-to-cup · New & boxed
-kitchenaid-artisan-5ksm175ps,KitchenAid Artisan Stand Mixer,5KSM175PS,KitchenAid,kitchen,Kitchen,54900,,4.8L · New & boxed
-ninja-blast-max-bc251uk,Ninja Blast Max Portable Blender,BC251UK,Ninja,kitchen,Kitchen,5999,,Cordless · New & sealed
-samsung-55-q60d,"Samsung 55"" Q60D QLED 4K TV",QE55Q60D,Samsung,tvs,TVs,59900,,"55"" · QLED 4K · New & boxed"
-lg-55-c4-oled,"LG 55"" C4 OLED evo 4K TV",OLED55C44LA,LG,tvs,TVs,119900,,"55"" · OLED 4K 120Hz · New & boxed"
-samsung-65-du8000,"Samsung 65"" DU8000 Crystal UHD TV",UE65DU8000,Samsung,tvs,TVs,64900,,"65"" · Crystal UHD · New & boxed"
-sony-55-bravia-8,"Sony 55"" BRAVIA 8 OLED TV",K55XR80,Sony,tvs,TVs,149900,,"55"" · OLED · Google TV · New & boxed"
-tcl-55-c655k,"TCL 55"" C655K QLED TV",55C655K,TCL,tvs,TVs,39900,,"55"" · QLED 4K · New & boxed"
-hisense-65-u7n,"Hisense 65"" U7N Mini-LED TV",65U7NQTUK,Hisense,tvs,TVs,89900,,"65"" · Mini-LED 144Hz · New & boxed"
-dyson-v15-detect,Dyson V15 Detect Absolute,V15,Dyson,vacuums,Vacuums,64999,,Cordless · Laser detect · New & boxed
-dyson-gen5detect,Dyson Gen5detect Absolute,Gen5,Dyson,vacuums,Vacuums,76999,,Cordless · HEPA · New & boxed
-shark-detect-pro-iw3611uk,Shark Detect Pro Cordless,IW3611UK,Shark,vacuums,Vacuums,37999,,Cordless · Auto-empty · New & boxed
-shark-stratos-az3000ukt,Shark Stratos Corded Upright,AZ3000UKT,Shark,vacuums,Vacuums,29999,,Corded · Anti-hair-wrap · New & boxed
-irobot-roomba-combo-j7plus,iRobot Roomba Combo j7+,c755840,iRobot,vacuums,Vacuums,89900,,Robot · Self-empty · New & boxed
-apple-macbook-air-13-m4,"Apple MacBook Air 13"" M4",MC6T4B/A,Apple,laptops,Laptops,99900,,M4 · 16GB · 256GB · New & sealed
-apple-macbook-pro-14-m4,"Apple MacBook Pro 14"" M4",MW2U3B/A,Apple,laptops,Laptops,159900,,M4 · 16GB · 512GB · New & sealed
-lenovo-ideapad-slim-5,Lenovo IdeaPad Slim 5,82XF004JUK,Lenovo,laptops,Laptops,54999,,"16"" · Ryzen 7 · 16GB · New & sealed"
-hp-pavilion-15,HP Pavilion 15,15-eg3018na,HP,laptops,Laptops,62999,,"15.6"" · i7 · 16GB · New & sealed"
-asus-vivobook-15,ASUS Vivobook 15,X1504ZA,ASUS,laptops,Laptops,42999,,"15.6"" · i5 · 16GB · New & sealed"
-dell-xps-13,Dell XPS 13,9350,Dell,laptops,Laptops,109900,,"13.4"" · Core Ultra 7 · New & sealed"
 apple-iphone-16-128,Apple iPhone 16 128GB,MYE93QN/A,Apple,phones,Phones,79900,,128GB · Unlocked · New & sealed
 apple-iphone-16-pro-256,Apple iPhone 16 Pro 256GB,MYNK3QN/A,Apple,phones,Phones,109900,,256GB · Unlocked · New & sealed
 samsung-galaxy-s25-256,Samsung Galaxy S25 256GB,SM-S931B,Samsung,phones,Phones,85900,,256GB · Unlocked · New & sealed
 google-pixel-9-128,Google Pixel 9 128GB,GA05842-GB,Google,phones,Phones,79900,,128GB · Unlocked · New & sealed
 samsung-galaxy-a56,Samsung Galaxy A56 5G,SM-A566B,Samsung,phones,Phones,49900,,256GB · Unlocked · New & sealed
-sony-wh1000xm5,Sony WH-1000XM5 Headphones,WH1000XM5,Sony,audio,Audio,37900,,Noise cancelling · New & sealed
-apple-airpods-pro-2,"Apple AirPods Pro (2nd gen, USB-C)",MTJV3ZM/A,Apple,audio,Audio,22900,,ANC · USB-C · New & sealed
-bose-qc-ultra,Bose QuietComfort Ultra Headphones,QCUH24,Bose,audio,Audio,44995,,ANC · New & sealed
-sonos-era-100,Sonos Era 100 Speaker,E10G1UK1BLK,Sonos,audio,Audio,24900,,Smart speaker · New & sealed
-jbl-charge-5,JBL Charge 5 Speaker,JBLCHARGE5,JBL,audio,Audio,15999,,Bluetooth · New & sealed
-marshall-stanmore-iii,Marshall Stanmore III Speaker,STANMORE3,Marshall,audio,Audio,32999,,Bluetooth · New & boxed
-sony-ps5-slim-disc,PlayStation 5 Slim (Disc),CFI-2016,Sony,gaming,Gaming,47999,,1TB · Disc edition · New & sealed
-sony-ps5-pro,PlayStation 5 Pro,CFI-7000,Sony,gaming,Gaming,69999,,2TB · New & sealed
-xbox-series-x-1tb,Xbox Series X 1TB,RRT-00007,Microsoft,gaming,Gaming,47999,,1TB · New & sealed
-nintendo-switch-2,Nintendo Switch 2,NS2-001,Nintendo,gaming,Gaming,39599,,New & sealed
-meta-quest-3s-128,Meta Quest 3S 128GB,899-00654-01,Meta,gaming,Gaming,28999,,128GB · New & sealed
-steam-deck-oled-512,Steam Deck OLED 512GB,V004284-30,Valve,gaming,Gaming,47900,,512GB OLED · New & sealed
-bosch-series-4-wan28282gb,Bosch Series 4 Washing Machine,WAN28282GB,Bosch,washing-machines,Washing machines,49900,,8kg · 1400rpm · New & boxed
-ninja-n2-af210uk,Ninja N2 Air Fryer,AF210UK,Ninja,air-fryers,Air fryers,9999,,4.7L · New & sealed
 apple-iphone-17-256,Apple iPhone 17 256GB,,Apple,phones,Phones,79900,,"6.3"" · A19 · 256GB · Unlocked · New & sealed"
 apple-iphone-air-256,Apple iPhone Air 256GB,,Apple,phones,Phones,99900,,Ultra-thin · 256GB · Unlocked · New & sealed
 apple-iphone-17-pro-256,Apple iPhone 17 Pro 256GB,,Apple,phones,Phones,109900,,A19 Pro · 256GB · Unlocked · New & sealed
