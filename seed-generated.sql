@@ -74,6 +74,8 @@ select v.slug,v.name,v.model,v.brand,(select id from c where c.slug=v.cat),v.rrp
  ('xbox-series-x-1tb','Xbox Series X 1TB','RRT-00007','Microsoft','gaming',47999,'1TB · New & sealed'),
  ('nintendo-switch-2','Nintendo Switch 2','NS2-001','Nintendo','gaming',39599,'New & sealed'),
  ('meta-quest-3s-128','Meta Quest 3S 128GB','899-00654-01','Meta','gaming',28999,'128GB · New & sealed'),
- ('steam-deck-oled-512','Steam Deck OLED 512GB','V004284-30','Valve','gaming',47900,'512GB OLED · New & sealed')
+ ('steam-deck-oled-512','Steam Deck OLED 512GB','V004284-30','Valve','gaming',47900,'512GB OLED · New & sealed'),
+ ('bosch-series-4-wan28282gb','Bosch Series 4 Washing Machine','WAN28282GB','Bosch','washing-machines',49900,'8kg · 1400rpm · New & boxed'),
+ ('ninja-n2-af210uk','Ninja N2 Air Fryer','AF210UK','Ninja','air-fryers',9999,'4.7L · New & sealed')
 ) as v(slug,name,model,brand,cat,rrp,spec)
 on conflict (slug) do nothing;
