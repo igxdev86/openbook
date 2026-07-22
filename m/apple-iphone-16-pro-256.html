@@ -158,11 +158,17 @@ async function load() {
     : '<div class="rung"><span class="units">No bids yet — set the market</span></div>';
   let askHtml = l.asks.map(o => rungHtml(o, 'ask')).join('');
   if (!l.asks.length && retail) {
-    const inner = '<span class="price num">' + P(retail.price_pence) +
-      '</span><span class="units">' + (retail.seller || 'retail') + ' →</span>';
-    askHtml = retail.url
-      ? '<a class="rung" href="' + retail.url + '" target="_blank" rel="noopener nofollow">' + inner + '</a>'
-      : '<div class="rung">' + inner + '</div>';
+    const offers = (retail.offers && retail.offers.length)
+      ? retail.offers
+      : [{ price_pence: retail.price_pence, seller: retail.seller, url: retail.url }];
+    askHtml = offers.map(o => {
+      const inner = '<span class="price num">' + P(o.price_pence) +
+        '</span><span class="units">' + (o.seller || 'retail') + ' →</span>';
+      return o.url
+        ? '<a class="rung" style="text-decoration:none" href="' + o.url +
+          '" target="_blank" rel="noopener nofollow">' + inner + '</a>'
+        : '<div class="rung">' + inner + '</div>';
+    }).join('');
   } else if (!l.asks.length) {
     askHtml = '<div class="rung"><span class="units">No asks yet</span></div>';
   }

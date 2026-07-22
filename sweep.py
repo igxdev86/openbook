@@ -78,11 +78,15 @@ def extract_offers(task_result):
                 'url': (item.get('url') or item.get('shopping_url') or '')[:500]})
     return offers
 
-def choose_floor(offers, rrp):
+def sane_offers(offers, rrp, n=5):
     lo, hi = int(rrp * 0.40), int(rrp * 1.50)
-    sane = sorted((o for o in offers if lo <= o['price_pence'] <= hi),
-                  key=lambda o: o['price_pence'])
-    return sane[0] if sane else None
+    best_by_seller = {}
+    for o in sorted((o for o in offers if lo <= o['price_pence'] <= hi),
+                    key=lambda o: o['price_pence']):
+        key = (o['seller'] or o['url'] or str(o['price_pence'])).lower()
+        if key not in best_by_seller:
+            best_by_seller[key] = o
+    return list(best_by_seller.values())[:n]
 
 def main():
     products = sb('GET',
@@ -126,13 +130,15 @@ def main():
                     done.add(tag)
                     p = by_slug[tag]
                     offers = extract_offers(task.get('result'))
-                    best = choose_floor(offers, p['rrp_pence'])
+                    top = sane_offers(offers, p['rrp_pence'])
+                    best = top[0] if top else None
                     if best:
                         floor = best['price_pence']
                         pct = round(100 * floor / p['rrp_pence'])
                         FLOORS[tag] = {'floor_pence': floor, 'rrp_pence': p['rrp_pence'],
                                        'pct_of_rrp': pct, 'offers': len(offers),
-                                       'seller': best['seller'], 'url': best['url']}
+                                       'seller': best['seller'], 'url': best['url'],
+                                       'ladder': top}
                         print(f"  {tag}: {len(offers)} offers -> £{floor/100:.2f} at {best['seller']} ({pct}% of RRP)")
                         if not DRY:
                             sb('PATCH', f'products?slug=eq.{tag}',
@@ -152,7 +158,8 @@ def main():
         'updated': updated, 'skipped': misses, 'timed_out': sorted(missing),
         'floors': FLOORS}, indent=1))
     pathlib.Path('data/retail.json').write_text(json.dumps({
-        s: {'price_pence': v['floor_pence'], 'seller': v['seller'], 'url': v['url']}
+        s: {'price_pence': v['floor_pence'], 'seller': v['seller'], 'url': v['url'],
+            'offers': v.get('ladder', [])}
         for s, v in FLOORS.items()}))
 
 if __name__ == '__main__':
