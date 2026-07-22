@@ -76,6 +76,25 @@ select v.slug,v.name,v.model,v.brand,(select id from c where c.slug=v.cat),v.rrp
  ('meta-quest-3s-128','Meta Quest 3S 128GB','899-00654-01','Meta','gaming',28999,'128GB · New & sealed'),
  ('steam-deck-oled-512','Steam Deck OLED 512GB','V004284-30','Valve','gaming',47900,'512GB OLED · New & sealed'),
  ('bosch-series-4-wan28282gb','Bosch Series 4 Washing Machine','WAN28282GB','Bosch','washing-machines',49900,'8kg · 1400rpm · New & boxed'),
- ('ninja-n2-af210uk','Ninja N2 Air Fryer','AF210UK','Ninja','air-fryers',9999,'4.7L · New & sealed')
+ ('ninja-n2-af210uk','Ninja N2 Air Fryer','AF210UK','Ninja','air-fryers',9999,'4.7L · New & sealed'),
+ ('apple-iphone-17-256','Apple iPhone 17 256GB','','Apple','phones',79900,'6.3" · A19 · 256GB · Unlocked · New & sealed'),
+ ('apple-iphone-air-256','Apple iPhone Air 256GB','','Apple','phones',99900,'Ultra-thin · 256GB · Unlocked · New & sealed'),
+ ('apple-iphone-17-pro-256','Apple iPhone 17 Pro 256GB','','Apple','phones',109900,'A19 Pro · 256GB · Unlocked · New & sealed'),
+ ('apple-iphone-17-pro-max-256','Apple iPhone 17 Pro Max 256GB','','Apple','phones',119900,'A19 Pro · 256GB · Unlocked · New & sealed'),
+ ('apple-iphone-17e','Apple iPhone 17e','','Apple','phones',59900,'128GB · Unlocked · New & sealed'),
+ ('samsung-galaxy-s26-256','Samsung Galaxy S26 256GB','SM-S941B','Samsung','phones',79900,'6.3" · 256GB · Unlocked · New & sealed'),
+ ('samsung-galaxy-s26-plus-256','Samsung Galaxy S26+ 256GB','SM-S946B','Samsung','phones',99900,'6.7" · 256GB · Unlocked · New & sealed'),
+ ('samsung-galaxy-s26-ultra-256','Samsung Galaxy S26 Ultra 256GB','SM-S948B','Samsung','phones',124900,'6.9" · 200MP · 256GB · Unlocked · New & sealed'),
+ ('samsung-galaxy-z-fold7','Samsung Galaxy Z Fold7 256GB','SM-F966B','Samsung','phones',179900,'Foldable · 256GB · Unlocked · New & sealed'),
+ ('samsung-galaxy-z-flip7','Samsung Galaxy Z Flip7 256GB','SM-F766B','Samsung','phones',104900,'Flip foldable · 256GB · Unlocked · New & sealed'),
+ ('google-pixel-10-128','Google Pixel 10 128GB','','Google','phones',79900,'Tensor G5 · 128GB · Unlocked · New & sealed'),
+ ('google-pixel-10-pro-128','Google Pixel 10 Pro 128GB','','Google','phones',99900,'Tensor G5 · 128GB · Unlocked · New & sealed'),
+ ('google-pixel-10-pro-xl-256','Google Pixel 10 Pro XL 256GB','','Google','phones',119900,'6.8" · 256GB · Unlocked · New & sealed'),
+ ('google-pixel-10-pro-fold','Google Pixel 10 Pro Fold 256GB','','Google','phones',174900,'Foldable · 256GB · Unlocked · New & sealed'),
+ ('google-pixel-9a-128','Google Pixel 9a 128GB','','Google','phones',49900,'128GB · Unlocked · New & sealed'),
+ ('nothing-phone-3-256','Nothing Phone (3) 256GB','A024','Nothing','phones',79900,'256GB · Unlocked · New & sealed'),
+ ('oneplus-13-512','OnePlus 13 512GB','CPH2653','OnePlus','phones',99900,'16GB RAM · 512GB · Unlocked · New & sealed'),
+ ('sony-xperia-1-vii','Sony Xperia 1 VII 256GB','XQ-FS54','Sony','phones',139900,'6.5" 4K OLED · 256GB · Unlocked · New & sealed'),
+ ('fairphone-6','Fairphone (Gen 6) 256GB','','Fairphone','phones',49900,'Repairable · 256GB · Unlocked · New & sealed')
 ) as v(slug,name,model,brand,cat,rrp,spec)
 on conflict (slug) do nothing;

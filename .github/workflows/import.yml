@@ -1,0 +1,30 @@
+name: Daily product import
+on:
+  schedule:
+    - cron: '20 5 * * *'     # 05:20 UTC daily
+  workflow_dispatch: {}       # manual "Run workflow" button
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Import feeds & regenerate site
+        env:
+          FEED_URLS: ${{ secrets.FEED_URLS }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          SITE_DOMAIN: https://openbook-pi.vercel.app
+        run: python3 import.py --max 200
+      - name: Commit & push if changed
+        run: |
+          git config user.name "openbook-importer"
+          git config user.email "importer@openbook"
+          git add -A
+          git diff --cached --quiet || git commit -m "Auto-import: new products from feeds"
+          git push
