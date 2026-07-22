@@ -1,0 +1,26 @@
+name: Sync catalogue to Supabase
+on:
+  push:
+    paths: ['products.csv']
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Upsert catalogue
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 db_sync.py
+      - name: Commit receipt
+        run: |
+          git config user.name "db-sync"
+          git config user.email "sync@openbook"
+          git add data/db-sync-last.json
+          git diff --cached --quiet || git commit -m "DB sync receipt"
+          git push
