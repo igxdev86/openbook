@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My account — OpenBook</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="logo" href="index.html">OPEN<span>BOOK</span></a>
+  <a class="top-link" href="markets.html"><b>All markets</b></a>
+</div>
+
+<div class="wrap">
+
+  <div class="card acct-head">
+    <div class="acct-avatar" id="avatar">·</div>
+    <div>
+      <div class="acct-name" id="acctName">Loading…</div>
+      <div class="acct-email" id="acctEmail"></div>
+    </div>
+    <button class="linkbtn" id="signOutBtn">Sign out</button>
+  </div>
+
+  <div class="sec"><h2>My live bids</h2><a href="markets.html">Find markets →</a></div>
+  <div class="card list" id="bidList"><div class="empty">Loading…</div></div>
+
+  <div class="sec"><h2>My matches</h2></div>
+  <div class="card list" id="matchList"><div class="empty">Loading…</div></div>
+
+  <div class="sec"><h2>Profile</h2></div>
+  <div class="card" style="padding:14px">
+    <div class="field">
+      <label for="displayName">Display name</label>
+      <input type="text" id="displayName" placeholder="Optional — shown on nothing public yet" maxlength="40">
+    </div>
+    <button class="btn btn-dark" style="width:100%;margin-top:12px" id="saveBtn">Save profile</button>
+    <div class="msg" id="profMsg"></div>
+  </div>
+
+  <div class="foot">One live bid per product · cancelling frees you to re-bid instantly<br>
+    OpenBook · every price is set by the market, not the retailer</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script>
+let timers = [];
+
+function fmtWhen(iso){
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-GB', { day:'numeric', month:'short' }) + ' ' +
+         d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
+}
+
+async function loadAccount(){
+  const prof = await getProfile();
+  if (!prof){ location.href = 'register.html'; return; }
+  document.getElementById('acctEmail').textContent = prof.email;
+  document.getElementById('acctName').textContent = prof.display_name || prof.email.split('@')[0];
+  document.getElementById('avatar').textContent =
+    (prof.display_name || prof.email).slice(0,1).toUpperCase();
+  document.getElementById('displayName').value = prof.display_name || '';
+  loadBids(); loadMatches();
+}
+
+async function loadBids(){
+  const el = document.getElementById('bidList');
+  const bids = await getMyBids();
+  if (!bids.length){
+    el.innerHTML = '<div class="empty">No live bids. Open any market and name your price.</div>';
+    return;
+  }
+  el.innerHTML = bids.map(b => `
+    <div class="lrow">
+      <div>
+        <div class="l-name"><a href="${marketUrl(b.products.slug)}">${b.products.name}</a></div>
+        <div class="l-sub num">Placed ${fmtWhen(b.created_at)}</div>
+      </div>
+      <div class="l-right">
+        <div class="l-price num">${P(b.price_pence)}</div>
+        ${b.status === 'live'
+          ? `<button class="cancel-btn" data-id="${b.id}">Cancel bid</button>`
+          : `<span class="pill pending">Matched</span>`}
+      </div>
+    </div>`).join('');
+  el.querySelectorAll('.cancel-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      btn.disabled = true; btn.textContent = 'Cancelling…';
+      const { error } = await cancelBid(btn.dataset.id);
+      if (error){ btn.disabled = false; btn.textContent = 'Cancel bid'; alert(error.message); return; }
+      loadBids();
+    });
+  });
+}
+
+async function loadMatches(){
+  const el = document.getElementById('matchList');
+  timers.forEach(clearInterval); timers = [];
+  const ms = await getMyMatches();
+  if (!ms.length){
+    el.innerHTML = '<div class="empty">No matches yet. When a retailer accepts your bid, it lands here with your checkout link.</div>';
+    return;
+  }
+  el.innerHTML = ms.map(m => {
+    const pill = { pending:'pending', completed:'completed', ghosted:'ghosted', cancelled:'cancelled' }[m.status] || 'ghosted';
+    const pillLabel = { pending:'Action needed', completed:'Completed', ghosted:'Expired', cancelled:'Cancelled' }[m.status] || m.status;
+    let right = `<div class="l-price num">${P(m.price_pence)}</div><span class="pill ${pill}">${pillLabel}</span>`;
+    if (m.status === 'pending'){
+      right += `<div class="countdown num" id="cd-${m.id}"></div>
+        <a class="go-btn" href="${m.checkout_url}" target="_blank" rel="noopener">Complete at retailer →</a>`;
+    }
+    return `<div class="lrow">
+      <div>
+        <div class="l-name"><a href="${marketUrl(m.products.slug)}">${m.products.name}</a></div>
+        <div class="l-sub num">Ref ${m.match_ref} · matched ${fmtWhen(m.matched_at)}</div>
+      </div>
+      <div class="l-right">${right}</div>
+    </div>`;
+  }).join('');
+  ms.filter(m => m.status === 'pending').forEach(m => {
+    const el2 = document.getElementById('cd-' + m.id);
+    const tick = () => {
+      const left = Math.floor((new Date(m.expires_at) - Date.now()) / 1000);
+      if (left <= 0){ el2.textContent = 'Window closed'; return; }
+      el2.textContent = Math.floor(left/60) + ':' + String(left%60).padStart(2,'0') + ' left';
+    };
+    tick(); timers.push(setInterval(tick, 1000));
+  });
+}
+
+document.getElementById('signOutBtn').addEventListener('click', signOut);
+document.getElementById('saveBtn').addEventListener('click', async () => {
+  const msg = document.getElementById('profMsg'); msg.className = 'msg';
+  const { error } = await saveDisplayName(document.getElementById('displayName').value.trim());
+  if (error){ msg.textContent = error.message; msg.className = 'msg err'; return; }
+  msg.textContent = 'Saved.'; msg.className = 'msg ok'; loadAccount();
+});
+
+loadAccount();
+</script>
+</body>
+</html>

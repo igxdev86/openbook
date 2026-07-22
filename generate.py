@@ -52,20 +52,18 @@ PAGE = """<!DOCTYPE html>
 
 <div class="wrap">
 
-  <div style="font-size:.64rem;color:var(--ink-soft);margin-top:8px">
-    <a href="../index.html" style="text-decoration:none">Home</a> /
-    <a href="../markets.html" style="text-decoration:none">{category_name}</a> /
-    {brand}</div>
+  <div class="crumbs">
+    <a href="../index.html">Home</a> / <a href="../markets.html">{category_name}</a> / {brand}</div>
 
-  <div class="card" style="display:flex;gap:14px;align-items:center;padding:14px;margin-top:8px">
+  <div class="card prod-head">
     <div>
-      <h1 style="font-weight:700;font-size:1.05rem;line-height:1.25">{name}</h1>
-      <div style="font-size:.72rem;color:var(--ink-soft);margin-top:2px">{spec_line}</div>
+      <h1>{name}</h1>
+      <div class="prod-spec">{spec_line}</div>
     </div>
-    <div style="margin-left:auto;text-align:right;flex:none">
-      <div style="font-size:.62rem;letter-spacing:.12em;color:var(--ink-soft);text-transform:uppercase">Last matched</div>
-      <div class="num" style="font-size:1.7rem;font-weight:700" id="pLast">—</div>
-      <div class="num" style="font-size:.72rem;color:var(--match);font-weight:600" id="pOff">RRP {rrp_disp}</div>
+    <div class="prod-last">
+      <div class="cap">Last matched</div>
+      <div class="num big" id="pLast">—</div>
+      <div class="num sub" id="pOff">RRP {rrp_disp}</div>
     </div>
   </div>
 
@@ -88,8 +86,7 @@ PAGE = """<!DOCTYPE html>
   </div>
 
   <div class="card" style="margin-top:12px;padding:14px">
-    <div style="font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)">
-      Place your bid</div>
+    <div class="section-cap">Place your bid</div>
     <div class="field">
       <label for="bidPrice">Your price (£)</label>
       <input type="number" id="bidPrice" inputmode="decimal" step="0.01" min="1" placeholder="What would you pay?">
@@ -99,27 +96,27 @@ PAGE = """<!DOCTYPE html>
     <div class="msg" id="bidMsg"></div>
   </div>
 
-  <div class="card" style="margin-top:12px;padding:14px">
-    <h2 style="font-size:.8rem;font-weight:700">Name your price on the {name}</h2>
-    <p style="font-size:.74rem;color:var(--ink-soft);line-height:1.6;margin-top:6px">
+  <div class="card content">
+    <h2>Name your price on the {name}</h2>
+    <p>
       The {name} ({spec_line}) has a recommended retail price of <b class="num">{rrp_disp}</b>.
       On OpenBook you don't pay the shelf price — you bid the price you'd pay today,
       and verified UK retailers accept bids in bulk when the numbers work for them.
       Your bid joins the open order book above alongside every other buyer's.</p>
-    <h3 style="font-size:.74rem;font-weight:700;margin-top:12px">How bidding on the {short_name} works</h3>
-    <p style="font-size:.74rem;color:var(--ink-soft);line-height:1.6;margin-top:6px">
+    <h3>How bidding on the {short_name} works</h3>
+    <p>
       Bidding is free and you can only have one live bid on this product.
       If a retailer accepts your bid you get a 30-minute checkout link at your exact
       price — payment and delivery are handled directly by the retailer, never by OpenBook.
       If nobody accepts, your bid simply stays in the book until you cancel it.</p>
-    <h3 style="font-size:.74rem;font-weight:700;margin-top:12px">Product details</h3>
-    <table style="font-size:.74rem;margin-top:6px;border-collapse:collapse;width:100%">
-      <tr><td style="padding:4px 0;color:var(--ink-soft);width:40%">Brand</td><td>{brand}</td></tr>
-      <tr><td style="padding:4px 0;color:var(--ink-soft)">Model</td><td class="num">{model_code}</td></tr>
+    <h3>Product details</h3>
+    <table class="spec-table">
+      <tr><td>Brand</td><td>{brand}</td></tr>
+      <tr><td>Model</td><td class="num">{model_code}</td></tr>
       {ean_row}
-      <tr><td style="padding:4px 0;color:var(--ink-soft)">Category</td><td>{category_name}</td></tr>
-      <tr><td style="padding:4px 0;color:var(--ink-soft)">RRP</td><td class="num">{rrp_disp}</td></tr>
-      <tr><td style="padding:4px 0;color:var(--ink-soft)">Condition</td><td>New — every unit sold by a verified UK retailer</td></tr>
+      <tr><td>Category</td><td>{category_name}</td></tr>
+      <tr><td>RRP</td><td class="num">{rrp_disp}</td></tr>
+      <tr><td>Condition</td><td>New — every unit sold by a verified UK retailer</td></tr>
     </table>
   </div>
 
@@ -232,8 +229,7 @@ def build_page(row):
     title = f"{row['name']} — Name Your Price (RRP {rrp_disp}) | OpenBook"
     desc = (f"Bid what you'd pay for the {row['name']} ({row['spec_line']}). RRP {rrp_disp}. "
             f"Verified UK retailers accept bids in bulk. Free to bid — you only commit if a retailer accepts.")
-    ean_row = (f'<tr><td style="padding:4px 0;color:var(--ink-soft)">EAN</td>'
-               f'<td class="num">{esc(row["ean"])}</td></tr>') if row.get('ean') else ''
+    ean_row = (f'<tr><td>EAN</td><td class="num">{esc(row["ean"])}</td></tr>') if row.get('ean') else ''
     return PAGE.format(
         title=esc(title), description=esc(desc),
         canonical=f"{DOMAIN}/m/{row['slug']}",

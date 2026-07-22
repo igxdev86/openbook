@@ -180,3 +180,40 @@ function initChrome(){
     if (b) b.classList.add('on');
   }
 }
+
+/* ---------- account ---------- */
+async function signOut(){ if (!DEMO) await sb.auth.signOut(); location.href = 'index.html'; }
+
+async function getProfile(){
+  if (DEMO) return null;
+  const user = await getUser(); if (!user) return null;
+  await sb.from('profiles').upsert({ id: user.id }, { onConflict: 'id' });
+  const { data } = await sb.from('profiles').select('display_name').eq('id', user.id).single();
+  return { email: user.email, display_name: (data && data.display_name) || '' };
+}
+async function saveDisplayName(name){
+  const user = await getUser(); if (!user) return { error:{ message:'Not signed in' } };
+  return sb.from('profiles').update({ display_name: name }).eq('id', user.id);
+}
+async function getMyBids(){
+  if (DEMO) return [];
+  const user = await getUser(); if (!user) return [];
+  const { data, error } = await sb.from('bids')
+    .select('id,price_pence,status,created_at,products(name,slug)')
+    .eq('user_id', user.id).in('status', ['live','matched'])
+    .order('created_at', { ascending:false });
+  if (error){ console.error(error); return []; }
+  return data;
+}
+async function cancelBid(id){
+  return sb.from('bids').update({ status:'cancelled', updated_at: new Date().toISOString() }).eq('id', id);
+}
+async function getMyMatches(){
+  if (DEMO) return [];
+  const user = await getUser(); if (!user) return [];
+  const { data, error } = await sb.from('matches')
+    .select('id,match_ref,price_pence,status,checkout_url,expires_at,matched_at,products(name,slug)')
+    .eq('user_id', user.id).order('matched_at', { ascending:false }).limit(25);
+  if (error){ console.error(error); return []; }
+  return data;
+}

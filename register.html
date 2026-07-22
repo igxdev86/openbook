@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join OpenBook — free account</title>
+<meta name="description" content="Create a free OpenBook account to bid your price on products from verified UK retailers.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="logo" href="index.html">OPEN<span>BOOK</span></a>
+  <a class="top-link" href="account.html"><b>My bids</b></a>
+</div>
+
+<div class="wrap" style="max-width:480px">
+
+  <div style="padding:26px 4px 6px;text-align:center">
+    <h1 style="font-size:1.4rem;font-weight:800;letter-spacing:-.01em">Join OpenBook</h1>
+    <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.55">
+      One account for bidding and tracking your matches.<br>
+      No passwords — we email you a sign-in link.</p>
+  </div>
+
+  <div class="card" style="padding:16px;margin-top:10px">
+    <div class="field">
+      <label for="email">Email address</label>
+      <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+    </div>
+    <button class="btn btn-buy" style="width:100%;margin-top:12px" id="joinBtn">
+      Continue with email<small>works for new and existing accounts</small></button>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <div class="card content" style="margin-top:12px">
+    <h2>What you get</h2>
+    <p><b>Bid your price</b> on any product — free, no card required, and you're only
+      committed if a retailer accepts your exact price.</p>
+    <p><b>Instant match alerts</b> — the moment a retailer accepts, you get a 30-minute
+      checkout link at your price, direct to the retailer's own store.</p>
+    <p><b>Full control</b> — see and cancel your live bids any time from your account.</p>
+  </div>
+
+  <div class="foot">OpenBook · every price is set by the market, not the retailer</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script>
+// already signed in? straight to the account
+(async () => { if (await getUser()) location.href = 'account.html'; })();
+
+document.getElementById('joinBtn').addEventListener('click', async () => {
+  const msg = document.getElementById('msg'); msg.className = 'msg';
+  const email = document.getElementById('email').value.trim();
+  if (!email || !email.includes('@')){
+    msg.textContent = 'Enter a valid email address.'; msg.className = 'msg err'; return;
+  }
+  const btn = document.getElementById('joinBtn'); btn.disabled = true;
+  const { error } = DEMO
+    ? { error: { message: 'Demo mode — connect Supabase to enable accounts.' } }
+    : await sb.auth.signInWithOtp({ email,
+        options: { emailRedirectTo: location.origin + '/account.html' } });
+  btn.disabled = false;
+  if (error){ msg.textContent = error.message; msg.className = 'msg err'; return; }
+  msg.textContent = 'Check your inbox — tap the link and you\'re in. It may take a minute to arrive.';
+  msg.className = 'msg ok';
+});
+</script>
+</body>
+</html>
