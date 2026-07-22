@@ -110,7 +110,9 @@ initChrome();
       : `<div class="cell empty"><b>—</b><span>no bids</span></div>`;
     const askCell = m.best_ask_pence
       ? `<div class="cell ask"><b class="num">${P(m.best_ask_pence)}</b><span>best ask</span></div>`
-      : `<div class="cell empty"><b>—</b><span>no asks</span></div>`;
+      : (m.retail_price_pence
+        ? `<div class="cell ask"><b class="num">${P(m.retail_price_pence)}</b><span>retail</span></div>`
+        : `<div class="cell empty"><b>—</b><span>no asks</span></div>`);
     return `<a class="mrow" href="${marketUrl(m.slug)}">
       <div><div class="m-name">${m.name}</div>
         <div class="m-meta num">${meta}</div></div>

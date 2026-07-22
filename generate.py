@@ -166,17 +166,35 @@ async function load() {{
       PCT_OFF(summary.last_matched_pence, RRP) +
       '% below RRP <span style="color:var(--rrp);text-decoration:line-through;font-weight:400">' + P(RRP) + '</span>';
   }}
-  if (summary && summary.retail_price_pence) {{
-    document.getElementById('retailLine').textContent =
-      'Cheapest at retail today: ' + P(summary.retail_price_pence);
+  let retail = null;
+  try {{
+    const rj = await fetch('/data/retail.json').then(r => r.ok ? r.json() : null);
+    if (rj && rj[slug]) retail = rj[slug];
+  }} catch (e) {{}}
+  if (!retail && summary && summary.retail_price_pence)
+    retail = {{ price_pence: summary.retail_price_pence, seller: '', url: '' }};
+  if (retail) {{
+    const el = document.getElementById('retailLine');
+    el.innerHTML = 'Cheapest at retail today: ' + P(retail.price_pence) +
+      (retail.seller ? ' at ' + retail.seller : '');
   }}
   const l = await getLadders(slug, product ? product.id : 0);
   document.getElementById('bidLadder').innerHTML =
     l.bids.length ? l.bids.map(o => rungHtml(o, 'bid')).join('')
     : '<div class="rung"><span class="units">No bids yet — set the market</span></div>';
-  document.getElementById('askLadder').innerHTML =
-    l.asks.length ? l.asks.map(o => rungHtml(o, 'ask')).join('')
-    : '<div class="rung"><span class="units">No asks yet</span></div>';
+  let askHtml = l.asks.map(o => rungHtml(o, 'ask')).join('');
+  if (!l.asks.length && retail) {{
+    const inner = '<span class="price num">' + P(retail.price_pence) +
+      '</span><span class="units">' + (retail.seller || 'retail') + ' →</span>';
+    askHtml = retail.url
+      ? '<a class="rung" href="' + retail.url + '" target="_blank" rel="noopener nofollow">' + inner + '</a>'
+      : '<div class="rung">' + inner + '</div>';
+  }} else if (!l.asks.length) {{
+    askHtml = '<div class="rung"><span class="units">No asks yet</span></div>';
+  }}
+  document.getElementById('askLadder').innerHTML = askHtml;
+  if (!l.asks.length && retail && l.bids.length)
+    document.getElementById('spreadVal').textContent = P(retail.price_pence - l.bids[0].p);
   if (l.bids.length && l.asks.length)
     document.getElementById('spreadVal').textContent = P(l.asks[0].p - l.bids[0].p);
 }}
@@ -317,6 +335,8 @@ initChrome();
       '<div class="cell bid"><b class="num">' + P(m.best_bid_pence) + '</b><span>best bid</span></div>';
     if (m.best_ask_pence) cells[1].outerHTML =
       '<div class="cell ask"><b class="num">' + P(m.best_ask_pence) + '</b><span>best ask</span></div>';
+    else if (m.retail_price_pence) cells[1].outerHTML =
+      '<div class="cell ask"><b class="num">' + P(m.retail_price_pence) + '</b><span>retail</span></div>';
   }});
 }})();
 </script>

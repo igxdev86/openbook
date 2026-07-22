@@ -119,6 +119,8 @@ initChrome();
       '<div class="cell bid"><b class="num">' + P(m.best_bid_pence) + '</b><span>best bid</span></div>';
     if (m.best_ask_pence) cells[1].outerHTML =
       '<div class="cell ask"><b class="num">' + P(m.best_ask_pence) + '</b><span>best ask</span></div>';
+    else if (m.retail_price_pence) cells[1].outerHTML =
+      '<div class="cell ask"><b class="num">' + P(m.retail_price_pence) + '</b><span>retail</span></div>';
   });
 })();
 </script>
