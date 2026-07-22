@@ -202,7 +202,7 @@ document.getElementById('authBtn').addEventListener('click', async () => {
   if (!email) { msg.textContent = 'Enter your email.'; msg.className = 'msg err'; return; }
   const r = await signIn(email);
   if (r.error) { msg.textContent = r.error.message; msg.className = 'msg err'; return; }
-  msg.textContent = 'Link sent — check your inbox, then come back and place your bid.';
+  msg.textContent = 'Link sent — check your inbox, then come back and place your order.';
   msg.className = 'msg ok';
 });
 load();

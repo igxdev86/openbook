@@ -232,7 +232,7 @@ document.getElementById('authBtn').addEventListener('click', async () => {{
   if (!email) {{ msg.textContent = 'Enter your email.'; msg.className = 'msg err'; return; }}
   const r = await signIn(email);
   if (r.error) {{ msg.textContent = r.error.message; msg.className = 'msg err'; return; }}
-  msg.textContent = 'Link sent — check your inbox, then come back and place your bid.';
+  msg.textContent = 'Link sent — check your inbox, then come back and place your order.';
   msg.className = 'msg ok';
 }});
 load();
@@ -314,8 +314,8 @@ CAT_PAGE = """<!DOCTYPE html>
 
   <div class="card content">
     <h2>How ordering {cat_name_lc} works on OpenBook</h2>
-    <p>Every product above has an open market. Pick the exact model you want, bid the
-      price you'd pay today, and your bid joins the public order book. Verified UK
+    <p>Every product above has an open market. Pick the exact model you want, place an order at the
+      price you'd pay today, and it joins the public book. Verified UK
       retailers watch the demand on their stock and accept orders in bulk when the price
       works — if yours is accepted you get a 30-minute checkout link at your exact
       price, paid directly to the retailer. Ordering is free and you can cancel any time.</p>
