@@ -5,8 +5,8 @@
       site runs on built-in demo data (yellow banner shows).
 ======================================================== */
 
-const SUPABASE_URL = "";      // e.g. "https://abcd1234.supabase.co"
-const SUPABASE_ANON_KEY = ""; // anon public key — safe in the page, RLS guards everything
+const SUPABASE_URL = "https://webxitknbugyawafukvb.supabase.co";      // e.g. "https://abcd1234.supabase.co"
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlYnhpdGtuYnVneWF3YWZ1a3ZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3NTQzNzMsImV4cCI6MjEwMDMzMDM3M30.HbAnHJepUgU2zBqp2kqtzl3BQbbqDA-zOgBfFch_6Tw"; // anon public key — safe in the page, RLS guards everything
 
 const DEMO = !SUPABASE_URL || !SUPABASE_ANON_KEY;
 let sb = null;
