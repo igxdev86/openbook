@@ -10,7 +10,7 @@
 
 <div class="topbar">
   <a class="logo" href="index.html">OPEN<span>BOOK</span></a>
-  <a class="top-link" href="account.html"><b>My bids</b></a>
+  <a class="top-link" href="account.html"><b>My orders</b></a>
 </div>
 
 <div class="demo-banner" id="demoBanner">Demo mode — showing sample data. Add Supabase keys in config.js to go live.</div>
@@ -32,7 +32,7 @@
 
   <div class="markets" style="margin-top:10px">
     <div class="m-legend">
-      <div>Product</div><div class="bid-l">Best bid</div><div class="ask-l">Best ask</div>
+      <div>Product</div><div class="bid-l">Best order</div><div class="ask-l">Best offer</div>
     </div>
     <div id="marketRows" style="min-height:80px"></div>
   </div>
@@ -60,14 +60,14 @@ function rowHtml(m){
   const meta = [
     m.brand || null,
     last ? `Last ${P(last)} · <span class="off">${PCT_OFF(last, rrp)}% off</span>` : `RRP <span class="rrp">${P(rrp)}</span>`,
-    (m.live_bids || 0) + ' bids'
+    (m.live_bids || 0) + ' orders'
   ].filter(Boolean).join(' · ');
   const bidCell = m.best_bid_pence
-    ? `<div class="cell bid"><b class="num">${P(m.best_bid_pence)}</b><span>best bid</span></div>`
-    : `<div class="cell empty"><b>—</b><span>no bids</span></div>`;
+    ? `<div class="cell bid"><b class="num">${P(m.best_bid_pence)}</b><span>best order</span></div>`
+    : `<div class="cell empty"><b>—</b><span>no orders</span></div>`;
   const askCell = m.best_ask_pence
-    ? `<div class="cell ask"><b class="num">${P(m.best_ask_pence)}</b><span>best ask</span></div>`
-    : `<div class="cell empty"><b>—</b><span>no asks</span></div>`;
+    ? `<div class="cell ask"><b class="num">${P(m.best_ask_pence)}</b><span>best offer</span></div>`
+    : `<div class="cell empty"><b>—</b><span>no offers</span></div>`;
   return `<a class="mrow" href="${marketUrl(m.slug)}">
     <div><div class="m-name">${m.name}</div>
       <div class="m-meta num">${meta}</div></div>

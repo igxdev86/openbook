@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpenBook — Name your price on your next phone</title>
-<meta name="description" content="Bid what you'd pay for the exact phone you want — iPhone, Galaxy, Pixel and more. Verified UK retailers accept bids in bulk. Free to bid.">
+<meta name="description" content="Order the exact phone you want at your price — iPhone, Galaxy, Pixel and more. Verified UK retailers accept orders in bulk. Free to place.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="topbar">
   <a class="logo" href="index.html">OPEN<span>BOOK</span></a>
-  <a class="top-link" href="account.html"><b>My bids</b></a>
+  <a class="top-link" href="account.html"><b>My orders</b></a>
 </div>
 
 <div class="demo-banner" id="demoBanner">Demo mode — showing sample data. Add Supabase keys in config.js to go live.</div>
@@ -28,7 +28,7 @@
       Every phone has a price.<br><em style="font-style:normal;color:var(--buy-ink)">Yours.</em></h1>
     <p style="font-size:.82rem;color:var(--ink-soft);margin-top:8px;line-height:1.55;max-width:34em">
       Place a bid on the exact product you want. Verified UK retailers see real demand
-      and accept bids in bulk — you get the nod, you check out with the retailer.
+      and accept orders in bulk — you get the nod, you check out with the retailer.
       No auctions, no waiting games.</p>
   </div>
 
@@ -39,7 +39,7 @@
   <div class="sec"><h2>Phone markets</h2><a href="markets.html">All markets →</a></div>
   <div class="markets" id="marketList">
     <div class="m-legend">
-      <div>Product</div><div class="bid-l">Best bid</div><div class="ask-l">Best ask</div>
+      <div>Product</div><div class="bid-l">Best order</div><div class="ask-l">Best offer</div>
     </div>
     <div id="marketRows" style="min-height:60px"></div>
   </div>
@@ -49,7 +49,7 @@
     <div class="card" style="padding:12px 14px;display:flex;gap:12px">
       <div style="width:30px;height:30px;border-radius:9px;flex:none;background:var(--buy);
         display:flex;align-items:center;justify-content:center">💷</div>
-      <div><b style="font-size:.82rem">Bid your price</b>
+      <div><b style="font-size:.82rem">Order at your price</b>
         <p style="font-size:.7rem;color:var(--ink-soft);margin-top:2px;line-height:1.5">
         Pick the exact product and name the price you'd pay today.</p></div>
     </div>
@@ -58,7 +58,7 @@
         display:flex;align-items:center;justify-content:center">🤝</div>
       <div><b style="font-size:.82rem">A retailer accepts</b>
         <p style="font-size:.7rem;color:var(--ink-soft);margin-top:2px;line-height:1.5">
-        Verified UK retailers accept bids in bulk when the price works. You're matched instantly.</p></div>
+        Verified UK retailers accept orders in bulk when the price works. You're matched instantly.</p></div>
     </div>
     <div class="card" style="padding:12px 14px;display:flex;gap:12px">
       <div style="width:30px;height:30px;border-radius:9px;flex:none;background:var(--sell);
@@ -73,7 +73,7 @@
     <h3 style="font-size:1rem;font-weight:800">Retailers:
       <span style="color:var(--buy-strong)">see demand before you discount</span></h3>
     <p style="font-size:.74rem;color:#aebccb;margin-top:6px;line-height:1.55">
-      Watch the live demand curve on your products, accept hundreds of bids in one sweep,
+      Watch the live demand curve on your products, accept hundreds of orders in one sweep,
       pay <b style="color:#fff" class="num">2%</b> only on completed sales.
       Buyers check out at your store.</p>
     <a href="seller.html" style="display:inline-block;margin-top:12px;background:var(--buy-strong);
@@ -104,16 +104,16 @@ initChrome();
       last ? `Last ${P(last)} · <span class="off">${PCT_OFF(last, anchor)}% off</span>`
            : (m.retail_price_pence ? `Retail ${P(m.retail_price_pence)}`
                                    : `RRP <span class="rrp">${P(rrp)}</span>`),
-      `${m.live_bids || 0} bids`
+      `${m.live_bids || 0} orders`
     ].join(' · ');
     const bidCell = m.best_bid_pence
-      ? `<div class="cell bid"><b class="num">${P(m.best_bid_pence)}</b><span>best bid</span></div>`
-      : `<div class="cell empty"><b>—</b><span>no bids</span></div>`;
+      ? `<div class="cell bid"><b class="num">${P(m.best_bid_pence)}</b><span>best order</span></div>`
+      : `<div class="cell empty"><b>—</b><span>no orders</span></div>`;
     const askCell = m.best_ask_pence
-      ? `<div class="cell ask"><b class="num">${P(m.best_ask_pence)}</b><span>best ask</span></div>`
+      ? `<div class="cell ask"><b class="num">${P(m.best_ask_pence)}</b><span>best offer</span></div>`
       : (m.retail_price_pence
         ? `<div class="cell ask"><b class="num">${P(m.retail_price_pence)}</b><span>retail</span></div>`
-        : `<div class="cell empty"><b>—</b><span>no asks</span></div>`);
+        : `<div class="cell empty"><b>—</b><span>no offers</span></div>`);
     return `<a class="mrow" href="${marketUrl(m.slug)}">
       <div><div class="m-name">${m.name}</div>
         <div class="m-meta num">${meta}</div></div>

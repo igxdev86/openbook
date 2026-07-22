@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apple iPhone 17e — Name Your Price (RRP £599) | OpenBook</title>
-<meta name="description" content="Bid what you&#x27;d pay for the Apple iPhone 17e (128GB · Unlocked · New &amp; sealed). RRP £599. Verified UK retailers accept bids in bulk. Free to bid — you only commit if a retailer accepts.">
+<meta name="description" content="Name the price you&#x27;d pay for the Apple iPhone 17e (128GB · Unlocked · New &amp; sealed). RRP £599. Verified UK retailers accept orders in bulk. Free to place — you only commit if a retailer accepts.">
 <link rel="canonical" href="https://openbook-pi.vercel.app/m/apple-iphone-17e">
 <link rel="stylesheet" href="/styles.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Apple iPhone 17e", "brand": {"@type": "Brand", "name": "Apple"}, "model": "", "description": "Name your price on the Apple iPhone 17e (128GB \u00b7 Unlocked \u00b7 New & sealed). RRP \u00a3599. Verified UK retailers accept bids in bulk on OpenBook.", "category": "Phones", "url": "https://openbook-pi.vercel.app/m/apple-iphone-17e"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Apple iPhone 17e", "brand": {"@type": "Brand", "name": "Apple"}, "model": "", "description": "Name your price on the Apple iPhone 17e (128GB \u00b7 Unlocked \u00b7 New & sealed). RRP \u00a3599. Verified UK retailers accept orders in bulk on OpenBook.", "category": "Phones", "url": "https://openbook-pi.vercel.app/m/apple-iphone-17e"}</script>
 </head>
 <body>
 
 <div class="topbar">
   <a class="logo" href="/">OPEN<span>BOOK</span></a>
-  <a class="top-link" href="/account.html">Sign in · <b>My bids</b></a>
+  <a class="top-link" href="/account.html">Sign in · <b>My orders</b></a>
 </div>
 
 <div class="demo-banner" id="demoBanner">Demo mode — showing sample data. Add Supabase keys in config.js to go live.</div>
@@ -40,9 +40,9 @@
 
   <div class="card" style="margin-top:12px;overflow:hidden">
     <div class="book-head">
-      <div class="side-label sell">Sellers · Ask</div>
+      <div class="side-label sell">Sellers · Offers</div>
       <div class="mid-label">Spread</div>
-      <div class="side-label buy">Buyers · Bid</div>
+      <div class="side-label buy">Buyers · Orders</div>
     </div>
     <div class="book">
       <div class="ladder sell" id="askLadder">
@@ -57,13 +57,13 @@
   </div>
 
   <div class="card" style="margin-top:12px;padding:14px">
-    <div class="section-cap">Place your bid</div>
+    <div class="section-cap">Place your order</div>
     <div class="field">
       <label for="bidPrice">Your price (£)</label>
       <input type="number" id="bidPrice" inputmode="decimal" step="0.01" min="1" placeholder="What would you pay?">
     </div>
     <button class="btn btn-buy" style="width:100%;margin-top:12px" id="bidBtn">
-      Place bid<small>free to bid · you're only committed if a retailer accepts</small></button>
+      Place order<small>free to place · you're only committed if a retailer accepts</small></button>
     <div class="msg" id="bidMsg"></div>
   </div>
 
@@ -71,15 +71,15 @@
     <h2>Name your price on the Apple iPhone 17e</h2>
     <p>
       The Apple iPhone 17e (128GB · Unlocked · New &amp; sealed) has a recommended retail price of <b class="num">£599</b>.
-      On OpenBook you don't pay the shelf price — you bid the price you'd pay today,
-      and verified UK retailers accept bids in bulk when the numbers work for them.
-      Your bid joins the open order book above alongside every other buyer's.</p>
-    <h3>How bidding on the Apple works</h3>
+      On OpenBook you don't pay the shelf price — you place an order at the price you'd pay today,
+      and verified UK retailers accept orders in bulk when the numbers work for them.
+      Your order joins the open book above alongside every other buyer's.</p>
+    <h3>How ordering the Apple works</h3>
     <p>
-      Bidding is free and you can only have one live bid on this product.
-      If a retailer accepts your bid you get a 30-minute checkout link at your exact
+      Ordering is free and you can only have one live order per product.
+      If a retailer accepts your order you get a 30-minute checkout link at your exact
       price — payment and delivery are handled directly by the retailer, never by OpenBook.
-      If nobody accepts, your bid simply stays in the book until you cancel it.</p>
+      If nobody accepts, your order simply stays in the book until you cancel it.</p>
     <h3>Product details</h3>
     <table class="spec-table">
       <tr><td>Brand</td><td>Apple</td></tr>
@@ -97,7 +97,7 @@
 
 <div class="overlay" id="authSheet">
   <div class="sheet">
-    <div style="font-size:1.1rem;font-weight:700">Sign in to place your bid</div>
+    <div style="font-size:1.1rem;font-weight:700">Sign in to place your order</div>
     <p style="font-size:.76rem;color:var(--ink-soft);margin-top:6px;line-height:1.5">
       We'll email you a one-tap sign-in link. No passwords.</p>
     <div class="field">
@@ -121,7 +121,7 @@ const RRP = 59900;
 let product = null;
 
 function rungHtml(o, side) {
-  const label = side === 'bid' ? (o.c + ' bid' + (o.c === 1 ? '' : 's'))
+  const label = side === 'bid' ? (o.c + ' order' + (o.c === 1 ? '' : 's'))
                                : (o.u + ' unit' + (o.u === 1 ? '' : 's'));
   return '<div class="rung"><span class="price num">' + P(o.p) +
          '</span><span class="units num">' + label + '</span></div>';
@@ -155,7 +155,7 @@ async function load() {
   const l = await getLadders(slug, product ? product.id : 0);
   document.getElementById('bidLadder').innerHTML =
     l.bids.length ? l.bids.map(o => rungHtml(o, 'bid')).join('')
-    : '<div class="rung"><span class="units">No bids yet — set the market</span></div>';
+    : '<div class="rung"><span class="units">No orders yet — set the market</span></div>';
   let askHtml = l.asks.map(o => rungHtml(o, 'ask')).join('');
   if (!l.asks.length && retail) {
     const offers = (retail.offers && retail.offers.length)
@@ -170,7 +170,7 @@ async function load() {
         : '<div class="rung">' + inner + '</div>';
     }).join('');
   } else if (!l.asks.length) {
-    askHtml = '<div class="rung"><span class="units">No asks yet</span></div>';
+    askHtml = '<div class="rung"><span class="units">No offers yet</span></div>';
   }
   document.getElementById('askLadder').innerHTML = askHtml;
   if (!l.asks.length && retail && l.bids.length)
@@ -185,14 +185,14 @@ document.getElementById('bidBtn').addEventListener('click', async () => {
   if (!v || v <= 0) { msg.textContent = 'Enter a price.'; msg.className = 'msg err'; return; }
   const pence = Math.round(v * 100);
   if (pence >= RRP) {
-    msg.textContent = 'Your bid is at or above RRP — just buy it from a shop! Bid below ' + P(RRP) + '.';
+    msg.textContent = 'Your order is at or above RRP — just buy it from a shop! Bid below ' + P(RRP) + '.';
     msg.className = 'msg err'; return;
   }
   const r = await placeBid(product ? product.id : 0, pence);
   if (r.error && r.error.message === 'SIGN_IN') {
     document.getElementById('authSheet').classList.add('open'); return; }
   if (r.error) { msg.textContent = r.error.message; msg.className = 'msg err'; return; }
-  msg.textContent = 'Bid placed at ' + P(pence) + ". You'll be emailed the moment a retailer accepts.";
+  msg.textContent = 'Order placed at ' + P(pence) + ". You'll be emailed the moment a retailer accepts.";
   msg.className = 'msg ok';
   load();
 });

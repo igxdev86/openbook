@@ -169,7 +169,7 @@ async function placeBid(productId, pricePence){
   const { error } = await sb.from('bids')
     .insert({ product_id: productId, user_id: user.id, price_pence: pricePence });
   if (error && error.code === '23505')
-    return { error: { message: 'You already have a live bid on this product. Cancel it first from My bids.' } };
+    return { error: { message: 'You already have a live order on this product. Cancel it first from My orders.' } };
   return { error };
 }
 

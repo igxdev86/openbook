@@ -25,7 +25,7 @@
     <button class="linkbtn" id="signOutBtn">Sign out</button>
   </div>
 
-  <div class="sec"><h2>My live bids</h2><a href="markets.html">Find markets →</a></div>
+  <div class="sec"><h2>My live orders</h2><a href="markets.html">Find markets →</a></div>
   <div class="card list" id="bidList"><div class="empty">Loading…</div></div>
 
   <div class="sec"><h2>My matches</h2></div>
@@ -41,7 +41,7 @@
     <div class="msg" id="profMsg"></div>
   </div>
 
-  <div class="foot"><a href="/about" style="color:inherit">What is OpenBook</a> · <a href="/support" style="color:inherit">Support</a> · <a href="/terms" style="color:inherit">Terms</a> · <a href="/privacy" style="color:inherit">Privacy</a><br>One live bid per product · cancelling frees you to re-bid instantly<br>
+  <div class="foot"><a href="/about" style="color:inherit">What is OpenBook</a> · <a href="/support" style="color:inherit">Support</a> · <a href="/terms" style="color:inherit">Terms</a> · <a href="/privacy" style="color:inherit">Privacy</a><br>One live order per product · cancelling frees you to re-order instantly<br>
     OpenBook · every price is set by the market, not the retailer</div>
 </div>
 
@@ -71,7 +71,7 @@ async function loadBids(){
   const el = document.getElementById('bidList');
   const bids = await getMyBids();
   if (!bids.length){
-    el.innerHTML = '<div class="empty">No live bids. Open any market and name your price.</div>';
+    el.innerHTML = '<div class="empty">No live orders. Open any market and name your price.</div>';
     return;
   }
   el.innerHTML = bids.map(b => `
@@ -83,7 +83,7 @@ async function loadBids(){
       <div class="l-right">
         <div class="l-price num">${P(b.price_pence)}</div>
         ${b.status === 'live'
-          ? `<button class="cancel-btn" data-id="${b.id}">Cancel bid</button>`
+          ? `<button class="cancel-btn" data-id="${b.id}">Cancel order</button>`
           : `<span class="pill pending">Matched</span>`}
       </div>
     </div>`).join('');
@@ -91,7 +91,7 @@ async function loadBids(){
     btn.addEventListener('click', async () => {
       btn.disabled = true; btn.textContent = 'Cancelling…';
       const { error } = await cancelBid(btn.dataset.id);
-      if (error){ btn.disabled = false; btn.textContent = 'Cancel bid'; alert(error.message); return; }
+      if (error){ btn.disabled = false; btn.textContent = 'Cancel order'; alert(error.message); return; }
       loadBids();
     });
   });
@@ -102,7 +102,7 @@ async function loadMatches(){
   timers.forEach(clearInterval); timers = [];
   const ms = await getMyMatches();
   if (!ms.length){
-    el.innerHTML = '<div class="empty">No matches yet. When a retailer accepts your bid, it lands here with your checkout link.</div>';
+    el.innerHTML = '<div class="empty">No matches yet. When a retailer accepts your order, it lands here with your checkout link.</div>';
     return;
   }
   el.innerHTML = ms.map(m => {

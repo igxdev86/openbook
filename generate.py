@@ -45,7 +45,7 @@ PAGE = """<!DOCTYPE html>
 
 <div class="topbar">
   <a class="logo" href="/">OPEN<span>BOOK</span></a>
-  <a class="top-link" href="/account.html">Sign in · <b>My bids</b></a>
+  <a class="top-link" href="/account.html">Sign in · <b>My orders</b></a>
 </div>
 
 <div class="demo-banner" id="demoBanner">Demo mode — showing sample data. Add Supabase keys in config.js to go live.</div>
@@ -70,9 +70,9 @@ PAGE = """<!DOCTYPE html>
 
   <div class="card" style="margin-top:12px;overflow:hidden">
     <div class="book-head">
-      <div class="side-label sell">Sellers · Ask</div>
+      <div class="side-label sell">Sellers · Offers</div>
       <div class="mid-label">Spread</div>
-      <div class="side-label buy">Buyers · Bid</div>
+      <div class="side-label buy">Buyers · Orders</div>
     </div>
     <div class="book">
       <div class="ladder sell" id="askLadder">
@@ -87,13 +87,13 @@ PAGE = """<!DOCTYPE html>
   </div>
 
   <div class="card" style="margin-top:12px;padding:14px">
-    <div class="section-cap">Place your bid</div>
+    <div class="section-cap">Place your order</div>
     <div class="field">
       <label for="bidPrice">Your price (£)</label>
       <input type="number" id="bidPrice" inputmode="decimal" step="0.01" min="1" placeholder="What would you pay?">
     </div>
     <button class="btn btn-buy" style="width:100%;margin-top:12px" id="bidBtn">
-      Place bid<small>free to bid · you're only committed if a retailer accepts</small></button>
+      Place order<small>free to place · you're only committed if a retailer accepts</small></button>
     <div class="msg" id="bidMsg"></div>
   </div>
 
@@ -101,15 +101,15 @@ PAGE = """<!DOCTYPE html>
     <h2>Name your price on the {name}</h2>
     <p>
       The {name} ({spec_line}) has a recommended retail price of <b class="num">{rrp_disp}</b>.
-      On OpenBook you don't pay the shelf price — you bid the price you'd pay today,
-      and verified UK retailers accept bids in bulk when the numbers work for them.
-      Your bid joins the open order book above alongside every other buyer's.</p>
-    <h3>How bidding on the {short_name} works</h3>
+      On OpenBook you don't pay the shelf price — you place an order at the price you'd pay today,
+      and verified UK retailers accept orders in bulk when the numbers work for them.
+      Your order joins the open book above alongside every other buyer's.</p>
+    <h3>How ordering the {short_name} works</h3>
     <p>
-      Bidding is free and you can only have one live bid on this product.
-      If a retailer accepts your bid you get a 30-minute checkout link at your exact
+      Ordering is free and you can only have one live order per product.
+      If a retailer accepts your order you get a 30-minute checkout link at your exact
       price — payment and delivery are handled directly by the retailer, never by OpenBook.
-      If nobody accepts, your bid simply stays in the book until you cancel it.</p>
+      If nobody accepts, your order simply stays in the book until you cancel it.</p>
     <h3>Product details</h3>
     <table class="spec-table">
       <tr><td>Brand</td><td>{brand}</td></tr>
@@ -127,7 +127,7 @@ PAGE = """<!DOCTYPE html>
 
 <div class="overlay" id="authSheet">
   <div class="sheet">
-    <div style="font-size:1.1rem;font-weight:700">Sign in to place your bid</div>
+    <div style="font-size:1.1rem;font-weight:700">Sign in to place your order</div>
     <p style="font-size:.76rem;color:var(--ink-soft);margin-top:6px;line-height:1.5">
       We'll email you a one-tap sign-in link. No passwords.</p>
     <div class="field">
@@ -151,7 +151,7 @@ const RRP = {rrp_pence};
 let product = null;
 
 function rungHtml(o, side) {{
-  const label = side === 'bid' ? (o.c + ' bid' + (o.c === 1 ? '' : 's'))
+  const label = side === 'bid' ? (o.c + ' order' + (o.c === 1 ? '' : 's'))
                                : (o.u + ' unit' + (o.u === 1 ? '' : 's'));
   return '<div class="rung"><span class="price num">' + P(o.p) +
          '</span><span class="units num">' + label + '</span></div>';
@@ -185,7 +185,7 @@ async function load() {{
   const l = await getLadders(slug, product ? product.id : 0);
   document.getElementById('bidLadder').innerHTML =
     l.bids.length ? l.bids.map(o => rungHtml(o, 'bid')).join('')
-    : '<div class="rung"><span class="units">No bids yet — set the market</span></div>';
+    : '<div class="rung"><span class="units">No orders yet — set the market</span></div>';
   let askHtml = l.asks.map(o => rungHtml(o, 'ask')).join('');
   if (!l.asks.length && retail) {{
     const offers = (retail.offers && retail.offers.length)
@@ -200,7 +200,7 @@ async function load() {{
         : '<div class="rung">' + inner + '</div>';
     }}).join('');
   }} else if (!l.asks.length) {{
-    askHtml = '<div class="rung"><span class="units">No asks yet</span></div>';
+    askHtml = '<div class="rung"><span class="units">No offers yet</span></div>';
   }}
   document.getElementById('askLadder').innerHTML = askHtml;
   if (!l.asks.length && retail && l.bids.length)
@@ -215,14 +215,14 @@ document.getElementById('bidBtn').addEventListener('click', async () => {{
   if (!v || v <= 0) {{ msg.textContent = 'Enter a price.'; msg.className = 'msg err'; return; }}
   const pence = Math.round(v * 100);
   if (pence >= RRP) {{
-    msg.textContent = 'Your bid is at or above RRP — just buy it from a shop! Bid below ' + P(RRP) + '.';
+    msg.textContent = 'Your order is at or above RRP — just buy it from a shop! Bid below ' + P(RRP) + '.';
     msg.className = 'msg err'; return;
   }}
   const r = await placeBid(product ? product.id : 0, pence);
   if (r.error && r.error.message === 'SIGN_IN') {{
     document.getElementById('authSheet').classList.add('open'); return; }}
   if (r.error) {{ msg.textContent = r.error.message; msg.className = 'msg err'; return; }}
-  msg.textContent = 'Bid placed at ' + P(pence) + ". You'll be emailed the moment a retailer accepts.";
+  msg.textContent = 'Order placed at ' + P(pence) + ". You'll be emailed the moment a retailer accepts.";
   msg.className = 'msg ok';
   load();
 }});
@@ -248,7 +248,7 @@ def jsonld(row):
         "brand": {"@type": "Brand", "name": row['brand']},
         "model": row['model_code'],
         "description": f"Name your price on the {row['name']} ({row['spec_line']}). "
-                       f"RRP {money(row['rrp_pence'])}. Verified UK retailers accept bids in bulk on OpenBook.",
+                       f"RRP {money(row['rrp_pence'])}. Verified UK retailers accept orders in bulk on OpenBook.",
         "category": row['category_name'],
         "url": f"{DOMAIN}/m/{row['slug']}"
     }
@@ -260,8 +260,8 @@ def build_page(row):
     rrp_disp = money(row['rrp_pence'])
     short_name = (row['brand'] + ' ' + row['model_code']).strip() or row['name']
     title = f"{row['name']} — Name Your Price (RRP {rrp_disp}) | OpenBook"
-    desc = (f"Bid what you'd pay for the {row['name']} ({row['spec_line']}). RRP {rrp_disp}. "
-            f"Verified UK retailers accept bids in bulk. Free to bid — you only commit if a retailer accepts.")
+    desc = (f"Name the price you'd pay for the {row['name']} ({row['spec_line']}). RRP {rrp_disp}. "
+            f"Verified UK retailers accept orders in bulk. Free to place — you only commit if a retailer accepts.")
     ean_row = (f'<tr><td>EAN</td><td class="num">{esc(row["ean"])}</td></tr>') if row.get('ean') else ''
     return PAGE.format(
         title=esc(title), description=esc(desc),
@@ -290,7 +290,7 @@ CAT_PAGE = """<!DOCTYPE html>
 
 <div class="topbar">
   <a class="logo" href="/">OPEN<span>BOOK</span></a>
-  <a class="top-link" href="/account.html"><b>My bids</b></a>
+  <a class="top-link" href="/account.html"><b>My orders</b></a>
 </div>
 
 <div class="wrap">
@@ -307,18 +307,18 @@ CAT_PAGE = """<!DOCTYPE html>
 
   <div class="markets" style="margin-top:8px">
     <div class="m-legend">
-      <div>Product</div><div class="bid-l">Best bid</div><div class="ask-l">Best ask</div>
+      <div>Product</div><div class="bid-l">Best order</div><div class="ask-l">Best offer</div>
     </div>
     {rows}
   </div>
 
   <div class="card content">
-    <h2>How bidding on {cat_name_lc} works on OpenBook</h2>
+    <h2>How ordering {cat_name_lc} works on OpenBook</h2>
     <p>Every product above has an open market. Pick the exact model you want, bid the
       price you'd pay today, and your bid joins the public order book. Verified UK
-      retailers watch the demand on their stock and accept bids in bulk when the price
+      retailers watch the demand on their stock and accept orders in bulk when the price
       works — if yours is accepted you get a 30-minute checkout link at your exact
-      price, paid directly to the retailer. Bidding is free and you can cancel any time.</p>
+      price, paid directly to the retailer. Ordering is free and you can cancel any time.</p>
   </div>
 
   <div class="foot"><a href="/about" style="color:inherit">What is OpenBook</a> · <a href="/support" style="color:inherit">Support</a> · <a href="/terms" style="color:inherit">Terms</a> · <a href="/privacy" style="color:inherit">Privacy</a><br>OpenBook · every price is set by the market, not the retailer</div>
@@ -337,16 +337,16 @@ initChrome();
     const anchor = m.retail_price_pence || m.rrp_pence;
     if (m.last_matched_pence)
       meta.innerHTML = 'Last ' + P(m.last_matched_pence) + ' · <span class="off">' +
-        PCT_OFF(m.last_matched_pence, anchor) + '% off</span> · ' + (m.live_bids||0) + ' bids';
+        PCT_OFF(m.last_matched_pence, anchor) + '% off</span> · ' + (m.live_bids||0) + ' orders';
     else if (m.retail_price_pence)
-      meta.innerHTML = 'Retail ' + P(m.retail_price_pence) + ' · ' + (m.live_bids||0) + ' bids';
+      meta.innerHTML = 'Retail ' + P(m.retail_price_pence) + ' · ' + (m.live_bids||0) + ' orders';
     else
-      meta.innerHTML = 'RRP <span class="rrp">' + P(m.rrp_pence) + '</span> · ' + (m.live_bids||0) + ' bids';
+      meta.innerHTML = 'RRP <span class="rrp">' + P(m.rrp_pence) + '</span> · ' + (m.live_bids||0) + ' orders';
     const cells = row.querySelectorAll('.cell');
     if (m.best_bid_pence) cells[0].outerHTML =
-      '<div class="cell bid"><b class="num">' + P(m.best_bid_pence) + '</b><span>best bid</span></div>';
+      '<div class="cell bid"><b class="num">' + P(m.best_bid_pence) + '</b><span>best order</span></div>';
     if (m.best_ask_pence) cells[1].outerHTML =
-      '<div class="cell ask"><b class="num">' + P(m.best_ask_pence) + '</b><span>best ask</span></div>';
+      '<div class="cell ask"><b class="num">' + P(m.best_ask_pence) + '</b><span>best offer</span></div>';
     else if (m.retail_price_pence) cells[1].outerHTML =
       '<div class="cell ask"><b class="num">' + P(m.retail_price_pence) + '</b><span>retail</span></div>';
   }});
@@ -367,8 +367,8 @@ def cat_row(r):
     return ('<a class="mrow" id="r-%s" href="/m/%s">'
             '<div><div class="m-name">%s</div>'
             '<div class="m-meta num">%s · RRP <span class="rrp">%s</span></div></div>'
-            '<div class="cell empty"><b>—</b><span>no bids</span></div>'
-            '<div class="cell empty"><b>—</b><span>no asks</span></div></a>'
+            '<div class="cell empty"><b>—</b><span>no orders</span></div>'
+            '<div class="cell empty"><b>—</b><span>no offers</span></div></a>'
             ) % (esc(r['slug']), esc(r['slug']), esc(r['name']),
                  esc(r['brand']), money(r['rrp_pence']))
 
@@ -379,13 +379,13 @@ def build_category(cat, rows_in_cat, cats):
     lo = min(int(r['rrp_pence']) for r in rows_in_cat)
     hi = max(int(r['rrp_pence']) for r in rows_in_cat)
     title = f"{name} — Name Your Price on {len(rows_in_cat)} Models | OpenBook"
-    desc = (f"Bid what you'd pay on {len(rows_in_cat)} {name.lower()} from "
+    desc = (f"Name your price on {len(rows_in_cat)} {name.lower()} from "
             f"{', '.join(brands[:4])}{' and more' if len(brands)>4 else ''}. "
-            f"RRPs {money(lo)}–{money(hi)}. Verified UK retailers accept bids in bulk. Free to bid.")
+            f"RRPs {money(lo)}–{money(hi)}. Verified UK retailers accept orders in bulk. Free to order.")
     intro = (f"{len(rows_in_cat)} live {name.lower()} markets from "
              f"{', '.join(brands[:5])}{' and more' if len(brands)>5 else ''}. "
              f"Recommended retail prices run from {money(lo)} to {money(hi)} — "
-             f"the price you bid is up to you.")
+             f"the price you name is up to you.")
     jsonld = json.dumps({
         "@context":"https://schema.org","@type":"ItemList","name":title,
         "itemListElement":[{"@type":"ListItem","position":i+1,
