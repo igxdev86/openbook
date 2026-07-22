@@ -79,7 +79,7 @@ def extract_offers(task_result):
     return offers
 
 def sane_offers(offers, rrp, n=5):
-    lo, hi = int(rrp * 0.40), int(rrp * 1.50)
+    lo, hi = int(rrp * 0.55), int(rrp * 1.40)
     best_by_seller = {}
     for o in sorted((o for o in offers if lo <= o['price_pence'] <= hi),
                     key=lambda o: o['price_pence']):
@@ -106,28 +106,27 @@ def main():
     print(f'posted {len(posted)} tasks, waiting for results…')
 
     by_slug = {p['slug']: p for p in products}
+    id_to_tag = {tid: tag for tag, tid in posted.items()}
     done, updated, misses = set(), 0, []
     global FLOORS
     FLOORS = {}
-    deadline = time.time() + 15 * 60
+    deadline = time.time() + 12 * 60
     while len(done) < len(posted) and time.time() < deadline:
-        time.sleep(20)
-        try:
-            ready = d4s('merchant/google/products/tasks_ready')
-        except Exception as e:
-            print('  poll error (tasks_ready):', e); continue
-        for t in (ready.get('tasks') or []):
-            for r in (t.get('result') or []):
-                tid = r.get('id')
-                if not tid: continue
-                try:
-                    got = d4s(f'merchant/google/products/task_get/advanced/{tid}')
-                except Exception as e:
-                    print('  poll error (task_get):', e); continue
-                for task in (got.get('tasks') or []):
-                    tag = (task.get('data') or {}).get('tag')
-                    if not tag or tag in done or tag not in by_slug: continue
-                    done.add(tag)
+        time.sleep(15)
+        pending_ids = [tid for tid, tag in id_to_tag.items() if tag not in done]
+        for tid in pending_ids:
+            if time.time() > deadline: break
+            try:
+                got = d4s(f'merchant/google/products/task_get/advanced/{tid}')
+            except Exception as e:
+                continue  # not ready or transient — next cycle
+            for task in (got.get('tasks') or []):
+                if task.get('status_code') != 20000 or not task.get('result'):
+                    continue  # still in queue
+                tag = id_to_tag.get(tid)
+                if not tag or tag in done: continue
+                done.add(tag)
+                if True:
                     p = by_slug[tag]
                     offers = extract_offers(task.get('result'))
                     top = sane_offers(offers, p['rrp_pence'])
