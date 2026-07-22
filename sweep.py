@@ -98,6 +98,8 @@ def main():
 
     by_slug = {p['slug']: p for p in products}
     done, updated, misses = set(), 0, []
+    global FLOORS
+    FLOORS = {}
     deadline = time.time() + 15 * 60
     while len(done) < len(posted) and time.time() < deadline:
         time.sleep(20)
@@ -116,6 +118,8 @@ def main():
                     floor = choose_floor(prices, p['rrp_pence'])
                     if floor:
                         pct = round(100 * floor / p['rrp_pence'])
+                        FLOORS[tag] = {'floor_pence': floor, 'rrp_pence': p['rrp_pence'],
+                                       'pct_of_rrp': pct, 'offers': len(prices)}
                         print(f"  {tag}: {len(prices)} offers -> floor £{floor/100:.2f} ({pct}% of RRP)")
                         if not DRY:
                             sb('PATCH', f'products?slug=eq.{tag}',
@@ -128,6 +132,12 @@ def main():
     missing = set(posted) - done
     if missing: print('no result in time for:', ', '.join(sorted(missing)))
     print(f'done: {updated} updated, {len(misses)} skipped, {len(missing)} timed out')
+    import pathlib
+    pathlib.Path('data').mkdir(exist_ok=True)
+    pathlib.Path('data/sweep-last.json').write_text(json.dumps({
+        'at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+        'updated': updated, 'skipped': misses, 'timed_out': sorted(missing),
+        'floors': FLOORS}, indent=1))
 
 if __name__ == '__main__':
     main()
