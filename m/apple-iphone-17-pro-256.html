@@ -50,7 +50,6 @@
         <div class="rung"><span class="units">Loading the book…</span></div></div>
       <div class="spread">
         <div class="spread-val num" id="spreadVal">—</div>
-        <div class="spread-cap">spread</div>
       </div>
       <div class="ladder buy" id="bidLadder">
         <div class="rung"><span class="units">Loading the book…</span></div></div>
@@ -121,6 +120,17 @@ const slug = 'apple-iphone-17-pro-256';
 const RRP = 109900;
 let product = null;
 
+function cleanSeller(s) {
+  if (!s) return 'retail';
+  let via = '';
+  let m = s.match(/^eBay\s*-\s*(.+)$/i);
+  if (m) { s = m[1]; via = ' · eBay'; }
+  m = s.match(/^Amazon\.co\.uk\s*-\s*(.+)$/i);
+  if (m) { s = /amazon/i.test(m[1]) ? 'Amazon' : m[1]; via = /amazon/i.test(m[1]) ? '' : ' · Amazon'; }
+  s = s.replace(/\s+Store$/i, '').replace(/\s+UK$/i, '');
+  return (s + via).slice(0, 30);
+}
+
 function rungHtml(o, side) {
   const label = side === 'bid' ? (o.c + ' order' + (o.c === 1 ? '' : 's'))
                                : (o.u + ' unit' + (o.u === 1 ? '' : 's'));
@@ -147,8 +157,8 @@ async function load() {
   }
   if (retail) {
     const el = document.getElementById('retailLine');
-    el.innerHTML = 'Cheapest at retail today: ' + P(retail.price_pence) +
-      (retail.seller ? ' at ' + retail.seller : '');
+    el.innerHTML = 'Cheapest at retail: ' + P(retail.price_pence) +
+      (retail.seller ? ' · ' + cleanSeller(retail.seller) : '');
     const cr = document.getElementById('contentRetail');
     if (cr) cr.textContent = P(retail.price_pence);
     const sr = document.getElementById('specRetail');
@@ -168,7 +178,7 @@ async function load() {
       : [{ price_pence: retail.price_pence, seller: retail.seller, url: retail.url }];
     askHtml = offers.map(o => {
       const inner = '<span class="price num">' + P(o.price_pence) +
-        '</span><span class="units">' + (o.seller || 'retail') + ' →</span>';
+        '</span><span class="units">' + cleanSeller(o.seller) + ' →</span>';
       return o.url
         ? '<a class="rung" style="text-decoration:none" href="' + o.url +
           '" target="_blank" rel="noopener nofollow">' + inner + '</a>'
