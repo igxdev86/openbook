@@ -152,11 +152,14 @@ def main():
     tasks = [{'keyword': f"{p['name']}",
               'location_code': UK_LOCATION, 'language_code': LANG,
               'tag': p['slug']} for p in products]
-    post = d4s('merchant/google/products/task_post', tasks)
-    if post.get('status_code') != 20000:
-        die(f"task_post failed: {post.get('status_message')}")
-    posted = {t['data']['tag']: t['id'] for t in post['tasks']
-              if t.get('id') and t.get('status_code') in (20000, 20100)}
+    posted = {}
+    for i in range(0, len(tasks), 90):
+        post = d4s('merchant/google/products/task_post', tasks[i:i+90])
+        if post.get('status_code') != 20000:
+            die(f"task_post failed: {post.get('status_message')}")
+        for tk in post['tasks']:
+            if tk.get('id') and tk.get('status_code') in (20000, 20100):
+                posted[tk['data']['tag']] = tk['id']
     print(f'posted {len(posted)} tasks, waiting for results…')
 
     by_slug = {p['slug']: p for p in products}
@@ -164,7 +167,7 @@ def main():
     done, updated, misses = set(), 0, []
     global FLOORS
     FLOORS = {}
-    deadline = time.time() + 12 * 60
+    deadline = time.time() + 18 * 60
     while len(done) < len(posted) and time.time() < deadline:
         time.sleep(15)
         pending_ids = [tid for tid, tag in id_to_tag.items() if tag not in done]
