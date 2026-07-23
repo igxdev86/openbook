@@ -32,7 +32,7 @@ UK_LOCATION = 2826       # United Kingdom
 SELLER_ALLOW = ['amazon','argos','currys','john lewis','very','ao.com','ao retail',
  'ee','o2','vodafone','three','sky','samsung','apple','google','laptops direct',
  'box','mobile phones direct','mobiles.co.uk','fonehouse','giffgaff','costco',
- 'jd williams','littlewoods','tesco','sainsbury']
+ 'jd williams','littlewoods','tesco','sainsbury','dyson','shark','ninja','numatic','roborock','eufy','anker','gtech','vax','hoover','karcher','kärcher','appliances direct','marks electrical','robert dyas','lakeland','dunelm','the range','b&q','screwfix','wickes','euronics','hughes','peter tyson','sonic direct']
 BLOCK_WORDS = ['refurb','renewed','pre-owned','preowned','used','second hand','open box','graded']
 def allowed_seller(name):
     n = (name or '').lower()
