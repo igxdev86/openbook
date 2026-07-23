@@ -1,0 +1,8 @@
+{
+ "id": "mine-vac-eufy-vacuum",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "eufy vacuum",
+  "limit": 300
+ }
+}

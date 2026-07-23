@@ -1,0 +1,8 @@
+{
+ "id": "mine-vac-shark-vacuum",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "shark vacuum",
+  "limit": 300
+ }
+}

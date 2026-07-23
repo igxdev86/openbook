@@ -1,0 +1,8 @@
+{
+ "id": "mine-vac-roborock",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "roborock",
+  "limit": 300
+ }
+}

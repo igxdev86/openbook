@@ -1,0 +1,8 @@
+{
+ "id": "mine-vac-robot-vacuum",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "robot vacuum",
+  "limit": 300
+ }
+}

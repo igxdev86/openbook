@@ -1,0 +1,8 @@
+{
+ "id": "mine-vac-henry-hoover",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "henry hoover",
+  "limit": 300
+ }
+}

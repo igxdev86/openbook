@@ -1,0 +1,8 @@
+{
+ "id": "mine-vac-dyson",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "dyson",
+  "limit": 300
+ }
+}

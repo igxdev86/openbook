@@ -1,0 +1,8 @@
+{
+ "id": "mine-vac-vacuum-cleaner",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "vacuum cleaner",
+  "limit": 300
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "id": "mine-vac-cordless-vacuum",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "cordless vacuum",
+  "limit": 300
+ }
+}
