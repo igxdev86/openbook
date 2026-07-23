@@ -56,6 +56,7 @@ PAGE = """<!DOCTYPE html>
     <a href="/">Home</a> / <a href="/markets.html">{category_name}</a> / {brand}</div>
 
   <div class="card prod-head">
+    {img_html}
     <div>
       <h1>{name}</h1>
       <div class="prod-spec">{spec_line}</div>
@@ -264,6 +265,9 @@ def build_page(row):
     rrp_disp = money(row['rrp_pence'])
     lp = (RETAIL.get(row['slug']) or {}).get('price_pence')
     live_disp = money(lp) if lp else rrp_disp
+    img = (RETAIL.get(row['slug']) or {}).get('image','')
+    img_html = (f'<div class="prod-photo"><img src="{esc(img)}" alt="{esc(row["name"])}" '
+                f'loading="lazy"></div>') if img else ''
     if lp:
         anchor_sentence = (f'currently sells at UK retailers from '
                            f'<b class="num" id="contentRetail">{money(lp)}</b>')
@@ -289,7 +293,7 @@ def build_page(row):
         model_code=esc(row['model_code']), ean_row=ean_row,
         category_name=esc(row['category_name']),
         rrp_disp=rrp_disp, rrp_pence=int(row['rrp_pence']),
-        anchor_sentence=anchor_sentence, price_row=price_row,
+        anchor_sentence=anchor_sentence, price_row=price_row, img_html=img_html,
         slug_js="'" + row['slug'].replace("'", "") + "'"
     )
 
@@ -382,9 +386,12 @@ def catnav_html(cats, active=None):
     return '<nav class="catnav" aria-label="Categories">' + ''.join(links) + '</nav>'
 
 def cat_row(r):
+    img = (RETAIL.get(r['slug']) or {}).get('image','')
+    thumb = ('<img class="m-thumb" src="%s" alt="" loading="lazy">' % esc(img)) if img else ''
     return ('<a class="mrow" id="r-%s" href="/m/%s">'
+            '<div style="display:flex;gap:10px;align-items:center">' + thumb +
             '<div><div class="m-name">%s</div>'
-            '<div class="m-meta num">%s · RRP <span class="rrp">%s</span></div></div>'
+            '<div class="m-meta num">%s · RRP <span class="rrp">%s</span></div></div></div>'
             '<div class="cell empty"><b>—</b><span>no orders</span></div>'
             '<div class="cell empty"><b>—</b><span>no offers</span></div></a>'
             ) % (esc(r['slug']), esc(r['slug']), esc(r['name']),

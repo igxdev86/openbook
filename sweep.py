@@ -72,10 +72,16 @@ def extract_offers(task_result):
             if val is None: continue
             try: pence = round(float(val) * 100)
             except (TypeError, ValueError): continue
+            img = item.get('image_url') or item.get('main_image') or ''
+            if not img:
+                imgs = item.get('images')
+                if isinstance(imgs, list) and imgs:
+                    img = imgs[0] if isinstance(imgs[0], str) else (imgs[0] or {}).get('url','')
             offers.append({
                 'price_pence': pence,
                 'seller': (item.get('seller') or item.get('source') or '').strip()[:60],
-                'url': (item.get('url') or item.get('shopping_url') or '')[:500]})
+                'url': (item.get('url') or item.get('shopping_url') or '')[:500],
+                'image': (img or '')[:500]})
     return offers
 
 def sane_offers(offers, rrp, n=5):
@@ -134,15 +140,17 @@ def main():
                     if best:
                         floor = best['price_pence']
                         pct = round(100 * floor / p['rrp_pence'])
+                        image = next((o['image'] for o in top if o.get('image')), '')
                         FLOORS[tag] = {'floor_pence': floor, 'rrp_pence': p['rrp_pence'],
                                        'pct_of_rrp': pct, 'offers': len(offers),
                                        'seller': best['seller'], 'url': best['url'],
-                                       'ladder': top}
+                                       'image': image, 'ladder': top}
                         print(f"  {tag}: {len(offers)} offers -> £{floor/100:.2f} at {best['seller']} ({pct}% of RRP)")
                         if not DRY:
-                            sb('PATCH', f'products?slug=eq.{tag}',
-                               {'retail_price_pence': floor,
-                                'retail_checked_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
+                            patch = {'retail_price_pence': floor,
+                                'retail_checked_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
+                            if image: patch['image_url'] = image
+                            sb('PATCH', f'products?slug=eq.{tag}', patch)
                         updated += 1
                     else:
                         print(f"  {tag}: {len(offers)} offers, none sane — skipped")
@@ -158,7 +166,7 @@ def main():
         'floors': FLOORS}, indent=1))
     pathlib.Path('data/retail.json').write_text(json.dumps({
         s: {'price_pence': v['floor_pence'], 'seller': v['seller'], 'url': v['url'],
-            'offers': v.get('ladder', [])}
+            'image': v.get('image',''), 'offers': v.get('ladder', [])}
         for s, v in FLOORS.items()}))
 
 if __name__ == '__main__':
