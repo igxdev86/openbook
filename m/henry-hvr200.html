@@ -26,7 +26,7 @@
   <nav class="catnav" aria-label="Categories"><a href="/markets.html">All</a><a href="/c/phones">Phones</a><a href="/c/vacuums" class="active">Vacuums</a><a href="/c/washing-machines">Washing machines</a><a href="/c/tumble-dryers">Tumble dryers</a><a href="/c/dishwashers">Dishwashers</a><a href="/c/fridge-freezers">Fridge freezers</a><a href="/c/air-fryers">Air fryers</a><a href="/c/kitchen">Kitchen</a><a href="/c/tvs">TVs</a><a href="/c/laptops">Laptops</a><a href="/c/audio">Audio</a><a href="/c/gaming">Gaming</a><a href="/c/smartwatches">Smartwatches</a><a href="/c/tablets">Tablets</a><a href="/c/e-readers">E-readers</a><a href="/c/fans">Fans</a><a href="/c/air-treatment">Air treatment</a><a href="/c/personal-care">Personal care</a><a href="/c/haircare">Haircare</a><a href="/c/microwaves">Microwaves</a><a href="/c/kettles">Kettles</a><a href="/c/toasters">Toasters</a><a href="/c/monitors">Monitors</a><a href="/c/printers">Printers</a><a href="/c/networking">Networking</a><a href="/c/garden">Garden</a><a href="/c/diy">DIY &amp; tools</a><a href="/c/baby">Baby</a><a href="/c/car-tech">Car tech</a><a href="/c/fitness">Fitness</a></nav>
 
   <div class="card prod-head">
-    <div class="prod-photo"><img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJFDbKv7fq95Yz9-LQtzx-TsAzpQ-OkdYJqVeElQ1EAHdCBMy23ismMUJ71ZgRuPkMD3ihgnQl8iu9RT-UMHnVhucD2KTt" alt="Henry Vacuum Cleaner" loading="lazy"></div>
+    <div class="prod-photo" id="heroPhoto" role="button" tabindex="0" title="Tap to enlarge"><img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJFDbKv7fq95Yz9-LQtzx-TsAzpQ-OkdYJqVeElQ1EAHdCBMy23ismMUJ71ZgRuPkMD3ihgnQl8iu9RT-UMHnVhucD2KTt" alt="Henry Vacuum Cleaner" loading="lazy"></div>
     <div>
       <h1>Henry Vacuum Cleaner</h1>
       <div class="prod-spec">Corded cylinder · New &amp; boxed</div>
@@ -93,6 +93,14 @@
 
   <div class="foot"><a href="/about" style="color:inherit">What is OpenBook</a> · <a href="/support" style="color:inherit">Support</a> · <a href="/terms" style="color:inherit">Terms</a> · <a href="/privacy" style="color:inherit">Privacy</a><br>OpenBook · every price is set by the market, not the retailer<br>
     All retailers are verified UK businesses · payment &amp; delivery direct with the retailer</div>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-thumbs" id="lbThumbs"></div>
 </div>
 
 <div class="overlay" id="authSheet">
@@ -211,6 +219,61 @@ document.getElementById('bidBtn').addEventListener('click', async () => {
   msg.className = 'msg ok';
   load();
 });
+/* ---- gallery lightbox ---- */
+(function initLightbox() {
+  const hero = document.getElementById('heroPhoto');
+  if (!hero) return;
+  const lb = document.getElementById('lightbox'),
+        lbImg = document.getElementById('lbImg'),
+        thumbs = document.getElementById('lbThumbs');
+  let gal = [], idx = 0, touchX = null;
+  function show(i) {
+    idx = (i + gal.length) % gal.length;
+    lbImg.src = gal[idx];
+    thumbs.querySelectorAll('img').forEach((t2, j) =>
+      t2.classList.toggle('active', j === idx));
+  }
+  async function open() {
+    if (!gal.length) {
+      try {
+        const gj = await fetch('/data/galleries.json').then(r => r.ok ? r.json() : null);
+        gal = (gj && gj[slug] && gj[slug].length) ? gj[slug] : [];
+      } catch(e) {}
+      const heroSrc = hero.querySelector('img').src;
+      if (!gal.length) gal = [heroSrc];
+      else if (!gal.includes(heroSrc)) gal.unshift(heroSrc);
+      thumbs.innerHTML = gal.map((u, j) =>
+        '<img src="' + u + '" data-j="' + j + '" alt="">').join('');
+      thumbs.querySelectorAll('img').forEach(t2 =>
+        t2.addEventListener('click', e => { e.stopPropagation(); show(+t2.dataset.j); }));
+    }
+    document.getElementById('lbPrev').style.display =
+      document.getElementById('lbNext').style.display = gal.length > 1 ? '' : 'none';
+    thumbs.style.display = gal.length > 1 ? '' : 'none';
+    show(idx);
+    lb.classList.add('open');
+  }
+  function close() { lb.classList.remove('open'); }
+  hero.addEventListener('click', open);
+  hero.addEventListener('keydown', e => { if (e.key === 'Enter') open(); });
+  document.getElementById('lbClose').addEventListener('click', close);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
+  document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+  lb.addEventListener('touchstart', e => touchX = e.touches[0].clientX, {passive:true});
+  lb.addEventListener('touchend', e => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX; touchX = null;
+    if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+  }, {passive:true});
+})();
+
 document.getElementById('authBtn').addEventListener('click', async () => {
   const email = document.getElementById('authEmail').value.trim();
   const msg = document.getElementById('authMsg'); msg.className = 'msg';

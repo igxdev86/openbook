@@ -107,16 +107,19 @@ def extract_offers(task_result):
             if cond and cond != 'new': continue
             try: pence = round(float(val) * 100)
             except (TypeError, ValueError): continue
-            img = ''
+            gal = []
             imgs = item.get('product_images')
-            if isinstance(imgs, list) and imgs:
-                img = imgs[0] if isinstance(imgs[0], str) else (imgs[0] or {}).get('url','') or (imgs[0] or {}).get('image_url','')
-            img = img or item.get('image_url') or ''
+            if isinstance(imgs, list):
+                for im in imgs[:8]:
+                    u = im if isinstance(im, str) else (im or {}).get('url','') or (im or {}).get('image_url','')
+                    if u: gal.append(u)
+            img = gal[0] if gal else (item.get('image_url') or '')
             offers.append({
                 'price_pence': pence,
                 'seller': (item.get('seller') or item.get('source') or '').strip()[:60],
                 'url': (item.get('url') or item.get('shopping_url') or '')[:500],
                 'image': (img or '')[:500],
+                'gallery': gal[:8],
                 'title': (item.get('title') or '')[:120]})
     return offers
 
@@ -168,6 +171,12 @@ def main():
     global FLOORS, IMAGES
     FLOORS = {}
     IMAGES = {}
+    global GALLERIES
+    GALLERIES = {}
+    galp = pathlib.Path(__file__).parent / 'data' / 'galleries.json'
+    if galp.exists():
+        try: GALLERIES = json.loads(galp.read_text())
+        except Exception: GALLERIES = {}
     imgp = pathlib.Path(__file__).parent / 'data' / 'images.json'
     if imgp.exists():
         try: IMAGES = json.loads(imgp.read_text())
@@ -202,6 +211,14 @@ def main():
                         IMAGES[tag] = img_any
                         if not DRY and not best:
                             sb('PATCH', f'products?slug=eq.{tag}', {'image_url': img_any})
+                    seen, gal = set(), []
+                    pools = [top, [o for o in offers if o.get('_variant_ok')], offers]
+                    for pool in pools:
+                        for o in pool:
+                            for u in (o.get('gallery') or []):
+                                if u not in seen:
+                                    seen.add(u); gal.append(u)
+                    if gal: GALLERIES[tag] = gal[:6]
                     if best:
                         floor = best['price_pence']
                         pct = round(100 * floor / p['rrp_pence'])
@@ -229,6 +246,7 @@ def main():
         'updated': updated, 'skipped': misses, 'timed_out': sorted(missing),
         'floors': FLOORS}, indent=1))
     pathlib.Path('data/images.json').write_text(json.dumps(IMAGES))
+    pathlib.Path('data/galleries.json').write_text(json.dumps(GALLERIES))
     pathlib.Path('data/retail.json').write_text(json.dumps({
         s: {'price_pence': v['floor_pence'], 'seller': v['seller'], 'url': v['url'],
             'image': v.get('image',''), 'offers': v.get('ladder', [])}

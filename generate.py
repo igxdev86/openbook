@@ -125,6 +125,14 @@ PAGE = """<!DOCTYPE html>
     All retailers are verified UK businesses · payment &amp; delivery direct with the retailer</div>
 </div>
 
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-thumbs" id="lbThumbs"></div>
+</div>
+
 <div class="overlay" id="authSheet">
   <div class="sheet">
     <div style="font-size:1.1rem;font-weight:700">Sign in to place your order</div>
@@ -241,6 +249,61 @@ document.getElementById('bidBtn').addEventListener('click', async () => {{
   msg.className = 'msg ok';
   load();
 }});
+/* ---- gallery lightbox ---- */
+(function initLightbox() {{
+  const hero = document.getElementById('heroPhoto');
+  if (!hero) return;
+  const lb = document.getElementById('lightbox'),
+        lbImg = document.getElementById('lbImg'),
+        thumbs = document.getElementById('lbThumbs');
+  let gal = [], idx = 0, touchX = null;
+  function show(i) {{
+    idx = (i + gal.length) % gal.length;
+    lbImg.src = gal[idx];
+    thumbs.querySelectorAll('img').forEach((t2, j) =>
+      t2.classList.toggle('active', j === idx));
+  }}
+  async function open() {{
+    if (!gal.length) {{
+      try {{
+        const gj = await fetch('/data/galleries.json').then(r => r.ok ? r.json() : null);
+        gal = (gj && gj[slug] && gj[slug].length) ? gj[slug] : [];
+      }} catch(e) {{}}
+      const heroSrc = hero.querySelector('img').src;
+      if (!gal.length) gal = [heroSrc];
+      else if (!gal.includes(heroSrc)) gal.unshift(heroSrc);
+      thumbs.innerHTML = gal.map((u, j) =>
+        '<img src="' + u + '" data-j="' + j + '" alt="">').join('');
+      thumbs.querySelectorAll('img').forEach(t2 =>
+        t2.addEventListener('click', e => {{ e.stopPropagation(); show(+t2.dataset.j); }}));
+    }}
+    document.getElementById('lbPrev').style.display =
+      document.getElementById('lbNext').style.display = gal.length > 1 ? '' : 'none';
+    thumbs.style.display = gal.length > 1 ? '' : 'none';
+    show(idx);
+    lb.classList.add('open');
+  }}
+  function close() {{ lb.classList.remove('open'); }}
+  hero.addEventListener('click', open);
+  hero.addEventListener('keydown', e => {{ if (e.key === 'Enter') open(); }});
+  document.getElementById('lbClose').addEventListener('click', close);
+  lb.addEventListener('click', e => {{ if (e.target === lb) close(); }});
+  document.getElementById('lbPrev').addEventListener('click', e => {{ e.stopPropagation(); show(idx - 1); }});
+  document.getElementById('lbNext').addEventListener('click', e => {{ e.stopPropagation(); show(idx + 1); }});
+  document.addEventListener('keydown', e => {{
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  }});
+  lb.addEventListener('touchstart', e => touchX = e.touches[0].clientX, {{passive:true}});
+  lb.addEventListener('touchend', e => {{
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX; touchX = null;
+    if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+  }}, {{passive:true}});
+}})();
+
 document.getElementById('authBtn').addEventListener('click', async () => {{
   const email = document.getElementById('authEmail').value.trim();
   const msg = document.getElementById('authMsg'); msg.className = 'msg';
@@ -276,7 +339,8 @@ def build_page(row):
     lp = (RETAIL.get(row['slug']) or {}).get('price_pence')
     live_disp = money(lp) if lp else rrp_disp
     img = (RETAIL.get(row['slug']) or {}).get('image','') or IMAGES.get(row['slug'],'')
-    img_html = (f'<div class="prod-photo"><img src="{esc(img)}" alt="{esc(row["name"])}" '
+    img_html = (f'<div class="prod-photo" id="heroPhoto" role="button" tabindex="0" '
+                f'title="Tap to enlarge"><img src="{esc(img)}" alt="{esc(row["name"])}" '
                 f'loading="lazy"></div>') if img else ''
     if lp:
         anchor_sentence = (f'currently sells at UK retailers from '

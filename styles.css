@@ -222,3 +222,21 @@ a{color:inherit}
 .rung .units{flex:1;min-width:0;text-align:right;overflow:hidden;
   text-overflow:ellipsis;white-space:nowrap}
 a.rung{text-decoration:none}
+
+/* gallery lightbox */
+.prod-photo{cursor:zoom-in}
+.lightbox{position:fixed;inset:0;background:rgba(10,15,21,.92);display:none;
+  align-items:center;justify-content:center;z-index:90;flex-direction:column;gap:14px}
+.lightbox.open{display:flex}
+.lb-img{max-width:92vw;max-height:70vh;object-fit:contain;border-radius:12px;
+  background:#fff;padding:10px}
+.lb-close{position:absolute;top:14px;right:16px;border:none;background:none;
+  color:#fff;font-size:2rem;cursor:pointer;line-height:1}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);border:none;
+  background:rgba(255,255,255,.14);color:#fff;font-size:1.7rem;width:44px;height:44px;
+  border-radius:50%;cursor:pointer}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-thumbs{display:flex;gap:8px;max-width:92vw;overflow-x:auto;padding:4px}
+.lb-thumbs img{width:52px;height:52px;object-fit:contain;background:#fff;
+  border-radius:8px;cursor:pointer;border:2px solid transparent;flex:none}
+.lb-thumbs img.active{border-color:var(--buy-strong)}
