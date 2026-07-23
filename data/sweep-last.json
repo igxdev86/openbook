@@ -1,0 +1,1788 @@
+{
+ "at": "2026-07-23T00:11:06Z",
+ "updated": 52,
+ "skipped": [],
+ "timed_out": [],
+ "floors": {
+  "apple-iphone-16-128": {
+   "floor_pence": 44999,
+   "rrp_pence": 79900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "eBay - llanexchange",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+128GB+sale&prds=headlineOfferDocid:3116263624774254302,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 44999,
+     "seller": "eBay - llanexchange",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+128GB+sale&prds=headlineOfferDocid:3116263624774254302,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 44999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+128GB+sale&prds=headlineOfferDocid:10561842054712248266,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 47999,
+     "seller": "eBay - cashconnectors",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+128GB+sale&prds=headlineOfferDocid:12083552937059081886,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 49900,
+     "seller": "Argos",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+128GB+sale&prds=gpcid:14126173308846421367,rds:PC_14126173308846421367%7CPROD_PC_14126173308846421367,headlineOfferDocid:5173186246660470748,catalogid:6351045177198527385,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 49900,
+     "seller": "Ambrose Wilson",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+128GB+sale&prds=headlineOfferDocid:9503913155339941595,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-17-pro-256": {
+   "floor_pence": 64000,
+   "rrp_pence": 109900,
+   "pct_of_rrp": 58,
+   "offers": 40,
+   "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+256GB+sale&prds=headlineOfferDocid:2388548369549293871,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 64000,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+256GB+sale&prds=headlineOfferDocid:2388548369549293871,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 74500,
+     "seller": "fonehouse",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+256GB+sale&prds=headlineOfferDocid:5088547512561104177,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 79900,
+     "seller": "Amazon.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+256GB+sale&prds=gpcid:11477510506055115875,rds:PC_11477510506055115875%7CPROD_PC_11477510506055115875,headlineOfferDocid:3815587740954326990,catalogid:7774368846121522169,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 84999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+256GB+sale&prds=headlineOfferDocid:3172865001011891555,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 87370,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+256GB+sale&prds=headlineOfferDocid:15700350343096655651,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "oneplus-13-512": {
+   "floor_pence": 54976,
+   "rrp_pence": 99900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "Fulfillment Goods UK",
+   "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13+512GB+sale&prds=headlineOfferDocid:6112818521484086906,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 54976,
+     "seller": "Fulfillment Goods UK",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13+512GB+sale&prds=headlineOfferDocid:6112818521484086906,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 56490,
+     "seller": "eBay - lifestylegallery2010",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13+512GB+sale&prds=headlineOfferDocid:5179370227386266064,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 56499,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13+512GB+sale&prds=headlineOfferDocid:2914670196869144483,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 57133,
+     "seller": "eBay - globaltone",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13+512GB+sale&prds=headlineOfferDocid:11282265477689479195,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 57700,
+     "seller": "Etoren.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13+512GB+sale&prds=headlineOfferDocid:13244442844978211292,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "fairphone-6": {
+   "floor_pence": 43500,
+   "rrp_pence": 49900,
+   "pct_of_rrp": 87,
+   "offers": 11,
+   "seller": "CeX",
+   "url": "https://google.co.uk/search?ibp=oshop&q=new+Fairphone+(Gen+6)+256GB&prds=headlineOfferDocid:4734877245991966282,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 43500,
+     "seller": "CeX",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Fairphone+(Gen+6)+256GB&prds=headlineOfferDocid:4734877245991966282,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 47900,
+     "seller": "Laptops Direct",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Fairphone+(Gen+6)+256GB&prds=gpcid:368622430556277372,rds:PC_368622430556277372%7CPROD_PC_368622430556277372,headlineOfferDocid:15072293699710778958,catalogid:17584753531345115228,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 47900,
+     "seller": "Your Co-op",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Fairphone+(Gen+6)+256GB&prds=headlineOfferDocid:17660773533551447271,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 54900,
+     "seller": "Macromart",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Fairphone+(Gen+6)+256GB&prds=headlineOfferDocid:12945541692609078957,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 65400,
+     "seller": "eBay - kickmobiles-ltd",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Fairphone+(Gen+6)+256GB&prds=gpcid:14834793783915316167,rds:PC_14834793783915316167%7CPROD_PC_14834793783915316167,headlineOfferDocid:12975122043217807132,catalogid:4872421323587048238,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-16-pro-max-256": {
+   "floor_pence": 67999,
+   "rrp_pence": 119900,
+   "pct_of_rrp": 57,
+   "offers": 40,
+   "seller": "Cash Converters",
+   "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16+Pro+Max+256GB&prds=headlineOfferDocid:6065397490379944968,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 67999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16+Pro+Max+256GB&prds=headlineOfferDocid:6065397490379944968,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 69500,
+     "seller": "Cash Generator",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16+Pro+Max+256GB&prds=gpcid:8668586170580829558,rds:PC_8668586170580829558%7CPROD_PC_8668586170580829558,headlineOfferDocid:17388585865446784676,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 69675,
+     "seller": "FoneZone.me",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16+Pro+Max+256GB&prds=gpcid:11775646887677831314,rds:PC_11775646887677831314%7CPROD_PC_11775646887677831314,headlineOfferDocid:15818549060749491606,catalogid:8483599082241797144,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 70800,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16+Pro+Max+256GB&prds=gpcid:13968878833108707620,rds:PC_13968878833108707620%7CPROD_PC_13968878833108707620,headlineOfferDocid:7382518102474807068,catalogid:11358339466185742750,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 71999,
+     "seller": "musicMagpie Store",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16+Pro+Max+256GB&prds=gpcid:13393796921678671245,rds:PC_13393796921678671245%7CPROD_PC_13393796921678671245,headlineOfferDocid:5651857175180214069,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s24-128": {
+   "floor_pence": 44900,
+   "rrp_pence": 79900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+128GB+sale&prds=gpcid:14654169995454618582,rds:PC_14654169995454618582%7CPROD_PC_14654169995454618582,headlineOfferDocid:2649523280391089106,catalogid:13136656418485984813,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 44900,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+128GB+sale&prds=gpcid:14654169995454618582,rds:PC_14654169995454618582%7CPROD_PC_14654169995454618582,headlineOfferDocid:2649523280391089106,catalogid:13136656418485984813,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 54499,
+     "seller": "Smart Cellular",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+128GB+sale&prds=headlineOfferDocid:5230910235740198986,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 54592,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+128GB+sale&prds=headlineOfferDocid:6739535272640065342,catalogid:6678072928589449754,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 68325,
+     "seller": "Amazon.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+128GB+sale&prds=gpcid:9498634852265044983,rds:PC_9498634852265044983%7CPROD_PC_9498634852265044983,headlineOfferDocid:9180993620011292671,catalogid:12173423215222699372,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s23-128": {
+   "floor_pence": 56168,
+   "rrp_pence": 84900,
+   "pct_of_rrp": 66,
+   "offers": 40,
+   "seller": "OnBuy.com",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S23+128GB+sale&prds=gpcid:18147460555647867309,rds:PC_18147460555647867309%7CPROD_PC_18147460555647867309,headlineOfferDocid:6117120663046380691,catalogid:15947602286755696612,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 56168,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S23+128GB+sale&prds=gpcid:18147460555647867309,rds:PC_18147460555647867309%7CPROD_PC_18147460555647867309,headlineOfferDocid:6117120663046380691,catalogid:15947602286755696612,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 101900,
+     "seller": "eBay - macromart_uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S23+128GB+sale&prds=headlineOfferDocid:5229874580330668448,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-z-fold6": {
+   "floor_pence": 111000,
+   "rrp_pence": 179900,
+   "pct_of_rrp": 62,
+   "offers": 39,
+   "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold6+256GB+sale&prds=gpcid:9620232089973811057,rds:PC_9620232089973811057%7CPROD_PC_9620232089973811057,headlineOfferDocid:3781414369794324525,catalogid:15300498418780941052,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 111000,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold6+256GB+sale&prds=gpcid:9620232089973811057,rds:PC_9620232089973811057%7CPROD_PC_9620232089973811057,headlineOfferDocid:3781414369794324525,catalogid:15300498418780941052,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 128170,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold6+256GB+sale&prds=headlineOfferDocid:6212763124634949122,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 159315,
+     "seller": "u-buy.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold6+256GB+sale&prds=headlineOfferDocid:11152802744497140638,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 190570,
+     "seller": "eBay - globaltone",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold6+256GB+sale&prds=headlineOfferDocid:11664867840400938358,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "oneplus-13r-256": {
+   "floor_pence": 37800,
+   "rrp_pence": 67900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "Back Market",
+   "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13R+256GB+sale&prds=headlineOfferDocid:1679172993790499675,catalogid:9281741860465384808,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 37800,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13R+256GB+sale&prds=headlineOfferDocid:1679172993790499675,catalogid:9281741860465384808,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 37848,
+     "seller": "Fulfillment Goods UK",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13R+256GB+sale&prds=headlineOfferDocid:8184684971882467895,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 37927,
+     "seller": "Alibaba.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13R+256GB+sale&prds=gpcid:2308080459122111039,rds:PC_2308080459122111039%7CPROD_PC_2308080459122111039,headlineOfferDocid:9302389789102284379,catalogid:3918813501018431139,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 39520,
+     "seller": "u-buy.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13R+256GB+sale&prds=headlineOfferDocid:1069120009755245140,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 39999,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+13R+256GB+sale&prds=gpcid:15389475673394428125,rds:PC_15389475673394428125%7CPROD_PC_15389475673394428125,headlineOfferDocid:5699729462144258742,catalogid:14748028929655431941,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "motorola-razr-60": {
+   "floor_pence": 45700,
+   "rrp_pence": 79900,
+   "pct_of_rrp": 57,
+   "offers": 40,
+   "seller": "Etoren.com",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Motorola+Razr+60+256GB+sale&prds=headlineOfferDocid:8497411004854540853,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 45700,
+     "seller": "Etoren.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Motorola+Razr+60+256GB+sale&prds=headlineOfferDocid:8497411004854540853,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 45723,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Motorola+Razr+60+256GB+sale&prds=gpcid:15352228225225373350,rds:PC_15352228225225373350%7CPROD_PC_15352228225225373350,headlineOfferDocid:14791934100521885392,catalogid:13893622908072060450,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 46927,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Motorola+Razr+60+256GB+sale&prds=headlineOfferDocid:10729892843016544368,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 49999,
+     "seller": "Lenovo",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Motorola+Razr+60+256GB+sale&prds=gpcid:10552764294094473297,rds:PC_10552764294094473297%7CPROD_PC_10552764294094473297,headlineOfferDocid:11111043609795497160,catalogid:4949169884586822637,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 59834,
+     "seller": "Big Apple Buddy",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Motorola+Razr+60+256GB+sale&prds=gpcid:13976464002561865430,rds:PC_13976464002561865430%7CPROD_PC_13976464002561865430,headlineOfferDocid:8775211578893250635,catalogid:1996478579479491153,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-16-pro-256": {
+   "floor_pence": 61344,
+   "rrp_pence": 109900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "Back Market",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Pro+256GB+sale&prds=gpcid:6070299702262573581,rds:PC_6070299702262573581%7CPROD_PC_6070299702262573581,headlineOfferDocid:944417840967126017,catalogid:14997434955081890503,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 61344,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Pro+256GB+sale&prds=gpcid:6070299702262573581,rds:PC_6070299702262573581%7CPROD_PC_6070299702262573581,headlineOfferDocid:944417840967126017,catalogid:14997434955081890503,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 64999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Pro+256GB+sale&prds=headlineOfferDocid:194666810659668184,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 65999,
+     "seller": "Qwikfone.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Pro+256GB+sale&prds=headlineOfferDocid:15693695982120054630,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 67995,
+     "seller": "Refurb Phone",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Pro+256GB+sale&prds=headlineOfferDocid:16705923089888665463,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 71995,
+     "seller": "ur.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Pro+256GB+sale&prds=headlineOfferDocid:17664822277271029369,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-17e": {
+   "floor_pence": 44999,
+   "rrp_pence": 59900,
+   "pct_of_rrp": 75,
+   "offers": 40,
+   "seller": "Cash Converters",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17e+sale&prds=headlineOfferDocid:10039882112956152181,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 44999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17e+sale&prds=headlineOfferDocid:10039882112956152181,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 45000,
+     "seller": "Jigsaw24",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17e+sale&prds=headlineOfferDocid:15587987916340411200,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 49900,
+     "seller": "Amazon.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17e+sale&prds=gpcid:14126173308846421367,rds:PC_14126173308846421367%7CPROD_PC_14126173308846421367,headlineOfferDocid:4339668247161124257,catalogid:6232195553081206070,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 49999,
+     "seller": "eBay - cashconverters_nwest",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17e+sale&prds=headlineOfferDocid:4644685603177277599,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 56770,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17e+sale&prds=headlineOfferDocid:6385755645858906655,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "google-pixel-10-128": {
+   "floor_pence": 44499,
+   "rrp_pence": 79900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "Smart Cellular",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+128GB+sale&prds=gpcid:2218366166720555417,rds:PC_2218366166720555417%7CPROD_PC_2218366166720555417,headlineOfferDocid:11727577014260989806,catalogid:5960869281695775791,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 44499,
+     "seller": "Smart Cellular",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+128GB+sale&prds=gpcid:2218366166720555417,rds:PC_2218366166720555417%7CPROD_PC_2218366166720555417,headlineOfferDocid:11727577014260989806,catalogid:5960869281695775791,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 45500,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+128GB+sale&prds=headlineOfferDocid:9346468876603628263,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 48600,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+128GB+sale&prds=headlineOfferDocid:7345986234983062452,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 50900,
+     "seller": "Amazon.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+128GB+sale&prds=gpcid:5914617290475826623,rds:PC_5914617290475826623%7CPROD_PC_5914617290475826623,headlineOfferDocid:14164679498690933703,catalogid:4438861451157987732,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 51160,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+128GB+sale&prds=headlineOfferDocid:3232998181321207970,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "google-pixel-10-pro-xl-256": {
+   "floor_pence": 66982,
+   "rrp_pence": 119900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+XL+256GB+sale&prds=headlineOfferDocid:11739624713807304268,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 66982,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+XL+256GB+sale&prds=headlineOfferDocid:11739624713807304268,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 67499,
+     "seller": "Techinthebasket.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+XL+256GB+sale&prds=headlineOfferDocid:2047692035961226123,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 69499,
+     "seller": "musicMagpie Store",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+XL+256GB+sale&prds=headlineOfferDocid:16246173412935134579,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 69999,
+     "seller": "Wonderprice UK",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+XL+256GB+sale&prds=gpcid:12601004915035008516,rds:PC_12601004915035008516%7CPROD_PC_12601004915035008516,headlineOfferDocid:9695673423116737323,catalogid:14472556818472190633,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 70241,
+     "seller": "Mygsm.me",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+XL+256GB+sale&prds=headlineOfferDocid:13811223817706745371,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-13-128": {
+   "floor_pence": 21995,
+   "rrp_pence": 39900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "Refurb Phone",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+13+128GB+sale&prds=gpcid:14420205298426847555,rds:PC_14420205298426847555%7CPROD_PC_14420205298426847555,headlineOfferDocid:2276007823660562469,catalogid:6366264076679655061,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 21995,
+     "seller": "Refurb Phone",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+13+128GB+sale&prds=gpcid:14420205298426847555,rds:PC_14420205298426847555%7CPROD_PC_14420205298426847555,headlineOfferDocid:2276007823660562469,catalogid:6366264076679655061,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 22100,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+13+128GB+sale&prds=gpcid:13456402265030320513,rds:PC_13456402265030320513%7CPROD_PC_13456402265030320513,headlineOfferDocid:7660262725695642648,catalogid:8210561810624570531,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 22499,
+     "seller": "Smart Cellular",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+13+128GB+sale&prds=gpcid:8761188633754213220,rds:PC_8761188633754213220%7CPROD_PC_8761188633754213220,headlineOfferDocid:11469169253351734097,catalogid:10040129052004552636,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 22500,
+     "seller": "CeX",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+13+128GB+sale&prds=gpcid:7247330322390165966,rds:PC_7247330322390165966%7CPROD_PC_7247330322390165966,headlineOfferDocid:10539477355783758104,catalogid:18206932358362391572,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 22800,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+13+128GB+sale&prds=headlineOfferDocid:17815678179259607839,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s25-ultra-256": {
+   "floor_pence": 68700,
+   "rrp_pence": 124900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "Etoren.com",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Ultra+256GB+sale&prds=gpcid:7652038402803284195,rds:PC_7652038402803284195%7CPROD_PC_7652038402803284195,headlineOfferDocid:9538577312966962959,catalogid:9566687135328920040,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 68700,
+     "seller": "Etoren.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Ultra+256GB+sale&prds=gpcid:7652038402803284195,rds:PC_7652038402803284195%7CPROD_PC_7652038402803284195,headlineOfferDocid:9538577312966962959,catalogid:9566687135328920040,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 69999,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Ultra+256GB+sale&prds=gpcid:13513560417903215120,rds:PC_13513560417903215120%7CPROD_PC_13513560417903215120,headlineOfferDocid:7341592768239467180,catalogid:2790573175484754316,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 69999,
+     "seller": "Cash Generator",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Ultra+256GB+sale&prds=headlineOfferDocid:5758950772337880389,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 70999,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Ultra+256GB+sale&prds=headlineOfferDocid:12806280127354416461,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 72598,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Ultra+256GB+sale&prds=gpcid:17817985598720773820,rds:PC_17817985598720773820%7CPROD_PC_17817985598720773820,headlineOfferDocid:17199331405347939805,catalogid:8388093536300703336,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s25-edge-256": {
+   "floor_pence": 60599,
+   "rrp_pence": 109900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Edge+256GB+sale&prds=gpcid:5284187792860746827,rds:PC_5284187792860746827%7CPROD_PC_5284187792860746827,headlineOfferDocid:16940727869254400105,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 60599,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Edge+256GB+sale&prds=gpcid:5284187792860746827,rds:PC_5284187792860746827%7CPROD_PC_5284187792860746827,headlineOfferDocid:16940727869254400105,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 61320,
+     "seller": "Tektraders",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Edge+256GB+sale&prds=headlineOfferDocid:9153846332549789043,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 61359,
+     "seller": "eBay - musicmagpie",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Edge+256GB+sale&prds=gpcid:5284187792860746827,rds:PC_5284187792860746827%7CPROD_PC_5284187792860746827,headlineOfferDocid:8013337672345797831,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 64900,
+     "seller": "EE",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Edge+256GB+sale&prds=gpcid:17817985598720773820,rds:PC_17817985598720773820%7CPROD_PC_17817985598720773820,headlineOfferDocid:11444339632536884956,catalogid:14490060242543975323,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 64930,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+Edge+256GB+sale&prds=gpcid:4705185111373226074,rds:PC_4705185111373226074%7CPROD_PC_4705185111373226074,headlineOfferDocid:17504253643613592787,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-a36": {
+   "floor_pence": 21990,
+   "rrp_pence": 39900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A36+5G+128GB+sale&prds=headlineOfferDocid:10790027123901785978,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 21990,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A36+5G+128GB+sale&prds=headlineOfferDocid:10790027123901785978,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 21995,
+     "seller": "eBay - thetechgadgets",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A36+5G+128GB+sale&prds=headlineOfferDocid:16305769304348227677,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 21999,
+     "seller": "eBay - bronzetech",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A36+5G+128GB+sale&prds=headlineOfferDocid:9808149566391818664,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 22499,
+     "seller": "httmobiles.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A36+5G+128GB+sale&prds=gpcid:17301251205462636239,rds:PC_17301251205462636239%7CPROD_PC_17301251205462636239,headlineOfferDocid:14041252313167203293,catalogid:10254454132036239202,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 22900,
+     "seller": "eBay - thetwinstar",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A36+5G+128GB+sale&prds=headlineOfferDocid:7552602556182135294,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "google-pixel-9-pro-128": {
+   "floor_pence": 63910,
+   "rrp_pence": 99900,
+   "pct_of_rrp": 64,
+   "offers": 40,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+128GB+sale&prds=headlineOfferDocid:14945936239615790802,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 63910,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+128GB+sale&prds=headlineOfferDocid:14945936239615790802,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 73314,
+     "seller": "eBay - dstechtrading",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+128GB+sale&prds=headlineOfferDocid:17290675319994313565,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 74900,
+     "seller": "PhoneSwap Store",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+128GB+sale&prds=headlineOfferDocid:13603204795362066452,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 93100,
+     "seller": "u-buy.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+128GB+sale&prds=headlineOfferDocid:4511826493976576607,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "xiaomi-redmi-note-14-pro-5g": {
+   "floor_pence": 23499,
+   "rrp_pence": 39900,
+   "pct_of_rrp": 59,
+   "offers": 40,
+   "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+Redmi+Note+14+Pro+5G+256GB+sale&prds=gpcid:11254945908241961936,rds:PC_11254945908241961936%7CPROD_PC_11254945908241961936,headlineOfferDocid:9158418828748081429,catalogid:14141495516338516769,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 23499,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+Redmi+Note+14+Pro+5G+256GB+sale&prds=gpcid:11254945908241961936,rds:PC_11254945908241961936%7CPROD_PC_11254945908241961936,headlineOfferDocid:9158418828748081429,catalogid:14141495516338516769,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 24000,
+     "seller": "Etoren.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+Redmi+Note+14+Pro+5G+256GB+sale&prds=headlineOfferDocid:16405110815553419926,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 24921,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+Redmi+Note+14+Pro+5G+256GB+sale&prds=headlineOfferDocid:1091503456083270865,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 25370,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+Redmi+Note+14+Pro+5G+256GB+sale&prds=headlineOfferDocid:12448061505813235276,catalogid:1292304396825220503,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 26178,
+     "seller": "Alibaba.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+Redmi+Note+14+Pro+5G+256GB+sale&prds=gpcid:17262276776683134427,rds:PC_17262276776683134427%7CPROD_PC_17262276776683134427,headlineOfferDocid:13805614397322094780,catalogid:993515850489493340,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "nothing-phone-3a": {
+   "floor_pence": 19900,
+   "rrp_pence": 32900,
+   "pct_of_rrp": 60,
+   "offers": 27,
+   "seller": "Argos",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+128GB+sale&prds=gpcid:1188226152943200491,rds:PC_1188226152943200491%7CPROD_PC_1188226152943200491,headlineOfferDocid:11016142322145395300,catalogid:14244866375475848222,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 19900,
+     "seller": "Argos",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+128GB+sale&prds=gpcid:1188226152943200491,rds:PC_1188226152943200491%7CPROD_PC_1188226152943200491,headlineOfferDocid:11016142322145395300,catalogid:14244866375475848222,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 19999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+128GB+sale&prds=headlineOfferDocid:9206642154446632156,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 22800,
+     "seller": "Swiftronics USA",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+128GB+sale&prds=gpcid:9707884900260163011,rds:PC_9707884900260163011%7CPROD_PC_9707884900260163011,headlineOfferDocid:9521005789076686432,catalogid:5815088568161612106,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 25030,
+     "seller": "eBay - gadge-1079",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+128GB+sale&prds=headlineOfferDocid:13718339601114292870,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 25500,
+     "seller": "CeX",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+128GB+sale&prds=headlineOfferDocid:5676530583955752527,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s25-256": {
+   "floor_pence": 52399,
+   "rrp_pence": 85900,
+   "pct_of_rrp": 61,
+   "offers": 40,
+   "seller": "eBay - digitalcelldelight",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+256GB+sale&prds=gpcid:3123712197635071473,rds:PC_3123712197635071473%7CPROD_PC_3123712197635071473,headlineOfferDocid:15613424650685614989,catalogid:18434991524990722569,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 52399,
+     "seller": "eBay - digitalcelldelight",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+256GB+sale&prds=gpcid:3123712197635071473,rds:PC_3123712197635071473%7CPROD_PC_3123712197635071473,headlineOfferDocid:15613424650685614989,catalogid:18434991524990722569,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 52500,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+256GB+sale&prds=gpcid:11408333607178445579,rds:PC_11408333607178445579%7CPROD_PC_11408333607178445579,headlineOfferDocid:4059016493423217095,catalogid:14848526274581090479,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 52999,
+     "seller": "musicMagpie Store",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+256GB+sale&prds=gpcid:7998131059683023653,rds:PC_7998131059683023653%7CPROD_PC_7998131059683023653,headlineOfferDocid:6280067245303793319,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 54900,
+     "seller": "Argos",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+256GB+sale&prds=gpcid:7817482627795703956,rds:PC_7817482627795703956%7CPROD_PC_7817482627795703956,headlineOfferDocid:7765374554404186862,catalogid:9886860672924680828,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 54900,
+     "seller": "Appliances Direct",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+256GB+sale&prds=gpcid:902363218865621285,rds:PC_902363218865621285%7CPROD_PC_902363218865621285,headlineOfferDocid:13265455161267182739,catalogid:2285996700769663674,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s26-ultra-256": {
+   "floor_pence": 71039,
+   "rrp_pence": 124900,
+   "pct_of_rrp": 57,
+   "offers": 40,
+   "seller": "OnBuy.com",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+Ultra+256GB+sale&prds=headlineOfferDocid:18338538534852151836,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 71039,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+Ultra+256GB+sale&prds=headlineOfferDocid:18338538534852151836,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 74099,
+     "seller": "Techinthebasket.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+Ultra+256GB+sale&prds=gpcid:1093917702881201078,rds:PC_1093917702881201078%7CPROD_PC_1093917702881201078,headlineOfferDocid:5841408580059293194,catalogid:10969173086321908586,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 74999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+Ultra+256GB+sale&prds=headlineOfferDocid:17458127352145897646,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 77900,
+     "seller": "Amazon.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+Ultra+256GB+sale&prds=gpcid:10874049745205786652,rds:PC_10874049745205786652%7CPROD_PC_10874049745205786652,headlineOfferDocid:5211882009392859248,catalogid:17583075384231410389,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 78499,
+     "seller": "eBay - aurtrade",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+Ultra+256GB+sale&prds=headlineOfferDocid:7034499209099052451,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-z-fold7": {
+   "floor_pence": 102568,
+   "rrp_pence": 179900,
+   "pct_of_rrp": 57,
+   "offers": 40,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold7+256GB+sale&prds=headlineOfferDocid:5304753807032184648,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 102568,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold7+256GB+sale&prds=headlineOfferDocid:5304753807032184648,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 102999,
+     "seller": "eBay - aurtrade",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold7+256GB+sale&prds=headlineOfferDocid:18137425204744042168,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 110100,
+     "seller": "Swiftronics USA",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold7+256GB+sale&prds=headlineOfferDocid:14285264020090529617,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 119800,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold7+256GB+sale&prds=gpcid:16337891081947337161,rds:PC_16337891081947337161%7CPROD_PC_16337891081947337161,headlineOfferDocid:17800093505560917803,catalogid:5091786824057697942,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 139900,
+     "seller": "Laptops Direct",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Fold7+256GB+sale&prds=gpcid:5719470539066911410,rds:PC_5719470539066911410%7CPROD_PC_5719470539066911410,headlineOfferDocid:8395587063325011802,catalogid:5551801874575435977,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "google-pixel-9a-128": {
+   "floor_pence": 27500,
+   "rrp_pence": 49900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "Cash Converters",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9a+128GB+sale&prds=headlineOfferDocid:4113848615194865440,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 27500,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9a+128GB+sale&prds=headlineOfferDocid:4113848615194865440,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 27630,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9a+128GB+sale&prds=headlineOfferDocid:8709683785960996502,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 27999,
+     "seller": "Cash Generator",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9a+128GB+sale&prds=headlineOfferDocid:8407031596463526648,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 29399,
+     "seller": "Techinthebasket.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9a+128GB+sale&prds=gpcid:10674701989890442466,rds:PC_10674701989890442466%7CPROD_PC_10674701989890442466,headlineOfferDocid:15962701208656897327,catalogid:4768876175342485433,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 29995,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9a+128GB+sale&prds=headlineOfferDocid:8900509808623373894,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "nothing-phone-3-256": {
+   "floor_pence": 44500,
+   "rrp_pence": 79900,
+   "pct_of_rrp": 56,
+   "offers": 31,
+   "seller": "CeX",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3)+256GB+sale&prds=headlineOfferDocid:350648036609943947,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 44500,
+     "seller": "CeX",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3)+256GB+sale&prds=headlineOfferDocid:350648036609943947,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 44900,
+     "seller": "Dealmonday.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3)+256GB+sale&prds=gpcid:7251712868301782063,rds:PC_7251712868301782063%7CPROD_PC_7251712868301782063,headlineOfferDocid:13085731154560659660,catalogid:12765514455711540594,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 45220,
+     "seller": "u-buy.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3)+256GB+sale&prds=headlineOfferDocid:12543667178896807477,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 49897,
+     "seller": "Laptops Direct",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3)+256GB+sale&prds=gpcid:2901239192010480193,rds:PC_2901239192010480193%7CPROD_PC_2901239192010480193,headlineOfferDocid:16132037793012848069,catalogid:10178068666275283690,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 51568,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3)+256GB+sale&prds=headlineOfferDocid:910240444593739132,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-16-plus-128": {
+   "floor_pence": 52000,
+   "rrp_pence": 89900,
+   "pct_of_rrp": 58,
+   "offers": 40,
+   "seller": "Back Market",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Plus+128GB+sale&prds=headlineOfferDocid:3913839679873062138,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 52000,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Plus+128GB+sale&prds=headlineOfferDocid:3913839679873062138,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 53999,
+     "seller": "Smart Cellular",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Plus+128GB+sale&prds=headlineOfferDocid:2607067429213258069,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 53999,
+     "seller": "eBay - mrsuperdeals",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Plus+128GB+sale&prds=gpcid:6122768502087570457,rds:PC_6122768502087570457%7CPROD_PC_6122768502087570457,headlineOfferDocid:6048978301934803083,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 54900,
+     "seller": "Reboxed",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Plus+128GB+sale&prds=headlineOfferDocid:9864883402635337085,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 54997,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+Plus+128GB+sale&prds=gpcid:16553227257272009427,rds:PC_16553227257272009427%7CPROD_PC_16553227257272009427,headlineOfferDocid:15298939091555233334,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s25-plus-256": {
+   "floor_pence": 56000,
+   "rrp_pence": 99900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "CeX",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25++256GB+sale&prds=gpcid:2523886549851175896,rds:PC_2523886549851175896%7CPROD_PC_2523886549851175896,headlineOfferDocid:11445272534673471260,catalogid:4185024017689839678,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 56000,
+     "seller": "CeX",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25++256GB+sale&prds=gpcid:2523886549851175896,rds:PC_2523886549851175896%7CPROD_PC_2523886549851175896,headlineOfferDocid:11445272534673471260,catalogid:4185024017689839678,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 58000,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25++256GB+sale&prds=headlineOfferDocid:311441186671500593,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 59900,
+     "seller": "Laptops Direct",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25++256GB+sale&prds=gpcid:1831468378423316198,rds:PC_1831468378423316198%7CPROD_PC_1831468378423316198,headlineOfferDocid:7693505765012395631,catalogid:13641345972363059233,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 61999,
+     "seller": "Techinthebasket.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25++256GB+sale&prds=gpcid:4396478263566534544,rds:PC_4396478263566534544%7CPROD_PC_4396478263566534544,headlineOfferDocid:7852507528856625786,catalogid:1431908981521519305,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 64900,
+     "seller": "EE",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25++256GB+sale&prds=gpcid:17817985598720773820,rds:PC_17817985598720773820%7CPROD_PC_17817985598720773820,headlineOfferDocid:11444339632536884956,catalogid:14490060242543975323,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s24-ultra-256": {
+   "floor_pence": 69999,
+   "rrp_pence": 124900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "eBay - gainax2",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+Ultra+256GB+sale&prds=headlineOfferDocid:17806783451157860790,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 69999,
+     "seller": "eBay - gainax2",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+Ultra+256GB+sale&prds=headlineOfferDocid:17806783451157860790,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 70000,
+     "seller": "vendi",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+Ultra+256GB+sale&prds=headlineOfferDocid:1029695673805501040,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 73900,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+Ultra+256GB+sale&prds=gpcid:7375460946861828499,rds:PC_7375460946861828499%7CPROD_PC_7375460946861828499,headlineOfferDocid:17002332393698652379,catalogid:5691031226254412626,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 80655,
+     "seller": "u-buy.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+Ultra+256GB+sale&prds=headlineOfferDocid:15074783711911212894,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 83499,
+     "seller": "Smart Cellular",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+Ultra+256GB+sale&prds=headlineOfferDocid:12051572077092533121,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s24-fe": {
+   "floor_pence": 36900,
+   "rrp_pence": 64900,
+   "pct_of_rrp": 57,
+   "offers": 40,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+FE+128GB+sale&prds=gpcid:8888297900980422915,rds:PC_8888297900980422915%7CPROD_PC_8888297900980422915,headlineOfferDocid:3628766917661531608,catalogid:9079801758641708390,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 36900,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+FE+128GB+sale&prds=gpcid:8888297900980422915,rds:PC_8888297900980422915%7CPROD_PC_8888297900980422915,headlineOfferDocid:3628766917661531608,catalogid:9079801758641708390,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 42499,
+     "seller": "Tesco",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+FE+128GB+sale&prds=gpcid:14702962172298759766,rds:PC_14702962172298759766%7CPROD_PC_14702962172298759766,headlineOfferDocid:8609783850068748084,catalogid:1444324317147175405,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 44900,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+FE+128GB+sale&prds=gpcid:8888297900980422915,rds:PC_8888297900980422915%7CPROD_PC_8888297900980422915,headlineOfferDocid:3628766917661531608,catalogid:9079801758641708390,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 49590,
+     "seller": "u-buy.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+FE+128GB+sale&prds=headlineOfferDocid:9303870272294392631,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 52500,
+     "seller": "Fone4U",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S24+FE+128GB+sale&prds=headlineOfferDocid:15370708978292998899,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-z-flip6": {
+   "floor_pence": 61000,
+   "rrp_pence": 104900,
+   "pct_of_rrp": 58,
+   "offers": 40,
+   "seller": "Gleesim.co.uk",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip6+256GB+sale&prds=headlineOfferDocid:15449220146695611634,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 61000,
+     "seller": "Gleesim.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip6+256GB+sale&prds=headlineOfferDocid:15449220146695611634,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 125685,
+     "seller": "u-buy.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip6+256GB+sale&prds=headlineOfferDocid:15529847266493535099,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 137500,
+     "seller": "eBay - kickmobiles-ltd",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip6+256GB+sale&prds=headlineOfferDocid:5608006191177615067,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "cmf-phone-2-pro": {
+   "floor_pence": 14110,
+   "rrp_pence": 21900,
+   "pct_of_rrp": 64,
+   "offers": 19,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=CMF+Phone+2+Pro+128GB+sale&prds=headlineOfferDocid:10278605985203596785,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 14110,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=CMF+Phone+2+Pro+128GB+sale&prds=headlineOfferDocid:10278605985203596785,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 15252,
+     "seller": "eBay - topmoilephones",
+     "url": "https://google.co.uk/search?ibp=oshop&q=CMF+Phone+2+Pro+128GB+sale&prds=gpcid:3538767349089819118,rds:PC_3538767349089819118%7CPROD_PC_3538767349089819118,headlineOfferDocid:9176955942924101303,catalogid:2371931905812687910,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 18500,
+     "seller": "CeX",
+     "url": "https://google.co.uk/search?ibp=oshop&q=CMF+Phone+2+Pro+128GB+sale&prds=headlineOfferDocid:16905615850678380701,catalogid:15193666013109478212,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 18999,
+     "seller": "Used Mobiles 4 U",
+     "url": "https://google.co.uk/search?ibp=oshop&q=CMF+Phone+2+Pro+128GB+sale&prds=headlineOfferDocid:2890476838292253931,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 19999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=CMF+Phone+2+Pro+128GB+sale&prds=headlineOfferDocid:9531337193951801422,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "oneplus-15-256": {
+   "floor_pence": 53999,
+   "rrp_pence": 94900,
+   "pct_of_rrp": 57,
+   "offers": 40,
+   "seller": "Techinthebasket.com",
+   "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+15+256GB+sale&prds=gpcid:5226824948761936856,rds:PC_5226824948761936856%7CPROD_PC_5226824948761936856,headlineOfferDocid:9654940337819397277,catalogid:3152792325047610926,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 53999,
+     "seller": "Techinthebasket.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+15+256GB+sale&prds=gpcid:5226824948761936856,rds:PC_5226824948761936856%7CPROD_PC_5226824948761936856,headlineOfferDocid:9654940337819397277,catalogid:3152792325047610926,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 56700,
+     "seller": "Etoren.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+15+256GB+sale&prds=gpcid:18043387425176911026,rds:PC_18043387425176911026%7CPROD_PC_18043387425176911026,headlineOfferDocid:3577397919621635302,catalogid:6607372049691923528,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 56846,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+15+256GB+sale&prds=gpcid:9991887558433903083,rds:PC_9991887558433903083%7CPROD_PC_9991887558433903083,headlineOfferDocid:2183201855334510380,catalogid:3513039768600741374,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 61749,
+     "seller": "eBay - rxyamobile",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+15+256GB+sale&prds=headlineOfferDocid:3183188540500806830,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 61999,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=OnePlus+15+256GB+sale&prds=headlineOfferDocid:10589564283362806192,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "honor-magic7-pro": {
+   "floor_pence": 61870,
+   "rrp_pence": 109900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Honor+Magic7+Pro+512GB+sale&prds=headlineOfferDocid:17731347305120004028,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 61870,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Honor+Magic7+Pro+512GB+sale&prds=headlineOfferDocid:17731347305120004028,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 61999,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Honor+Magic7+Pro+512GB+sale&prds=gpcid:4499506179074521977,rds:PC_4499506179074521977%7CPROD_PC_4499506179074521977,headlineOfferDocid:12514014072512262187,catalogid:5731817937630757135,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 65800,
+     "seller": "eBay - alpha_360",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Honor+Magic7+Pro+512GB+sale&prds=headlineOfferDocid:17205444767498811601,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 66500,
+     "seller": "Etoren.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Honor+Magic7+Pro+512GB+sale&prds=headlineOfferDocid:2855851055801290013,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 68599,
+     "seller": "Techinthebasket.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Honor+Magic7+Pro+512GB+sale&prds=gpcid:3024641236845919727,rds:PC_3024641236845919727%7CPROD_PC_3024641236845919727,headlineOfferDocid:7896252079688323688,catalogid:15954837548393330938,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "oppo-find-x8-pro": {
+   "floor_pence": 58600,
+   "rrp_pence": 104900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "Etoren.com",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Oppo+Find+X8+Pro+512GB+sale&prds=gpcid:17161114450325673372,rds:PC_17161114450325673372%7CPROD_PC_17161114450325673372,headlineOfferDocid:17496927205712107400,catalogid:1915850538119436195,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 58600,
+     "seller": "Etoren.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Oppo+Find+X8+Pro+512GB+sale&prds=gpcid:17161114450325673372,rds:PC_17161114450325673372%7CPROD_PC_17161114450325673372,headlineOfferDocid:17496927205712107400,catalogid:1915850538119436195,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 58810,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Oppo+Find+X8+Pro+512GB+sale&prds=gpcid:3556937093210414300,rds:PC_3556937093210414300%7CPROD_PC_3556937093210414300,headlineOfferDocid:6204960776369249433,catalogid:5559356927884973976,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 70600,
+     "seller": "Swiftronics USA",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Oppo+Find+X8+Pro+512GB+sale&prds=gpcid:10473680795281832589,rds:PC_10473680795281832589%7CPROD_PC_10473680795281832589,headlineOfferDocid:11024558569407476712,catalogid:3724276302257883093,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 71500,
+     "seller": "CeX",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Oppo+Find+X8+Pro+512GB+sale&prds=headlineOfferDocid:12080017882543902841,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 73699,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Oppo+Find+X8+Pro+512GB+sale&prds=gpcid:13203506022707114531,rds:PC_13203506022707114531%7CPROD_PC_13203506022707114531,headlineOfferDocid:15384533146227484313,catalogid:15364605431217584250,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "google-pixel-9-128": {
+   "floor_pence": 44299,
+   "rrp_pence": 79900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "Back Market",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+128GB+sale&prds=gpcid:13513445356997666411,rds:PC_13513445356997666411%7CPROD_PC_13513445356997666411,headlineOfferDocid:10364667412324240575,catalogid:1912580155188847533,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 44299,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+128GB+sale&prds=gpcid:13513445356997666411,rds:PC_13513445356997666411%7CPROD_PC_13513445356997666411,headlineOfferDocid:10364667412324240575,catalogid:1912580155188847533,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 45499,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+128GB+sale&prds=headlineOfferDocid:16073954229947406404,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 48910,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+128GB+sale&prds=headlineOfferDocid:14110866666556472565,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 49900,
+     "seller": "Simply Be",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+128GB+sale&prds=headlineOfferDocid:14744055117448526749,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 49999,
+     "seller": "Qwikfone.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+128GB+sale&prds=headlineOfferDocid:3493354346362597844,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-17-pro-max-256": {
+   "floor_pence": 79900,
+   "rrp_pence": 119900,
+   "pct_of_rrp": 67,
+   "offers": 40,
+   "seller": "Harvey Norman",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+Max+256GB+sale&prds=gpcid:4728907421224624008,rds:PC_4728907421224624008%7CPROD_PC_4728907421224624008,headlineOfferDocid:5061916821032477433,catalogid:16459062469691403658,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 79900,
+     "seller": "Harvey Norman",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+Max+256GB+sale&prds=gpcid:4728907421224624008,rds:PC_4728907421224624008%7CPROD_PC_4728907421224624008,headlineOfferDocid:5061916821032477433,catalogid:16459062469691403658,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 79999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+Max+256GB+sale&prds=headlineOfferDocid:186688120720149779,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 91500,
+     "seller": "fonehouse",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+Max+256GB+sale&prds=headlineOfferDocid:12124257568642673019,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 94200,
+     "seller": "Swiftronics USA",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+Max+256GB+sale&prds=headlineOfferDocid:9534242543300882293,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 96300,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+Pro+Max+256GB+sale&prds=headlineOfferDocid:10027374195812429799,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "sony-xperia-1-vii": {
+   "floor_pence": 79500,
+   "rrp_pence": 139900,
+   "pct_of_rrp": 57,
+   "offers": 32,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Sony+Xperia+1+VII+256GB+sale&prds=headlineOfferDocid:15584812479643622644,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 79500,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Sony+Xperia+1+VII+256GB+sale&prds=headlineOfferDocid:15584812479643622644,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 85210,
+     "seller": "eBay - mobilephones",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Sony+Xperia+1+VII+256GB+sale&prds=headlineOfferDocid:11750490905151371227,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 97299,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Sony+Xperia+1+VII+256GB+sale&prds=gpcid:4507937719199940711,rds:PC_4507937719199940711%7CPROD_PC_4507937719199940711,headlineOfferDocid:16444604650351257270,catalogid:5421821514113653515,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 99812,
+     "seller": "eBay - bq_shop07",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Sony+Xperia+1+VII+256GB+sale&prds=gpcid:4119303154383711105,rds:PC_4119303154383711105%7CPROD_PC_4119303154383711105,headlineOfferDocid:17006269171483371835,catalogid:2900992535190193008,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 102450,
+     "seller": "eBay - globaltone",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Sony+Xperia+1+VII+256GB+sale&prds=headlineOfferDocid:15927047523552329944,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s26-256": {
+   "floor_pence": 49999,
+   "rrp_pence": 79900,
+   "pct_of_rrp": 63,
+   "offers": 40,
+   "seller": "eBay - llanexchange",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+256GB+nearby&prds=headlineOfferDocid:14428263313054901127,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 49999,
+     "seller": "eBay - llanexchange",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+256GB+nearby&prds=headlineOfferDocid:14428263313054901127,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 50799,
+     "seller": "Techinthebasket.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+256GB+nearby&prds=headlineOfferDocid:6435947547647538250,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 54998,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+256GB+nearby&prds=headlineOfferDocid:15771953707111847059,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 57000,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+256GB+nearby&prds=gpcid:9102455457797821746,rds:PC_9102455457797821746%7CPROD_PC_9102455457797821746,headlineOfferDocid:9213571215967604630,catalogid:2362118922784418032,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 60000,
+     "seller": "Etoren.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+256GB+nearby&prds=gpcid:2098372171743188779,rds:PC_2098372171743188779%7CPROD_PC_2098372171743188779,headlineOfferDocid:8234019371711883725,catalogid:13559967959067637738,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "google-pixel-10-pro-128": {
+   "floor_pence": 55000,
+   "rrp_pence": 99900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "eBay - naturplus1",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+128GB+sale&prds=headlineOfferDocid:2153805119134582085,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 55000,
+     "seller": "eBay - naturplus1",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+128GB+sale&prds=headlineOfferDocid:2153805119134582085,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 55299,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+128GB+sale&prds=headlineOfferDocid:4926572439489056280,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 57499,
+     "seller": "Smart Cellular",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+128GB+sale&prds=headlineOfferDocid:18261761902469978490,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 58900,
+     "seller": "eBay - cellularland",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+128GB+sale&prds=headlineOfferDocid:17834385454422765852,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 58999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+128GB+sale&prds=headlineOfferDocid:13991570638672400609,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "google-pixel-10-pro-fold": {
+   "floor_pence": 97468,
+   "rrp_pence": 174900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+Fold+256GB+sale&prds=headlineOfferDocid:427350288440388644,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 97468,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+Fold+256GB+sale&prds=headlineOfferDocid:427350288440388644,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 97700,
+     "seller": "vendi",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+Fold+256GB+sale&prds=headlineOfferDocid:8102253541704453644,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 97759,
+     "seller": "eBay - musicmagpie",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+Fold+256GB+sale&prds=gpcid:6152480820239649970,rds:PC_6152480820239649970%7CPROD_PC_6152480820239649970,headlineOfferDocid:17977902905638758697,catalogid:7740872525430130939,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 99000,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+Fold+256GB+sale&prds=headlineOfferDocid:16885957789027647415,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 99800,
+     "seller": "Currys",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+10+Pro+Fold+256GB+sale&prds=headlineOfferDocid:10473112782127792639,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-17-256": {
+   "floor_pence": 44900,
+   "rrp_pence": 79900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "fonehouse",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+256GB+sale&prds=headlineOfferDocid:1391463140458051399,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 44900,
+     "seller": "fonehouse",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+256GB+sale&prds=headlineOfferDocid:1391463140458051399,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 59900,
+     "seller": "John Lewis & Partners",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+256GB+sale&prds=gpcid:15096775703250617709,rds:PC_15096775703250617709%7CPROD_PC_15096775703250617709,headlineOfferDocid:16288253468910200468,catalogid:17886763741116907989,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 61999,
+     "seller": "Smart Cellular",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+256GB+sale&prds=gpcid:6422462872340121311,rds:PC_6422462872340121311%7CPROD_PC_6422462872340121311,headlineOfferDocid:15083039043195707566,catalogid:18409686598009521733,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 62900,
+     "seller": "giffgaff",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+256GB+sale&prds=headlineOfferDocid:6885136088265592450,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 64000,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+17+256GB+sale&prds=headlineOfferDocid:2388548369549293871,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "xiaomi-15-256": {
+   "floor_pence": 49799,
+   "rrp_pence": 89900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+15+256GB+sale&prds=gpcid:8916611252408156577,rds:PC_8916611252408156577%7CPROD_PC_8916611252408156577,headlineOfferDocid:8086693326382104978,catalogid:9857800556021791572,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 49799,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+15+256GB+sale&prds=gpcid:8916611252408156577,rds:PC_8916611252408156577%7CPROD_PC_8916611252408156577,headlineOfferDocid:8086693326382104978,catalogid:9857800556021791572,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 52700,
+     "seller": "OnBuy.com",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+15+256GB+sale&prds=headlineOfferDocid:15643146729636559645,catalogid:16419889337731132486,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 52915,
+     "seller": "u-buy.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+15+256GB+sale&prds=gpcid:4214356221146985267,rds:PC_4214356221146985267%7CPROD_PC_4214356221146985267,headlineOfferDocid:5409407169313495988,catalogid:15267227313549123420,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 54900,
+     "seller": "mi.com/uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+15+256GB+sale&prds=gpcid:14596708871755906833,rds:PC_14596708871755906833%7CPROD_PC_14596708871755906833,headlineOfferDocid:3747355387500779075,catalogid:16732291899844096310,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 59097,
+     "seller": "eBay - dstechtrading",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Xiaomi+15+256GB+sale&prds=headlineOfferDocid:7914918993343133738,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-15-128": {
+   "floor_pence": 35000,
+   "rrp_pence": 59900,
+   "pct_of_rrp": 58,
+   "offers": 40,
+   "seller": "eBay - aiodistribution",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+15+128GB+sale&prds=gpcid:5505210797105304426,rds:PC_5505210797105304426%7CPROD_PC_5505210797105304426,headlineOfferDocid:5191223430118393499,catalogid:8216418339714007793,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 35000,
+     "seller": "eBay - aiodistribution",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+15+128GB+sale&prds=gpcid:5505210797105304426,rds:PC_5505210797105304426%7CPROD_PC_5505210797105304426,headlineOfferDocid:5191223430118393499,catalogid:8216418339714007793,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 35900,
+     "seller": "Wireless Source",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+15+128GB+sale&prds=gpcid:15891091288395937022,rds:PC_15891091288395937022%7CPROD_PC_15891091288395937022,headlineOfferDocid:14305252988038328756,catalogid:2110145177732163964,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 36699,
+     "seller": "Phones Direct",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+15+128GB+sale&prds=gpcid:4167291535128124278,rds:PC_4167291535128124278%7CPROD_PC_4167291535128124278,headlineOfferDocid:10511847350445110484,catalogid:18264636264260338963,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 36999,
+     "seller": "Smart Cellular",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+15+128GB+sale&prds=gpcid:6877999411904543436,rds:PC_6877999411904543436%7CPROD_PC_6877999411904543436,headlineOfferDocid:3295901806444830440,catalogid:18189195207838659447,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 37000,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+15+128GB+sale&prds=headlineOfferDocid:3347083425608775914,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-air-256": {
+   "floor_pence": 57790,
+   "rrp_pence": 99900,
+   "pct_of_rrp": 58,
+   "offers": 31,
+   "seller": "eBay",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+Air+256GB+sale&prds=headlineOfferDocid:441900109395659223,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 57790,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+Air+256GB+sale&prds=headlineOfferDocid:441900109395659223,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 59900,
+     "seller": "Gadcet.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+Air+256GB+sale&prds=gpcid:12795037018121803266,rds:PC_12795037018121803266%7CPROD_PC_12795037018121803266,headlineOfferDocid:1607746767964689143,catalogid:11337896240160481350,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 79900,
+     "seller": "John Lewis & Partners",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+Air+256GB+sale&prds=gpcid:17053988925978656314,rds:PC_17053988925978656314%7CPROD_PC_17053988925978656314,headlineOfferDocid:11512018931787399112,catalogid:17287572984162857815,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 79900,
+     "seller": "Argos",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+Air+256GB+sale&prds=gpcid:11726862736650931716,rds:PC_11726862736650931716%7CPROD_PC_11726862736650931716,headlineOfferDocid:8988160396728008325,catalogid:14181659078788436100,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 99900,
+     "seller": "Simply Be",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+Air+256GB+sale&prds=headlineOfferDocid:18186155762319004293,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-s26-plus-256": {
+   "floor_pence": 54998,
+   "rrp_pence": 99900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "Cash Converters",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26++256GB+nearby&prds=headlineOfferDocid:15771953707111847059,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 54998,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26++256GB+nearby&prds=headlineOfferDocid:15771953707111847059,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 57000,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26++256GB+nearby&prds=gpcid:9102455457797821746,rds:PC_9102455457797821746%7CPROD_PC_9102455457797821746,headlineOfferDocid:9213571215967604630,catalogid:2362118922784418032,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 58999,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26++256GB+nearby&prds=headlineOfferDocid:4681946723751788098,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 61056,
+     "seller": "BoxedTech",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26++256GB+nearby&prds=gpcid:2061922704283076369,rds:PC_2061922704283076369%7CPROD_PC_2061922704283076369,headlineOfferDocid:9439271690981902596,catalogid:14813814720249309495,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 61489,
+     "seller": "eBay - tesco_outlet",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26++256GB+nearby&prds=headlineOfferDocid:14061329294496562445,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-14-128": {
+   "floor_pence": 27858,
+   "rrp_pence": 49900,
+   "pct_of_rrp": 56,
+   "offers": 40,
+   "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+14+128GB+sale&prds=gpcid:11877571330601143903,rds:PC_11877571330601143903%7CPROD_PC_11877571330601143903,headlineOfferDocid:12784751295576643402,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 27858,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+14+128GB+sale&prds=gpcid:11877571330601143903,rds:PC_11877571330601143903%7CPROD_PC_11877571330601143903,headlineOfferDocid:12784751295576643402,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 29499,
+     "seller": "Smart Cellular",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+14+128GB+sale&prds=gpcid:1825429984203782303,rds:PC_1825429984203782303%7CPROD_PC_1825429984203782303,headlineOfferDocid:14704472632406020255,catalogid:8085610066528772379,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 29999,
+     "seller": "musicMagpie Store",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+14+128GB+sale&prds=gpcid:8053804293482199477,rds:PC_8053804293482199477%7CPROD_PC_8053804293482199477,headlineOfferDocid:16705473985705791547,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 30000,
+     "seller": "Back Market",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+14+128GB+sale&prds=gpcid:1552196212506734534,rds:PC_1552196212506734534%7CPROD_PC_1552196212506734534,headlineOfferDocid:11056398765351165585,catalogid:368814445623470248,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 30000,
+     "seller": "Reboxed",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+14+128GB+sale&prds=gpcid:17773966890340812262,rds:PC_17773966890340812262%7CPROD_PC_17773966890340812262,headlineOfferDocid:13863211154055521234,catalogid:18023132346108115528,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-a56": {
+   "floor_pence": 27500,
+   "rrp_pence": 49900,
+   "pct_of_rrp": 55,
+   "offers": 40,
+   "seller": "Gleesim.co.uk",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A56+5G+sale&prds=headlineOfferDocid:77443737993434895,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 27500,
+     "seller": "Gleesim.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A56+5G+sale&prds=headlineOfferDocid:77443737993434895,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 27979,
+     "seller": "eBay - uk-fonedeals",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A56+5G+sale&prds=headlineOfferDocid:7022038564816053755,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 28900,
+     "seller": "IA Tech",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A56+5G+sale&prds=headlineOfferDocid:17137094588425478605,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 28999,
+     "seller": "Wonderprice UK",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A56+5G+sale&prds=headlineOfferDocid:3566215380738492424,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 29099,
+     "seller": "Dealmonday.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+A56+5G+sale&prds=gpcid:9441658066187786729,rds:PC_9441658066187786729%7CPROD_PC_9441658066187786729,headlineOfferDocid:680633409154718057,catalogid:6500203158315091428,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "samsung-galaxy-z-flip7": {
+   "floor_pence": 61999,
+   "rrp_pence": 104900,
+   "pct_of_rrp": 59,
+   "offers": 40,
+   "seller": "eBay - innofinity-worldwide",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip7+256GB+sale&prds=headlineOfferDocid:2541424075091688455,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 61999,
+     "seller": "eBay - innofinity-worldwide",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip7+256GB+sale&prds=headlineOfferDocid:2541424075091688455,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 63500,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip7+256GB+sale&prds=headlineOfferDocid:1988925376491256526,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 63500,
+     "seller": "eBay - aiodistribution",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip7+256GB+sale&prds=headlineOfferDocid:9111674267576408748,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 64200,
+     "seller": "vendi",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip7+256GB+sale&prds=headlineOfferDocid:828051312460072454,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 64999,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+Z+Flip7+256GB+sale&prds=headlineOfferDocid:8471456404121095619,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "apple-iphone-16e-128": {
+   "floor_pence": 33999,
+   "rrp_pence": 59900,
+   "pct_of_rrp": 57,
+   "offers": 40,
+   "seller": "Cash Converters",
+   "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16e+128GB&prds=headlineOfferDocid:17668467044114084651,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 33999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16e+128GB&prds=headlineOfferDocid:17668467044114084651,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 36370,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16e+128GB&prds=headlineOfferDocid:8379345396782634063,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 37490,
+     "seller": "eBay - llanexchange",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16e+128GB&prds=headlineOfferDocid:13796109599457350023,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 37999,
+     "seller": "eBay - yetechbus_23",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16e+128GB&prds=headlineOfferDocid:2641872884414740355,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 38000,
+     "seller": "refurbedcouk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=new+Apple+iPhone+16e+128GB&prds=headlineOfferDocid:15852274138643312545,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "nothing-phone-3a-pro": {
+   "floor_pence": 26999,
+   "rrp_pence": 44900,
+   "pct_of_rrp": 60,
+   "offers": 26,
+   "seller": "Cash Converters",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+Pro+256GB+sale&prds=headlineOfferDocid:1252781463183864316,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 26999,
+     "seller": "Cash Converters",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+Pro+256GB+sale&prds=headlineOfferDocid:1252781463183864316,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 27034,
+     "seller": "eBay - bq_shop07",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+Pro+256GB+sale&prds=gpcid:9551757218744625826,rds:PC_9551757218744625826%7CPROD_PC_9551757218744625826,headlineOfferDocid:13997426878885156479,catalogid:14107119450368430174,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 27110,
+     "seller": "eBay",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+Pro+256GB+sale&prds=headlineOfferDocid:15978174424629561552,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 32500,
+     "seller": "CeX",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+Pro+256GB+sale&prds=gpcid:10902722712327720804,rds:PC_10902722712327720804%7CPROD_PC_10902722712327720804,headlineOfferDocid:3926753405810014988,catalogid:8943725195063913602,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 33770,
+     "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Nothing+Phone+(3a)+Pro+256GB+sale&prds=gpcid:9989310470316036645,rds:PC_9989310470316036645%7CPROD_PC_9989310470316036645,headlineOfferDocid:11432521552978659131,catalogid:7398584735682069642,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  },
+  "google-pixel-9-pro-xl-128": {
+   "floor_pence": 64900,
+   "rrp_pence": 109900,
+   "pct_of_rrp": 59,
+   "offers": 40,
+   "seller": "eBay - officialc247",
+   "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+XL+128GB+sale&prds=headlineOfferDocid:6017415918653408906,pvo:3,pvt:hg&hl=en&gl=GB",
+   "ladder": [
+    {
+     "price_pence": 64900,
+     "seller": "eBay - officialc247",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+XL+128GB+sale&prds=headlineOfferDocid:6017415918653408906,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 69900,
+     "seller": "Google Store",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+XL+128GB+sale&prds=gpcid:12601004915035008516,rds:PC_12601004915035008516%7CPROD_PC_12601004915035008516,headlineOfferDocid:13384745402152471522,catalogid:16743673779897982780,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 74568,
+     "seller": "eBay - dstechtrading",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+XL+128GB+sale&prds=headlineOfferDocid:13349848638246509655,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 74900,
+     "seller": "PhoneSwap Store",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+XL+128GB+sale&prds=headlineOfferDocid:14216092352600050383,pvo:3,pvt:hg&hl=en&gl=GB"
+    },
+    {
+     "price_pence": 93100,
+     "seller": "u-buy.co.uk",
+     "url": "https://google.co.uk/search?ibp=oshop&q=Google+Pixel+9+Pro+XL+128GB+sale&prds=headlineOfferDocid:4511826493976576607,pvo:3,pvt:hg&hl=en&gl=GB"
+    }
+   ]
+  }
+ }
+}
