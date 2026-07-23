@@ -217,3 +217,38 @@ async function getMyMatches(){
   if (error){ console.error(error); return []; }
   return data;
 }
+
+/* ---------- seller ---------- */
+async function getRetailer(){
+  const user = await getUser(); if (!user) return { user: null };
+  const { data } = await sb.from('retailers').select('*').eq('owner_id', user.id).maybeSingle();
+  return { user, retailer: data };
+}
+async function applyRetailer(fields){
+  const user = await getUser(); if (!user) return { error:{message:'SIGN_IN'} };
+  return sb.from('retailers').insert({ ...fields, owner_id: user.id });
+}
+async function getDemandCurve(productId){
+  const { data, error } = await sb.from('v_demand_curve').select('*')
+    .eq('product_id', productId).order('price_pence', { ascending:false }).limit(12);
+  if (error){ console.error(error); return []; }
+  return data;
+}
+async function acceptOrders(productId, floorPence, checkoutBase, maxUnits){
+  return sb.rpc('accept_orders', { p_product_id: productId, p_floor_pence: floorPence,
+    p_checkout_base: checkoutBase, p_max_units: maxUnits || null });
+}
+async function getSellerMatches(retailerId){
+  const { data, error } = await sb.from('matches')
+    .select('id,match_ref,price_pence,status,matched_at,expires_at,products(name,slug)')
+    .eq('retailer_id', retailerId).order('matched_at', { ascending:false }).limit(50);
+  if (error){ console.error(error); return []; }
+  return data;
+}
+async function getLedger(retailerId){
+  const { data, error } = await sb.from('wallet_ledger')
+    .select('amount_pence,kind,note,created_at')
+    .eq('retailer_id', retailerId).order('created_at', { ascending:false }).limit(20);
+  if (error){ console.error(error); return []; }
+  return data;
+}
