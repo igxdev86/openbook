@@ -2,9 +2,6 @@ name: Daily retail price sweep
 on:
   schedule:
     - cron: '50 5 * * *'
-  workflow_run:
-    workflows: ["Sync catalogue to Supabase"]
-    types: [completed]
   push:
     paths: ['.sweep-trigger']
   workflow_dispatch:
@@ -28,7 +25,6 @@ jobs:
   sweep:
     runs-on: ubuntu-latest
     timeout-minutes: 28
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
