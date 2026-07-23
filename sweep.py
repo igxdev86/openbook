@@ -15,7 +15,7 @@ Sanity rules: ignore offers below 40% of RRP (grey/scam listings) and above
 150% of RRP (bundles/marketplace chancers); need at least 2 surviving offers
 unless only 1 exists at all.
 """
-import base64, json, os, sys, time, urllib.request
+import base64, json, os, sys, time, pathlib, urllib.request
 
 D4S_LOGIN = os.environ.get('DATAFORSEO_LOGIN', '')
 D4S_PASS  = os.environ.get('DATAFORSEO_PASSWORD', '')
@@ -165,8 +165,13 @@ def main():
     by_slug = {p['slug']: p for p in products}
     id_to_tag = {tid: tag for tag, tid in posted.items()}
     done, updated, misses = set(), 0, []
-    global FLOORS
+    global FLOORS, IMAGES
     FLOORS = {}
+    IMAGES = {}
+    imgp = pathlib.Path(__file__).parent / 'data' / 'images.json'
+    if imgp.exists():
+        try: IMAGES = json.loads(imgp.read_text())
+        except Exception: IMAGES = {}
     deadline = time.time() + 18 * 60
     while len(done) < len(posted) and time.time() < deadline:
         time.sleep(15)
@@ -190,6 +195,13 @@ def main():
                         o['_variant_ok'] = variant_ok(p['name'], o.get('title'))
                     top = sane_offers(offers, p['rrp_pence'])
                     best = top[0] if top else None
+                    img_any = next((o['image'] for o in top if o.get('image')), '') \
+                        or next((o['image'] for o in offers if o.get('_variant_ok') and o.get('image')), '') \
+                        or next((o['image'] for o in offers if o.get('image')), '')
+                    if img_any:
+                        IMAGES[tag] = img_any
+                        if not DRY and not best:
+                            sb('PATCH', f'products?slug=eq.{tag}', {'image_url': img_any})
                     if best:
                         floor = best['price_pence']
                         pct = round(100 * floor / p['rrp_pence'])
@@ -211,12 +223,12 @@ def main():
     missing = set(posted) - done
     if missing: print('no result in time for:', ', '.join(sorted(missing)))
     print(f'done: {updated} updated, {len(misses)} skipped, {len(missing)} timed out')
-    import pathlib
     pathlib.Path('data').mkdir(exist_ok=True)
     pathlib.Path('data/sweep-last.json').write_text(json.dumps({
         'at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
         'updated': updated, 'skipped': misses, 'timed_out': sorted(missing),
         'floors': FLOORS}, indent=1))
+    pathlib.Path('data/images.json').write_text(json.dumps(IMAGES))
     pathlib.Path('data/retail.json').write_text(json.dumps({
         s: {'price_pence': v['floor_pence'], 'seller': v['seller'], 'url': v['url'],
             'image': v.get('image',''), 'offers': v.get('ladder', [])}

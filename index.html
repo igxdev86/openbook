@@ -92,8 +92,9 @@ initChrome();
 
 (async function renderMarkets(){
   const rows = document.getElementById('marketRows');
-  let RJ = {};
+  let RJ = {}, IJ = {};
   try { RJ = await fetch('/data/retail.json').then(r => r.ok ? r.json() : {}) || {}; } catch(e){}
+  try { IJ = await fetch('/data/images.json').then(r => r.ok ? r.json() : {}) || {}; } catch(e){}
   const markets = await getMarkets();
   if (!markets.length){
     rows.innerHTML = '<div style="padding:16px;font-size:.76rem;color:var(--ink-soft)">No live markets yet.</div>';
@@ -116,8 +117,8 @@ initChrome();
       : (m.retail_price_pence
         ? `<div class="cell ask"><b class="num">${P(m.retail_price_pence)}</b><span>retail</span></div>`
         : `<div class="cell empty"><b>—</b><span>no offers</span></div>`);
-    const img = (RJ[m.slug] && RJ[m.slug].image)
-      ? `<img class="m-thumb" src="${RJ[m.slug].image}" alt="" loading="lazy">` : '';
+    const imgUrl = (RJ[m.slug] && RJ[m.slug].image) || IJ[m.slug] || '';
+    const img = imgUrl ? `<img class="m-thumb" src="${imgUrl}" alt="" loading="lazy">` : '';
     return `<a class="mrow" href="${marketUrl(m.slug)}">
       <div style="display:flex;gap:10px;align-items:center">${img}<div>
         <div class="m-name">${m.name}</div>

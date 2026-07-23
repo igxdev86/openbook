@@ -275,7 +275,7 @@ def build_page(row):
     rrp_disp = money(row['rrp_pence'])
     lp = (RETAIL.get(row['slug']) or {}).get('price_pence')
     live_disp = money(lp) if lp else rrp_disp
-    img = (RETAIL.get(row['slug']) or {}).get('image','')
+    img = (RETAIL.get(row['slug']) or {}).get('image','') or IMAGES.get(row['slug'],'')
     img_html = (f'<div class="prod-photo"><img src="{esc(img)}" alt="{esc(row["name"])}" '
                 f'loading="lazy"></div>') if img else ''
     if lp:
@@ -396,7 +396,7 @@ def catnav_html(cats, active=None):
     return '<nav class="catnav" aria-label="Categories">' + ''.join(links) + '</nav>'
 
 def cat_row(r):
-    img = (RETAIL.get(r['slug']) or {}).get('image','')
+    img = (RETAIL.get(r['slug']) or {}).get('image','') or IMAGES.get(r['slug'],'')
     thumb = ('<img class="m-thumb" src="%s" alt="" loading="lazy">' % esc(img)) if img else ''
     return ('<a class="mrow" id="r-%s" href="/m/%s">'
             '<div style="display:flex;gap:10px;align-items:center">' + thumb +
@@ -446,13 +446,18 @@ def inject_catnav(path, nav):
     f.write_text(pre + start + '\n' + nav + '\n' + end + post)
 
 RETAIL = {}
+IMAGES = {}
 
 def main():
-    global RETAIL
+    global RETAIL, IMAGES
     rp = ROOT / 'data' / 'retail.json'
     if rp.exists():
         try: RETAIL = json.loads(rp.read_text())
         except Exception: RETAIL = {}
+    ip = ROOT / 'data' / 'images.json'
+    if ip.exists():
+        try: IMAGES = json.loads(ip.read_text())
+        except Exception: IMAGES = {}
     rows = []
     with open(ROOT / CSV_PATH, newline='', encoding='utf-8') as f:
         for row in csv.DictReader(f):
