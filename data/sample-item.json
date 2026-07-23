@@ -1,0 +1,42 @@
+{
+ "type": "google_shopping_serp",
+ "rank_group": 1,
+ "rank_absolute": 1,
+ "position": "left",
+ "xpath": "/html[1]/body[1]/div[2]/div[1]/div[8]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/product-viewer-group[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[1]/li[1]",
+ "domain": null,
+ "title": "Apple iPhone Air 1TB",
+ "description": null,
+ "url": null,
+ "shopping_url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+Air+256GB+sale&prds=gpcid:17053988925978656314,rds:PC_17053988925978656314%7CPROD_PC_17053988925978656314,headlineOfferDocid:11512018931787399112,catalogid:17287572984162857815,pvo:3,pvt:hg&hl=en&gl=GB",
+ "tags": null,
+ "price": 799,
+ "price_multiplier": null,
+ "old_price": null,
+ "currency": "GBP",
+ "product_id": "17287572984162857815",
+ "data_docid": "11512018931787399112",
+ "seller": "John Lewis & Partners",
+ "additional_specifications": null,
+ "reviews_count": null,
+ "is_best_match": false,
+ "product_rating": {
+  "type": "rating_element",
+  "position": "left",
+  "rating_type": "Max5",
+  "value": 4.3,
+  "votes_count": 3000,
+  "rating_max": 5
+ },
+ "shop_rating": null,
+ "product_images": [
+  "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT58Dccj1klfKf1BaQGP0Um3hZY6hR7qBhd1k9zwD_R-PULl2WCkBGx4mY7Aqjb8m51dlucpwbwfWCFVLGaKqY2oRNpxB1e37jFADvbmzQd_fSiSbN2J9CXIU0"
+ ],
+ "shop_ad_aclk": null,
+ "gid": "17053988925978656314",
+ "delivery_info": {
+  "delivery_message": "Free delivery",
+  "delivery_price": null
+ },
+ "stores_count_info": null
+}
