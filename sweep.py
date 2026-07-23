@@ -31,13 +31,29 @@ UK_LOCATION = 2826       # United Kingdom
 # only recognised UK new-stock retailers may set the floor / appear in the ladder
 SELLER_ALLOW = ['amazon','argos','currys','john lewis','very','ao.com','ao retail',
  'ee','o2','vodafone','three','sky','samsung','apple','google','laptops direct',
- 'box','mobile phones direct','mobiles.co.uk','fonehouse','giffgaff','costco',
+ 'mobile phones direct','mobiles','fonehouse','giffgaff','costco',
  'jd williams','littlewoods','tesco','sainsbury','dyson','shark','ninja','numatic','roborock','eufy','anker','gtech','vax','hoover','karcher','kärcher','appliances direct','marks electrical','robert dyas','lakeland','dunelm','the range','b&q','screwfix','wickes','euronics','hughes','peter tyson','sonic direct']
-BLOCK_WORDS = ['refurb','renewed','pre-owned','preowned','used','second hand','open box','graded']
+BLOCK_WORDS = ['refurb','renewed','pre-owned','preowned','used','second hand',
+ 'open box','graded','outlet','reboxed','back market','cex','cash converters',
+ 'musicmagpie','smart cellular','wowcher','groupon','clearance']
+import re as _re
 def allowed_seller(name):
-    n = (name or '').lower()
+    n = (name or '').lower().strip()
+    if not n: return False
     if any(b in n for b in BLOCK_WORDS): return False
-    return any(a in n for a in SELLER_ALLOW)
+    # marketplace prefixes: "eBay - X" never trusted; "Amazon.co.uk - X" only first-party
+    if ' - ' in n:
+        platform, sub = n.split(' - ', 1)
+        if 'ebay' in platform: return False
+        if 'amazon' in platform: return 'amazon' in sub
+    if n.startswith('ebay'): return False
+    tokens = set(_re.split(r'[^a-z0-9&]+', n)) - {''}
+    for a in SELLER_ALLOW:
+        if len(a) <= 4:
+            if a in tokens: return True          # short names need exact token: ee, o2, b&q, sky, vax
+        else:
+            if n.startswith(a) or a in tokens: return True
+    return False
 LANG = 'en'
 
 def die(msg): print('FATAL:', msg); sys.exit(1)
@@ -91,23 +107,35 @@ def extract_offers(task_result):
             if cond and cond != 'new': continue
             try: pence = round(float(val) * 100)
             except (TypeError, ValueError): continue
-            img = item.get('image_url') or item.get('main_image') or ''
-            if not img:
-                imgs = item.get('images')
-                if isinstance(imgs, list) and imgs:
-                    img = imgs[0] if isinstance(imgs[0], str) else (imgs[0] or {}).get('url','')
+            img = ''
+            imgs = item.get('product_images')
+            if isinstance(imgs, list) and imgs:
+                img = imgs[0] if isinstance(imgs[0], str) else (imgs[0] or {}).get('url','') or (imgs[0] or {}).get('image_url','')
+            img = img or item.get('image_url') or ''
             offers.append({
                 'price_pence': pence,
                 'seller': (item.get('seller') or item.get('source') or '').strip()[:60],
                 'url': (item.get('url') or item.get('shopping_url') or '')[:500],
-                'image': (img or '')[:500]})
+                'image': (img or '')[:500],
+                'title': (item.get('title') or '')[:120]})
     return offers
+
+def norm(s):
+    s = (s or '').lower()
+    s = _re.sub(r'(\d)\s+(gb|tb)', r'\1\2', s)
+    return s
+def variant_ok(product_name, title):
+    if not title: return True
+    tn, pn = norm(title), norm(product_name)
+    need = [w for w in _re.split(r'[^a-z0-9+]+', pn) if any(ch.isdigit() for ch in w)]
+    return all(w in tn for w in need)
 
 def sane_offers(offers, rrp, n=5):
     lo, hi = int(rrp * 0.55), int(rrp * 1.40)
     best_by_seller = {}
     for o in sorted((o for o in offers
-                     if lo <= o['price_pence'] <= hi and allowed_seller(o['seller'])),
+                     if lo <= o['price_pence'] <= hi and allowed_seller(o['seller'])
+                        and o.get('_variant_ok', True)),
                     key=lambda o: o['price_pence']):
         key = (o['seller'] or o['url'] or str(o['price_pence'])).lower()
         if key not in best_by_seller:
@@ -155,6 +183,8 @@ def main():
                 if True:
                     p = by_slug[tag]
                     offers = extract_offers(task.get('result'))
+                    for o in offers:
+                        o['_variant_ok'] = variant_ok(p['name'], o.get('title'))
                     top = sane_offers(offers, p['rrp_pence'])
                     best = top[0] if top else None
                     if best:
