@@ -1,0 +1,8 @@
+{
+ "id": "mine-cat-kindle",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "kindle",
+  "limit": 300
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "id": "mine-cat-hair-dryer",
+ "type": "keyword_suggestions",
+ "params": {
+  "keyword": "hair dryer",
+  "limit": 300
+ }
+}
