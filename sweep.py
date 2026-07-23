@@ -27,6 +27,17 @@ for i, a in enumerate(sys.argv):
     if a == '--limit' and i + 1 < len(sys.argv): LIMIT = int(sys.argv[i + 1])
 
 UK_LOCATION = 2826       # United Kingdom
+
+# only recognised UK new-stock retailers may set the floor / appear in the ladder
+SELLER_ALLOW = ['amazon','argos','currys','john lewis','very','ao.com','ao retail',
+ 'ee','o2','vodafone','three','sky','samsung','apple','google','laptops direct',
+ 'box','mobile phones direct','mobiles.co.uk','fonehouse','giffgaff','costco',
+ 'jd williams','littlewoods','tesco','sainsbury']
+BLOCK_WORDS = ['refurb','renewed','pre-owned','preowned','used','second hand','open box','graded']
+def allowed_seller(name):
+    n = (name or '').lower()
+    if any(b in n for b in BLOCK_WORDS): return False
+    return any(a in n for a in SELLER_ALLOW)
 LANG = 'en'
 
 def die(msg): print('FATAL:', msg); sys.exit(1)
@@ -56,6 +67,7 @@ def sb(method, path, payload=None):
         body = r.read().decode()
         return json.loads(body) if body else None
 
+SAMPLE_SAVED = [False]
 def extract_offers(task_result):
     """Pull GBP offers (price, seller, url) out of a shopping result, defensively."""
     offers = []
@@ -70,6 +82,13 @@ def extract_offers(task_result):
             elif isinstance(price, (int, float)) and price > 0:
                 val = price
             if val is None: continue
+            if not SAMPLE_SAVED[0]:
+                SAMPLE_SAVED[0] = True
+                import pathlib as _pl
+                _pl.Path('data').mkdir(exist_ok=True)
+                _pl.Path('data/sample-item.json').write_text(json.dumps(item, indent=1)[:8000])
+            cond = str(item.get('condition') or '').lower()
+            if cond and cond != 'new': continue
             try: pence = round(float(val) * 100)
             except (TypeError, ValueError): continue
             img = item.get('image_url') or item.get('main_image') or ''
@@ -87,7 +106,8 @@ def extract_offers(task_result):
 def sane_offers(offers, rrp, n=5):
     lo, hi = int(rrp * 0.55), int(rrp * 1.40)
     best_by_seller = {}
-    for o in sorted((o for o in offers if lo <= o['price_pence'] <= hi),
+    for o in sorted((o for o in offers
+                     if lo <= o['price_pence'] <= hi and allowed_seller(o['seller'])),
                     key=lambda o: o['price_pence']):
         key = (o['seller'] or o['url'] or str(o['price_pence'])).lower()
         if key not in best_by_seller:
