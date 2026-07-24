@@ -123,15 +123,40 @@ def extract_offers(task_result):
                 'title': (item.get('title') or '')[:120]})
     return offers
 
-def norm(s):
+QUALIFIERS = {'pro','max','plus','ultra','mini','air','fe','se','slim','lite',
+ 'neo','edge','active','fold','flip','xl','note','nova','prime'}
+IGN_TOKENS = {'4k','uhd','fhd','qhd','hd','hdr','5g','4g','lte','wifi','bt','gps'}
+
+def norm_tokens(s):
     s = (s or '').lower()
-    s = _re.sub(r'(\d)\s+(gb|tb)', r'\1\2', s)
-    return s
+    s = _re.sub(r'(\d+)(?:\.\d+)?[\s-]*(?:inch|in\b|")', r'\1inch', s)
+    s = _re.sub(r'(\d)[\s-]*(gb|tb|kg)\b', r'\1\2', s)
+    return [w for w in _re.split(r'[^a-z0-9+&]+', s) if w]
+
+def _class_tokens(tokens, pat):
+    return {w for w in tokens if _re.fullmatch(pat, w)}
+
+def _series_num(toks):
+    for i, w in enumerate(toks[:-1]):
+        if w == 'series' and any(c.isdigit() for c in toks[i+1]):
+            return toks[i+1]
+    return None
+
 def variant_ok(product_name, title):
     if not title: return True
-    tn, pn = norm(title), norm(product_name)
-    need = [w for w in _re.split(r'[^a-z0-9+]+', pn) if any(ch.isdigit() for ch in w)]
-    return all(w in tn for w in need)
+    nt, tt = norm_tokens(product_name), norm_tokens(title)
+    nset, tset = set(nt), set(tt)
+    for w in nt:
+        if any(ch.isdigit() for ch in w) and w not in IGN_TOKENS:
+            if w not in tset: return False
+    for q in QUALIFIERS:
+        if (q in tset) != (q in nset): return False
+    for pat in (r'\d+(?:gb|tb)', r'\d+kg', r'\d+inch'):
+        n_c, t_c = _class_tokens(nset, pat), _class_tokens(tset, pat)
+        if n_c and t_c and not t_c <= n_c: return False
+    sn, st = _series_num(nt), _series_num(tt)
+    if sn and st and sn != st: return False
+    return True
 
 def sane_offers(offers, rrp, n=5):
     lo, hi = int(rrp * 0.55), int(rrp * 1.40)
@@ -205,14 +230,13 @@ def main():
                     top = sane_offers(offers, p['rrp_pence'])
                     best = top[0] if top else None
                     img_any = next((o['image'] for o in top if o.get('image')), '') \
-                        or next((o['image'] for o in offers if o.get('_variant_ok') and o.get('image')), '') \
-                        or next((o['image'] for o in offers if o.get('image')), '')
+                        or next((o['image'] for o in offers if o.get('_variant_ok') and o.get('image')), '')
                     if img_any:
                         IMAGES[tag] = img_any
                         if not DRY and not best:
                             sb('PATCH', f'products?slug=eq.{tag}', {'image_url': img_any})
                     seen, gal = set(), []
-                    pools = [top, [o for o in offers if o.get('_variant_ok')], offers]
+                    pools = [top, [o for o in offers if o.get('_variant_ok')]]
                     for pool in pools:
                         for o in pool:
                             for u in (o.get('gallery') or []):
