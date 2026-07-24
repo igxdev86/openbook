@@ -5,20 +5,18 @@
  "position": "left",
  "xpath": "/html[1]/body[1]/div[2]/div[1]/div[8]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/product-viewer-group[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[1]/li[1]",
  "domain": null,
- "title": "Samsung Galaxy S25",
+ "title": "HAIER I-Pro Series 7 Washing Machine HW100-B14979",
  "description": null,
  "url": null,
- "shopping_url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+256GB+sale&prds=gpcid:7998131059683023653,rds:PC_7998131059683023653%7CPROD_PC_7998131059683023653,headlineOfferDocid:6327165901011545683,catalogid:3914236193354950657,pvo:3,pvt:hg&hl=en&gl=GB",
- "tags": [
-  "LOW PRICE"
- ],
- "price": 549,
+ "shopping_url": "https://google.co.uk/search?ibp=oshop&q=new+Haier+i-Pro+Series+7+8kg&prds=gpcid:9703555075374051475,rds:PC_9703555075374051475%7CPROD_PC_9703555075374051475,headlineOfferDocid:1068421217611695213,catalogid:17903531817841764643,pvo:3,pvt:hg&hl=en&gl=GB",
+ "tags": null,
+ "price": 599.99,
  "price_multiplier": null,
  "old_price": null,
  "currency": "GBP",
- "product_id": "3914236193354950657",
- "data_docid": "6327165901011545683",
- "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+ "product_id": "17903531817841764643",
+ "data_docid": "1068421217611695213",
+ "seller": "Barlows Electrical",
  "additional_specifications": null,
  "reviews_count": null,
  "is_best_match": false,
@@ -26,16 +24,16 @@
   "type": "rating_element",
   "position": "left",
   "rating_type": "Max5",
-  "value": 4.7,
-  "votes_count": 62000,
+  "value": 4.8,
+  "votes_count": 146,
   "rating_max": 5
  },
  "shop_rating": null,
  "product_images": [
-  "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRGSTfSjug2fdq-NL2dkmg5fzj8seBSLqNervCgE1Z58U3_-JPTzScXtRBSrTAp-Q8ssjy-gggFfCdso2hvWTySniGa-LO7cFXPMzu8UFNSLyQc1P-f5cQJ9RE"
+  "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTyYKY8vS7Dzue40RrCjBlKb-ReKANSE9ifWtA2ckyt_gWmh3W7NkBzq7VL8q5ud0k_mKnKo3Gfxx4c5Ej9ONYaC1NqY--pYF9tZ91j2iO1LZsoWHNqc11i"
  ],
  "shop_ad_aclk": null,
- "gid": "7998131059683023653",
+ "gid": "9703555075374051475",
  "delivery_info": {
   "delivery_message": "Free delivery",
   "delivery_price": null
