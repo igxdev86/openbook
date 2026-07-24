@@ -120,12 +120,23 @@ def extract_offers(task_result):
                 'url': (item.get('url') or item.get('shopping_url') or '')[:500],
                 'image': (img or '')[:500],
                 'gallery': gal[:8],
+                'colour': colour_of(item.get('title') or ''),
                 'title': (item.get('title') or '')[:120]})
     return offers
 
 QUALIFIERS = {'pro','max','plus','ultra','mini','air','fe','se','slim','lite',
  'neo','edge','active','fold','flip','xl','note','nova','prime'}
 IGN_TOKENS = {'4k','uhd','fhd','qhd','hd','hdr','5g','4g','lte','wifi','bt','gps'}
+COLOURS = {'black','white','blue','red','green','yellow','pink','purple','orange',
+ 'silver','gold','graphite','grey','gray','cream','lavender','sage','teal','navy',
+ 'midnight','starlight','titanium','ultramarine','denim','indigo','mint','peach',
+ 'coral','bronze','copper','champagne','rose','jade','cyan','violet','obsidian',
+ 'porcelain','hazel','iris','lemongrass','onyx','marble','ivory','beige','charcoal'}
+
+def colour_of(title):
+    for w in norm_tokens(title):
+        if w in COLOURS: return w.capitalize()
+    return ''
 
 def norm_tokens(s):
     s = (s or '').lower()
@@ -273,7 +284,10 @@ def main():
     pathlib.Path('data/galleries.json').write_text(json.dumps(GALLERIES))
     pathlib.Path('data/retail.json').write_text(json.dumps({
         s: {'price_pence': v['floor_pence'], 'seller': v['seller'], 'url': v['url'],
-            'image': v.get('image',''), 'offers': v.get('ladder', [])}
+            'image': v.get('image',''),
+            'offers': [{'price_pence': o['price_pence'], 'seller': o['seller'],
+                        'url': o['url'], 'colour': o.get('colour','')}
+                       for o in v.get('ladder', [])]}
         for s, v in FLOORS.items()}))
 
 if __name__ == '__main__':

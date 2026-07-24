@@ -215,8 +215,9 @@ async function load() {{
       ? retail.offers
       : [{{ price_pence: retail.price_pence, seller: retail.seller, url: retail.url }}];
     askHtml = offers.map(o => {{
+      const col = o.colour ? ' · ' + o.colour : '';
       const inner = '<span class="price num">' + P(o.price_pence) +
-        '</span><span class="units">' + cleanSeller(o.seller) + ' →</span>';
+        '</span><span class="units">' + cleanSeller(o.seller) + col + ' →</span>';
       return o.url
         ? '<a class="rung" style="text-decoration:none" href="' + o.url +
           '" target="_blank" rel="noopener nofollow">' + inner + '</a>'
