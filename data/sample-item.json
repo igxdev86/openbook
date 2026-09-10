@@ -5,18 +5,20 @@
  "position": "left",
  "xpath": "/html[1]/body[1]/div[2]/div[1]/div[8]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/product-viewer-group[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[1]/li[1]",
  "domain": null,
- "title": "Apple iPhone 16, 128GB, Black (Renewed)",
+ "title": "Samsung Galaxy S26 Ultra",
  "description": null,
  "url": null,
- "shopping_url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+128GB+sale&prds=headlineOfferDocid:15298939091555233334,pvo:3,pvt:hg&hl=en&gl=GB",
- "tags": null,
- "price": 749,
+ "shopping_url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+Ultra+256GB+sale&prds=gpcid:16418233158843180078,rds:PC_16418233158843180078%7CPROD_PC_16418233158843180078,headlineOfferDocid:12905697229488839046,catalogid:18030421768195826794,pvo:3,pvt:hg&hl=en&gl=GB",
+ "tags": [
+  "10% OFF"
+ ],
+ "price": 899,
  "price_multiplier": null,
- "old_price": null,
+ "old_price": 999,
  "currency": "GBP",
- "product_id": null,
- "data_docid": "15298939091555233334",
- "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
+ "product_id": "18030421768195826794",
+ "data_docid": "12905697229488839046",
+ "seller": "Laptops Direct",
  "additional_specifications": null,
  "reviews_count": null,
  "is_best_match": false,
@@ -24,16 +26,16 @@
   "type": "rating_element",
   "position": "left",
   "rating_type": "Max5",
-  "value": 3,
-  "votes_count": 2,
+  "value": 4.8,
+  "votes_count": 57000,
   "rating_max": 5
  },
  "shop_rating": null,
  "product_images": [
-  "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQhxQ0Eq92_WxYyTscorG0V6BPhRFH59qhR3WMD8tv7ag1DJz4tYpMib2Y-ipBktrgBzSNPqQlB4Jah1itlMiY1SVxz5IcLHerXfQkqhtA"
+  "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRmBK3aC7ifZawGkcE99K05l4M9VtJcf-HzXj0rtWtYoZnk1NlwJvHce3cz1kUE36aPW9_5njeVOdaPWFkgjSuS-hsgIDlTUleisROmSmsW0RpdyO8kv1ZRjQ"
  ],
  "shop_ad_aclk": null,
- "gid": null,
+ "gid": "16418233158843180078",
  "delivery_info": {
   "delivery_message": "Free delivery",
   "delivery_price": null
