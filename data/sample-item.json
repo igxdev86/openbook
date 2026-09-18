@@ -5,18 +5,20 @@
  "position": "left",
  "xpath": "/html[1]/body[1]/div[2]/div[1]/div[8]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/product-viewer-group[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[1]/li[1]",
  "domain": null,
- "title": "Apple iPhone 16 128GB",
+ "title": "Galaxy S25 Samsung",
  "description": null,
  "url": null,
- "shopping_url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+128GB+sale&prds=gpcid:14255204214757082514,rds:PC_14255204214757082514%7CPROD_PC_14255204214757082514,headlineOfferDocid:3452562929003363618,catalogid:13039969681672175437,pvo:3,pvt:hg&hl=en&gl=GB",
- "tags": null,
- "price": 29.12,
+ "shopping_url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S25+256GB+sale&prds=gpcid:7998131059683023653,rds:PC_7998131059683023653%7CPROD_PC_7998131059683023653,headlineOfferDocid:18295584080179902434,catalogid:3182476936615454500,pvo:3,pvt:hg&hl=en&gl=GB",
+ "tags": [
+  "LOW PRICE"
+ ],
+ "price": 524,
  "price_multiplier": null,
  "old_price": null,
  "currency": "GBP",
- "product_id": "13039969681672175437",
- "data_docid": "3452562929003363618",
- "seller": "Apple",
+ "product_id": "3182476936615454500",
+ "data_docid": "18295584080179902434",
+ "seller": "Amazon.co.uk - Amazon.co.uk-Seller",
  "additional_specifications": null,
  "reviews_count": null,
  "is_best_match": false,
@@ -24,16 +26,16 @@
   "type": "rating_element",
   "position": "left",
   "rating_type": "Max5",
-  "value": 4.4,
-  "votes_count": 11000,
+  "value": 4.7,
+  "votes_count": 51000,
   "rating_max": 5
  },
  "shop_rating": null,
  "product_images": [
-  "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTb0BG_ZQWLRT2Aya3hUsDTwJetKjq4Y8k0RX30XStCB-1IVaVmE1VK7Ipo_-jVsZHlkOW9Q5f4ulMHwp9eV-CUT_Yzc5Os-mRlLSnz-9-_w4VA9WdVCc46"
+  "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSFoZmXfIaeUzXPSMXZuTvpiWVQGOwNn16TzA1lHGaqRSWn8BDUHVMmMjhiHGRCjl8OUiAEVfdsDttsczUvYGQx0Sv3H-dKZWe-fEnooRTfK2QkBdrEajS2oA"
  ],
  "shop_ad_aclk": null,
- "gid": "14255204214757082514",
+ "gid": "7998131059683023653",
  "delivery_info": {
   "delivery_message": "Free delivery",
   "delivery_price": null
