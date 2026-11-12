@@ -5,18 +5,18 @@
  "position": "left",
  "xpath": "/html[1]/body[1]/div[2]/div[1]/div[8]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/product-viewer-group[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[1]/li[1]",
  "domain": null,
- "title": "Apple iPhone 16",
+ "title": "Samsung Galaxy S26",
  "description": null,
  "url": null,
- "shopping_url": "https://google.co.uk/search?ibp=oshop&q=Apple+iPhone+16+128GB+sale&prds=gpcid:1465601687215425854,rds:PC_1465601687215425854%7CPROD_PC_1465601687215425854,headlineOfferDocid:3452562929003363618,catalogid:13039969681672175437,pvo:3,pvt:hg&hl=en&gl=GB",
+ "shopping_url": "https://google.co.uk/search?ibp=oshop&q=Samsung+Galaxy+S26+Ultra+256GB+sale&prds=gpcid:1767235362374137003,rds:PC_1767235362374137003%7CPROD_PC_1767235362374137003,headlineOfferDocid:3695960660504228398,catalogid:4408194180899172649,pvo:3,pvt:hg&hl=en&gl=GB",
  "tags": null,
- "price": 29.12,
+ "price": 599,
  "price_multiplier": null,
  "old_price": null,
  "currency": "GBP",
- "product_id": "13039969681672175437",
- "data_docid": "3452562929003363618",
- "seller": "Apple",
+ "product_id": "4408194180899172649",
+ "data_docid": "3695960660504228398",
+ "seller": "Back Market",
  "snippet": "& more",
  "additional_specifications": null,
  "reviews_count": null,
@@ -25,19 +25,16 @@
   "type": "rating_element",
   "position": "left",
   "rating_type": "Max5",
-  "value": 4.8,
-  "votes_count": 23000,
+  "value": 5,
+  "votes_count": 22000,
   "rating_max": 5
  },
  "shop_rating": null,
  "product_images": [
-  "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTb0BG_ZQWLRT2Aya3hUsDTwJetKjq4Y8k0RX30XStCB-1IVaVmE1VK7Ipo_-jVsZHlkOW9Q5f4ulMHwp9eV-CUT_Yzc5Os-mRlLSnz-9-_w4VA9WdVCc46"
+  "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQsoUPIUX5JXg3B77_80IomSjYQiooQPe_cfJSCF9R9hTyAc2DbKuFoy3zQv1cnaV2WW9WxRULRzIP79EOiyLPBAAGzuWc3WA"
  ],
  "shop_ad_aclk": null,
- "gid": "1465601687215425854",
- "delivery_info": {
-  "delivery_message": "Free delivery",
-  "delivery_price": null
- },
+ "gid": "1767235362374137003",
+ "delivery_info": null,
  "stores_count_info": null
 }
